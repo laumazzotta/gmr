@@ -1,0 +1,721 @@
+/* https://colorhunt.co/palette/66663 */
+
+html { 
+    scroll-behavior: smooth;
+    font-family: 'Big Shoulders Text', cursive; 
+}
+#body {
+    padding: 0;
+    margin: 0;    
+}
+/* backgrounds header */
+.header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+    
+}
+.header.home{
+    background-image: url("headerFinal.jpg");
+}
+
+/* barra menu principal */
+
+.navmenu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 6rem;
+    width: 100%;
+    background-color: #453c38b5;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    padding: 0 5%;
+}
+.menuppal {
+   list-style-type: none;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-around;
+   align-items: stretch;
+   position: relative;
+   margin: 0;
+   padding: 0;
+   flex-grow: 2;
+}
+.menuppal > li{
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+}
+.menuppal li a{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5vw;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 200;
+    padding: 16px 30px;
+}
+.menuppal li a:hover{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);  
+    transition: background-color .2s linear;
+}
+.menuppal li:hover ul{
+    display: block;
+    background-color: #453c38;
+}
+.menuppal li a:link{
+    text-decoration: none;
+}
+.logo {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+.logo a {
+    display: flex;
+    align-items: stretch;
+}
+.logo a img{
+    width: auto;
+    max-width: 300px;
+}
+/* titulo header y bajada */
+
+.tituloppal{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    margin-top: 5%;
+    z-index: 2;
+    align-self: flex-start;
+    color: #ebe9f6;
+    height: 562px;
+}
+.titulo1{
+    text-align: left;
+    font-size: 4vw;
+    letter-spacing: 5px;
+    line-height: 60px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+.bajada{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2vw;
+    font-weight: 200;
+    text-align: left;
+    margin: 0;
+    line-height: 3vw;
+}
+#main{
+    z-index: 1;
+}
+/* segmentos competicion-street */
+
+.bajadaSegmentos{
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #453c38;
+    width: 50%;
+}
+.segmentos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;  
+    margin: 5%;
+    position: relative;
+    height: 70vh;
+    
+}
+.segmentos .competicion{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    position: relative;
+    background-image: url(competicion_tomy.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 400px;
+}
+.segmentos .street{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    position: relative;
+    background-image: url(street.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 400px;
+}
+.segmentos .titulo{
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 3vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    padding: 0;
+    margin: 5%;
+    z-index: 1;
+    
+}
+.segmentos .titulo.comp{
+    text-align: left;
+    position: absolute;
+    top: 5%;
+}
+.segmentos .titulo.str{
+    text-align: right;
+    position: absolute;
+    top: 5%;
+    right: 0;
+}
+.segmentos .titulo:hover{
+    transform: scale(1.1);
+    transition: all .2s;
+}
+.competicion:hover{
+    box-shadow: 10px 10px 25px 10px #453c3882;
+    transition: all .3s;
+}
+.street:hover{
+    box-shadow: 10px 10px 25px 10px #453c3882;
+    transition: all .3s;
+}
+.intro{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.5;
+    padding: 10px;
+    color: #ebe9f6;
+    margin: 5%;
+    padding: 0;
+    position: absolute;
+    top: 30%;
+    width: 220px;
+}
+.segmentos .intro.str{
+    text-align: right;
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+.button{
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #ebe9f6;
+    font-size: 20px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5%;
+    padding: 0;
+    position: absolute;
+    top: 60%;
+}
+.button.str{
+    text-align: right;
+    position: absolute;
+    top: 60%;
+    right: 0;
+}
+.button span {
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: '\25BD';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 25px;
+}
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.button:hover + .texto{
+    display: block;
+}
+.texto{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+    padding: 40px;
+    color: #453c38;
+    margin: 0;
+    width: 500px;
+    height: 180px;
+    position: absolute;
+    top: 80%;
+    align-self: center;
+    animation: texto .2s ease-out;
+    animation-fill-mode: forwards;
+    display: none;
+}
+@keyframes texto{
+    0%   {background-color: transparent;}
+    100% {background-color: #ebe9f6}
+}
+
+/* secciones */
+
+.secciones {
+    color: #453c38;
+    text-align: center;
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 10rem;
+}
+.secciones:hover{
+    color: #453c38;
+}
+.secciones:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #f66e00;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.secciones:hover:before{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* SERVICIOS */
+
+#servicios{
+    position: relative;   
+    height: fit-content;
+}
+.subServicios{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
+.subServicios p{
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2vw;
+    color: #f66e00;
+    margin: 0;
+    padding: 0;
+}
+.listaServicios{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    top: 30%;
+    width: 100%;
+    z-index: 2;
+    margin-top: 5%;    
+    height: 100%;
+}
+.listaServicios li{
+    list-style-type: none;
+    color: #ebe9f6;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.8vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 300px;
+    padding: 3%;
+    margin: 0;
+    position: relative;
+}
+.listaServicios .service{
+    background: rgba(234, 85, 55, 1);
+    background: linear-gradient(90deg, rgba(234,85,55,1) 0%, rgba(237,91,43,1) 100%);
+}
+.listaServicios .setup{
+    background: rgb(237,91,43,1);
+    background: linear-gradient(90deg, rgba(237,91,43,1) 0%, rgba(241,99,25,1) 100%);
+}
+.listaServicios .asesoramiento{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(241,99,25,1) 0%, rgb(246, 111, 0) 100%);
+}
+.listaServicios .mantenimiento{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 0%, rgb(246, 111, 0) 100%);
+}
+.listaServicios .reparacion{
+    background: rgba(246, 111, 0, 1);
+}
+.listaServicios li:hover {
+    box-shadow: 0px 10px 25px 10px #453c3822;
+    transform: scale(1.05); 
+    transition: all 0.15s;
+    align-items: flex-start;
+    border-radius: 20px;
+    z-index: 10;
+}
+.listaServicios li i{
+    position: absolute;
+    top: 100px;
+    font-size: 1.5em;
+}
+.listaServicios li:hover::after{
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    padding: 10px;
+    z-index: 10;
+}
+.listaServicios .service:hover::after{
+    content: 'Consiste en el recambio de líquidos, inspección y lavado de todos los componentes (bujes, retenes, barrales, o-rings, arandelas, vástagos, etc) para la evaluación de desgastes y daños.';
+}
+.listaServicios .setup:hover::after{
+    content: 'Se trata del seteo del comportamiento de las suspensiones, de acuerdo al peso y al tipo de manejo del piloto. Con este servicio se optimiza la manera en que trabajan las suspensiones para cada persona.';
+}
+.listaServicios .asesoramiento:hover::after{
+    content: 'Te damos los consejos y tips para ayudarte a rendir al máximo en tu próxima carrera, desde la preparación de tu moto hasta los aspectos a tener en cuenta para el entrenamiento, tener los componentes adecuados, etc.';
+}
+.listaServicios .mantenimiento:hover::after{
+    content: 'Consiste escencialmente en un service completo en el que además se incluye el servicio de reparación y restauración de todas las piezas defectuosas o dañadas que puedan detectarse';
+}
+.listaServicios .reparacion:hover::after{
+    content: 'Nos encargamos de la reparación de todas las piezas componentes de tus suspensiones, ya sea por desgaste o golpes. Este servicio incluye el diseño, torneado y cromado de las piezas que fueran necesarias.';
+}
+.linkContacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    color: #453c38;
+    margin: 5%;
+    align-self: flex-end;
+}
+.linkContacto > p{
+    color: #453c38;
+    width: 40%;
+}
+.linkContacto > a{
+    text-decoration: none;
+    color: #ebe9f6;
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);
+    padding: 15px 50px;
+    border-radius: 50px;
+}
+.linkContacto > a:hover{
+    transform: scale(1.1);
+    transition: all .5s;
+}
+/* NOSOTROS */
+
+.nosotros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin: 5%;
+    padding: 0;
+    position: relative;
+}
+.nosotros img{
+    width: 100%;
+}
+.nosotros > p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.1vw;
+    text-align: justify;
+    line-height: 1.5;
+    color: #453c38;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 50%;
+}
+.nosotros1{
+    top: 20%;
+    right: 40%;
+}
+.nosotros2{
+    top: 10%;
+    left: 40%;
+}
+.linkGaleria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    margin: 5%;
+    color: #453c38;
+}
+.linkGaleria > p{
+    width: 40%;
+}
+.linkGaleria > a{
+    text-decoration: none;
+    color: #ebe9f6;
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);
+    padding: 15px 50px;
+    border-radius: 50px;
+}
+.linkGaleria > a:hover{
+    transform: scale(1.1);
+    transition: all .5s;
+}
+/* CONSEJOS */
+
+.bajadaConsejos{
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #453c38;
+    width: 50%;
+}
+.listaConsejos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+    padding: 0;
+    margin: 5% 0;
+    width: 100%;    
+    height: 100%;
+    background: rgba(246, 111, 0, 0.9);
+    background: linear-gradient(90deg, rgba(246,110,0,0.9) 0%, rgba(235,64,52,0.9) 100%);
+}
+.listaConsejos li{
+    list-style-type: none;
+    color: #ebe9f6;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 2.5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 300px;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    margin: 0;
+    position: relative;
+}
+.listaConsejos li span{
+    font-size: 2vw;
+    line-height: 3vw;
+}
+.listaConsejos li:hover {
+    box-shadow: 10px 10px 25px 10px #453c3882;
+    transition: all 0.15s;
+}
+.video{
+    width: 80%;
+    padding: 5% 0;
+}
+/* CONTACTO */
+
+.formulario{
+    color: #453c38;
+    text-align: left;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.4vw;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.formulario legend{
+    font-size: 1.8vw;
+    margin-bottom: 5%;
+}
+.formulario input {
+    padding: 12px 10px;
+    margin: 20px 0;    
+}
+.formulario textarea {
+    padding: 12px 10px;
+    margin: 20px 0;
+}
+.formulario button {
+    width: 30%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #ebe9f6;
+    font-size: 1.4vw;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background: rgba(246, 111, 0, 0.9);
+    background: linear-gradient(90deg, rgba(246,110,0,0.9) 0%, rgba(235,64,52,0.9) 100%);
+    padding: 15px 40px;
+    border-radius: 50px;
+}
+.formulario button:hover{
+    transform: scale(1.1);
+    transition: all .5s;   
+}
+.datosContacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+}
+.listaContacto {
+    list-style-type: none;
+    color: #453c38;
+    text-align: left;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.4vw;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 5%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+.listaContacto li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.listaContacto li i{
+    margin-right: 8px;
+    font-size: 2vw;
+}
+.listaContacto li a{
+    text-decoration: none;
+    color: #453c38;
+    display: flex;
+    align-items: center;
+}
+#contacto p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    color: #453c38;
+    display: block;
+    text-align: center;
+}
+.imagenMoto{
+    width: 35%;
+    position: absolute;
+    right: 5%;
+    top: 55%;
+}
+.listaRedes{
+    list-style-type: none;
+    color: #453c38;
+    text-align: left;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1vw;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 5%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+.listaRedes li a:hover{
+    color: #f66e00;
+    transition: .2s;
+}
+.listaRedes li a{
+    color: #453c38;
+    text-decoration: none;
+}
+.listaRedes li a > i{
+    font-size: 3vw;
+    margin-bottom: 10%;
+}
+/* FOOTER */
+
+.menuFooter{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+.menuFooter a{
+    margin: 5px 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 300;
+    color: #ebe9f6;
+    text-decoration: none;
+}
+#footer{
+    background-color: #453c38;
+    height: fit-content;
+}
