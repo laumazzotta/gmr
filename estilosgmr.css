@@ -19,7 +19,7 @@ html {
     
 }
 .header.home{
-    background-image: url("headerFinal.jpg");
+    background-image: url("img/headerFinal.jpg");
 }
 
 /* barra menu principal */
@@ -152,7 +152,7 @@ html {
     align-items: flex-start;
     margin: 10px;
     position: relative;
-    background-image: url(competicion_tomy.jpg);
+    background-image: url(img/competicion_tomy.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     height: 400px;
@@ -164,7 +164,7 @@ html {
     align-items: flex-start;
     margin: 10px;
     position: relative;
-    background-image: url(street.jpg);
+    background-image: url(img/street.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     height: 400px;
