@@ -1,83 +1,123 @@
 <!DOCTYPE html>
 <html id="galeria">
-<head>
-    <title>GMR Suspensiones Especiales - Gustavo Mazzotta Racing</title>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400,0:700;1,200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="animate.css"/>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" type="text/css" href="estilosgmr.css"/>
-    <link rel="stylesheet" type="text/css" href="estilosgaleria.css"/>
-    <link rel="stylesheet" type="text/css" href="cssFooter/estilosFooter.css"/>
-</head>
-<body id="body">
-    <header class="header galeria">
-        <nav class="navmenu"> 
-            <div class="logo">
-                <a href="index.html"><img src="logoOpNaranja.png" alt="GMR"></a>
+    <head>
+        <title>GMR Suspensiones Especiales - Gustavo Mazzotta Racing</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="description" content="GMR Suspensiones Especiales">
+        <meta name="keywords" content="suspensiones, motociclismo, motos, cuatriciclos, mecánica, motocross, enduro, dakar, amortiguadores, GMR">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400,0:700;1,200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Animate CSS -->
+        <link rel="stylesheet" type="text/css" href="Animate/animate.css"/>
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- my CSS -->
+        <link rel="stylesheet" type="text/css" href="estilos_gmr_v2.css"/>
+        <style>
+            html{
+                scroll-behavior: smooth;
+            }
+            h1, h2, h3{
+                font-family: 'Big Shoulders Text', cursive;    
+            }
+            p, a, li, form{
+                font-family: 'IBM Plex Sans', sans-serif;
+            }
+        </style>
+    </head>
+    <body id="body" class="container-fluid p-0">
+        <!-- HEADER -->
+        <header class="header galeria d-flex flex-column">
+            <nav class="navbar navbar-expand-lg align-items-stretch" style="background-color: #453c38b5; z-index: 2;">
+                <a class="navbar-brand" href="index.html"><img class="logo img-fluid" src="logoOpNaranja.png" alt="Logo GMR Suspensiones"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color: #ebe9f6;"></i></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end align-items-stretch" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link px-4" href="index.html#servicios">SERVICIOS</a>
+                        <a class="nav-item nav-link px-4" href="index.html#nosotros">NOSOTROS</a>
+                        <a class="nav-item nav-link px-4" href="galeria.html">GALERÍA</a>
+                        <a class="nav-item nav-link px-4" href="index.html#consejos">CONSEJOS Y RESEÑAS</a>
+                        <a class="nav-item nav-link px-4" href="index.html#contacto">CONTACTO</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="tituloppal d-flex flex-column justify-content-center p-0 wow fadeInLeftBig" style="background-color: transparent;">
+                <i class="fas fa-camera"></i>
+                <h1 class="tituloGaleria">GALERÍA</h1>
+                <p class="bajadaGaleria">Te compartimos algunas imágenes de nuestra historia, del equipo GMR, y de nuestros clientes y amigos disfrutando sus suspensiones…</p>
             </div>
-            <h1>GALERIA</h1>
-        </nav>
-        <div class="tituloGaleria wow fadeInLeftBig">
-            <i class="fas fa-camera"></i>
-            <h2 class="bajadaGal">Te compartimos algunas imágenes del equipo GMR y de nuestros clientes y amigos disfrutando sus suspensiones...</h2> 
-        </div>
-    </header>
-    <main>
-        <section class="grid">
-            <div class="grande"><img src="fotos Gus/20190215_081150.jpg"></div>
-            <div class="horizontal"><img src="fotos Gus/20181118_124619(1).jpg"></div>
-            <div class="grande"><img src="fotos Gus/1669813_809800899051742_7596757403035434314_o.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/20190214_115348(1).jpg" width="100%" height="100%"></div>
-            <div class="vertical"><img src="fotos Gus/774814_10200462942796562_557416935_o.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/408503_10201183976621957_1295219103_n.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/11128183_10206674148352819_5266347274440922488_n.jpg"></div>
-            <div class="vertical"><img src="fotos Gus/tomy.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/IMG_20170202_231647_546.jpg" width="100%" height="100%"></div>
-            <div class="grande"><img src="fotos Gus/DSC_0483.jpeg" width="100%" height="100%"></div>
-            <div class="vertical"><img src="fotos Gus/DSC_0305.jpeg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/20181020_114038.jpg" width="100%" height="100%"></div>
-            <div class="vertical"><img src="fotos Gus/IMG-20170920-WA0018.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/20190215_104659.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/33895720_10216955461499222_3958982801981702144_n.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/92868076_10223095299031323_7793450962999312384_n.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/racetech.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/chino.jpg" width="100%" height="100%"></div>
-            <div class="grande"><img src="fotos Gus/52117898_831596693852093_8631983039087378432_n.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/placa.jpg" width="100%" height="100%"></div>
-            <div class="vertical"><img src="fotos Gus/placaGus.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/20181118_122148.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/1421153_10202553973951034_928282766_o.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/551582_3616076241000_2081329189_n.jpg" width="100%" height="100%"></div>
-            <div class="vertical"><img src="fotos Gus/DSC_0191 2.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/13123226_10209861829522856_659552239097193454_o.jpg" width="100%" height="100%"></div>
-            <div class="horizontal"><img src="fotos Gus/10644677_10208740518690786_9080943355304959843_o.jpg" width="100%" height="100%"></div>
-        </section>
-    </main>
-    <footer id="footer">
-        <section class="footer">
-            <div class="footer__botonVolver">
-                <a href="#galeria"><i class="fas fa-chevron-circle-up"></i></a>
-            </div>
-            <div class="footer__logo">
-                <a href="index.html"></a><img src="logoOpNaranja.png" alt="GMR" width="350px"></a>
-                <p>Gustavo Mazzotta Racing</p>
-            </div>
-            <div class="footer__menu">
-                <a href="#servicios">Servicios</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#consejos">Consejos y Reseñas</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-        </section>
-    </footer>
-    <script src="wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-</body>
-</html>
-</body>
+        </header>
+        <main>
+            <section class="grid">
+                <div class="grande"><img src="FotosGaleria/20190215_081150.jpg"></div>
+                <div class="horizontal"><img src="FotosGaleria/20181118_124619(1).jpg"></div>
+                <div class="grande"><img src="FotosGaleria/1669813_809800899051742_7596757403035434314_o.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/20190214_115348(1).jpg" width="100%" height="100%"></div>
+                <div class="vertical"><img src="FotosGaleria/774814_10200462942796562_557416935_o.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/408503_10201183976621957_1295219103_n.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/11128183_10206674148352819_5266347274440922488_n.jpg"></div>
+                <div class="vertical"><img src="FotosGaleria/tomy.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/IMG_20170202_231647_546.jpg" width="100%" height="100%"></div>
+                <div class="grande"><img src="FotosGaleria/DSC_0483.jpeg" width="100%" height="100%"></div>
+                <div class="vertical"><img src="FotosGaleria/DSC_0305.jpeg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/20181020_114038.jpg" width="100%" height="100%"></div>
+                <div class="vertical"><img src="FotosGaleria/IMG-20170920-WA0018.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/20190215_104659.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/33895720_10216955461499222_3958982801981702144_n.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/92868076_10223095299031323_7793450962999312384_n.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/racetech.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/chino.jpg" width="100%" height="100%"></div>
+                <div class="grande"><img src="FotosGaleria/52117898_831596693852093_8631983039087378432_n.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/placa.jpg" width="100%" height="100%"></div>
+                <div class="vertical"><img src="FotosGaleria/placaGus.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/20181118_122148.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/1421153_10202553973951034_928282766_o.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/551582_3616076241000_2081329189_n.jpg" width="100%" height="100%"></div>
+                <div class="vertical"><img src="FotosGaleria/DSC_0191 2.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/13123226_10209861829522856_659552239097193454_o.jpg" width="100%" height="100%"></div>
+                <div class="horizontal"><img src="FotosGaleria/10644677_10208740518690786_9080943355304959843_o.jpg" width="100%" height="100%"></div>
+            </section>
+        </main>
+        <!-- FOOTER -->
+        <footer id="footer">
+            <section class="footerSegmentos">
+                <div class="row mx-0 d-flex justify-content-center footer__botonVolver">
+                    <a href="galeria.html"><i class="fas fa-chevron-circle-up"></i></a>
+                </div>
+                <div class="row mx-0 mt-4">
+                    <ul class="listaContactoFooter col">
+                        <li><i class="fas fa-user-circle"></i>Gustavo Mazzotta</li>
+                        <li><i class="fas fa-phone-alt"></i>+54 011 4754 0161</li>
+                        <li><i class="far fa-envelope"></i><a href="mailto:gusmazzo@yahoo.com.ar">gusmazzo@yahoo.com.ar</a></li>
+                        <li><i class="fas fa-map-marked-alt"></i>Buenos Aires, Argentina</li>
+                    </ul>
+                    <ul class="listaRedesFooter col">
+                        <li><a href="https://www.facebook.com/gmrsuspensiones.com.ar/?eid=ARBR95OEngmDgUEiXfz0SQ5FV3vU9csj-kicLa6UXERpOP9kxCSw1--u1-2wTG1NGHEpvCTBa5BokdWz&timeline_context_item_type=intro_card_work&timeline_context_item_source=1246656587&fref=tag" target="_blank"><i class="fab fa-facebook"></i>GMR suspensiones especiales</a></li>
+                        <li><a href="https://www.instagram.com/mazzotta_gmr_suspensiones/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i>@mazzotta_gmr_suspensiones</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCWG4rHSeRSNcY1JCIyHqKJw" target="_blank"><i class="fab fa-youtube"></i>Gustavo Mazzotta</a></li>
+                        <li><a href="https://gmr-suspensiones-especiales.business.site/" target="_blank"><i class="fab fa-google-plus-g"></i>GMR suspensiones especiales</a></li>
+                    </ul>
+                    <div class="footer__logo LogoFooterSegmentos d-none d-lg-block col mx-auto">
+                        <a href="index.html"><img src="logoOpNaranja.png" alt="Logo GMR"></a>
+                        <p>Gustavo Mazzotta Racing</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <script src="Animate/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
 </html>
