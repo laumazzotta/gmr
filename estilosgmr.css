@@ -18,9 +18,9 @@ html {
     position: relative;
     
 }
-.header.home{
+/* .header.home{
     background-image: url("img/headerFinal.jpg");
-}
+} */
 
 /* barra menu principal */
 
@@ -164,7 +164,7 @@ html {
     align-items: flex-start;
     margin: 10px;
     position: relative;
-    background-image: url(img/street.jpg);
+    background-image: url(street.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     height: 400px;
@@ -428,7 +428,7 @@ html {
     content: 'Te damos los consejos y tips para ayudarte a rendir al máximo en tu próxima carrera, desde la preparación de tu moto hasta los aspectos a tener en cuenta para el entrenamiento, tener los componentes adecuados, etc.';
 }
 .listaServicios .mantenimiento:hover::after{
-    content: 'Consiste escencialmente en un service completo en el que además se incluye el servicio de reparación y restauración de todas las piezas defectuosas o dañadas que puedan detectarse';
+    content: 'Consiste esencialmente en un service completo en el que además se incluye el servicio de reparación y restauración de todas las piezas defectuosas o dañadas que puedan detectarse.';
 }
 .listaServicios .reparacion:hover::after{
     content: 'Nos encargamos de la reparación de todas las piezas componentes de tus suspensiones, ya sea por desgaste o golpes. Este servicio incluye el diseño, torneado y cromado de las piezas que fueran necesarias.';

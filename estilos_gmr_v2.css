@@ -1,0 +1,1275 @@
+
+/* CALL TO ACTIONS */
+.boton{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);
+    text-decoration: none;
+    color: #ebe9f6;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 1.3em;
+}
+.boton:hover{
+    transform: scale(1.1);
+    transition: all .2s;
+    color: #ebe9f6;
+    text-decoration: none;
+}
+
+/* HEADER */
+.header{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home{
+    background-image: url("img/headerFinal.jpg");
+}
+.competicion{
+    background-image: url("img/headerComp.jpg");
+}
+.street{
+    background-image: url("img/headerStreet.jpg");
+}
+.galeria{
+    height: fit-content !important;
+}
+.navbar{
+    padding: 0 3rem 0 3rem;
+}
+.navbar-nav{
+    align-items: center;
+}
+.nav-item{
+    text-decoration: none;
+    color: #ebe9f6;
+    font-size: 1.4em;
+    font-weight: 200;   
+}
+.nav-item:hover{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);  
+    transition: background-color .2s linear;
+    color: #ebe9f6;
+}
+.tituloppal {
+    padding-top: 4rem;  
+    padding-left: 3rem;         
+}
+.titulo1{
+    letter-spacing: 5px;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 3.5em;
+}
+.bajada{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.8em;
+    font-weight: 200;
+    line-height: 1.5em;
+    padding-top: 1rem;
+}
+.tituloSegmentos{
+    margin-top: 5rem;
+    letter-spacing: 10px;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 7em;
+    text-shadow: 1px 1px 5px black;
+}
+.segmentos{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.segmentos > img{
+    border-radius: 40px;
+}
+.segmentos > p{
+    margin: 1rem 4rem;
+    font-size: 1.5em;
+    font-weight: 200;
+    color: #453c38;
+    width: 50%;
+}
+.tituloGaleria{
+    color: #453c38;
+    margin: auto;
+    letter-spacing: 10px;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 5em;
+    text-align: center;
+}
+.bajadaGaleria{
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 1.5em;
+    text-align: center;
+    width: 60%;
+    margin: 2rem auto;
+}
+.tituloppal > i{
+    font-size: 4em;
+    color: #ebe9f6;
+    margin: 2rem auto;
+}
+/* FIN HEADER ------------------------------------------- */
+
+/* CAROUSEL ------------------------------------------------- */
+.carouselGMR{
+    margin: 3rem 6rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.carousel-caption{
+    top: 20px;
+    text-shadow: 1px 1px 5px black;
+    z-index: 1;
+    padding-top: 1rem;
+}
+.carousel-caption > h2 {
+    font-size: 5em;
+    letter-spacing: .2em;
+}
+.carousel-caption > p{
+    font-size: 1.2em;
+}
+.botonCarousel{
+    bottom: 70px;
+    font-size: 1.3em;
+    z-index: 2;
+    right: 40%;
+    left: 40%;
+}
+/* FIN CAROUSEL ------------------------------------------------- */
+
+.bannerMarcas{
+    padding: 1.5rem 0 1.5rem 0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+}
+.bannerMarcas li{
+    list-style-type: none;
+}
+
+/* SERVICIOS ------------------------------------------------- */
+
+.secciones {
+    color: #453c38;
+    font-size: 5em;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 10rem;
+    text-align: center;
+}
+.secciones:hover{
+    color: #453c38;
+}
+.secciones:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #f66e00;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+.secciones:hover:before{
+    opacity: 1;
+    transform: scaleX(1);
+}
+.subServicios p{
+    font-size: 2vw;
+    color: #f66e00;
+}
+.listaServicios{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+    padding: 0;
+    z-index: 2;
+    margin-top: 3rem;    
+    width: 100%;
+}
+.listaServicios li{
+    list-style-type: none;
+    color: #ebe9f6;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 400px;
+    padding: 2rem;
+    margin: 0;
+    position: relative;
+}
+.listaServicios .service{
+    background: rgba(234, 85, 55, 1);
+    background: linear-gradient(90deg, rgba(234,85,55,1) 0%, rgba(237,91,43,1) 100%);
+}
+.listaServicios .setup{
+    background: rgb(237,91,43,1);
+    background: linear-gradient(90deg, rgba(237,91,43,1) 0%, rgba(241,99,25,1) 100%);
+}
+.listaServicios .asesoramiento{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(241,99,25,1) 0%, rgb(246, 111, 0) 100%);
+}
+.listaServicios .mantenimiento{
+    background: rgb(246,110,0);
+    background: linear-gradient(90deg, rgba(246,110,0,1) 0%, rgb(246, 111, 0) 100%);
+}
+.listaServicios .reparacion{
+    background: rgba(246, 111, 0, 1);
+}
+.listaServicios li:hover {
+    box-shadow: 0px 10px 25px 10px #453c3822;
+    transform: scale(1.05); 
+    transition: all 0.15s;
+    justify-content: flex-start;
+    border-radius: 20px;
+    z-index: 10;
+    font-size: 1.5em;
+}
+.listaServicios li i{
+    font-size: 1em;
+    padding: 1rem;
+}
+.listaServicios li:hover::after{
+    font-size: 1.2vw;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    padding: 10px;
+    z-index: 10;
+}
+.listaServicios .service:hover::after{
+    content: 'Consiste en el recambio de líquidos, inspección y lavado de todos los componentes (bujes, retenes, barrales, o-rings, arandelas, vástagos, etc) para la evaluación de desgastes y daños.';
+}
+.listaServicios .setup:hover::after{
+    content: 'Se trata del seteo del comportamiento de las suspensiones, de acuerdo al peso y al tipo de manejo del piloto. Con este servicio se optimiza la manera en que trabajan las suspensiones para cada persona.';
+}
+.listaServicios .asesoramiento:hover::after{
+    content: 'Te damos los consejos y tips para ayudarte a rendir al máximo en tu próxima carrera, desde la preparación de tu moto hasta los aspectos a tener en cuenta para el entrenamiento, tener los componentes adecuados, etc.';
+}
+.listaServicios .mantenimiento:hover::after{
+    content: 'Consiste esencialmente en un service completo en el que además se incluye el servicio de reparación y restauración de todas las piezas defectuosas o dañadas que puedan detectarse.';
+}
+.listaServicios .reparacion:hover::after{
+    content: 'Nos encargamos de la reparación de todas las piezas componentes de tus suspensiones, ya sea por desgaste o golpes. Este servicio incluye el diseño, torneado y cromado de las piezas que fueran necesarias.';
+}
+.link{
+    margin: 3rem auto 3rem;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 300;
+    color: #453c38;
+}
+
+/* NOSOTROS ------------------------------------------------- */
+
+.nosotros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin: 5rem auto 5rem auto;
+    padding: 0;
+    position: relative;
+}
+.nosotros img{
+    width: 100%;
+}
+.nosotros > p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.1vw;
+    text-align: justify;
+    line-height: 1.5;
+    color: #453c38;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 50%;
+}
+.nosotros1{
+    top: 20%;
+    right: 40%;
+}
+.nosotros2{
+    top: 10%;
+    left: 40%;
+}
+
+/* CONSEJOS ------------------------------------------------- */
+
+.bajadaConsejos{
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 300;
+    margin: 5rem auto;
+    color: #453c38;
+    width: 50%;
+}
+.listaConsejos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+    padding: 0;
+    margin: 3rem 0;
+    width: 100%;    
+    height: 100%;
+    background: rgba(246, 111, 0, 0.9);
+    background: linear-gradient(90deg, rgba(246,110,0,0.9) 0%, rgba(235,64,52,0.9) 100%);
+}
+.listaConsejos li{
+    list-style-type: none;
+    color: #ebe9f6;
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 2.5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 400px;
+    padding: 2rem .5rem;
+    margin: 0;
+    position: relative;
+}
+.listaConsejos li span{
+    font-size: 2vw;
+    line-height: 3vw;
+}
+.listaConsejos li:hover {
+    box-shadow: 10px 10px 25px 10px #453c3882;
+    transition: all 0.15s;
+}
+.video{
+    width: 80%;
+    padding: 1rem 0;
+}
+
+/* CONTACTO ------------------------------------------------- */
+
+.formulario{
+    color: #453c38;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+legend{
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+}
+label{
+    margin: 0;
+}
+input, textarea {
+    padding: .5rem;
+    margin: .5rem 0;    
+}
+.formulario > button {
+    width: 30%;
+    border: none;
+}
+.datosContacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+}
+.listaContacto {
+    list-style-type: none;
+    color: #453c38;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 7rem 2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.listaContacto li{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.listaContacto li i{
+    margin-right: .8rem;
+    font-size: 1.5em;
+}
+.listaContacto li a{
+    text-decoration: none;
+    color: #453c38;
+    display: flex;
+    align-items: center;
+}
+#contacto p{
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #453c38;
+    text-align: center;
+    margin: 4rem;
+}
+.imagenMoto{
+    width: 35%;
+    position: absolute;
+    right: 2%;
+    bottom: -10%;
+}
+.listaRedes{
+    list-style-type: none;
+    color: #453c38;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 4rem auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+.listaRedes li a:hover{
+    color: #f66e00;
+    transition: .2s;
+}
+.listaRedes li a{
+    color: #453c38;
+    text-decoration: none;
+}
+.listaRedes li a > i{
+    font-size: 4em;
+    margin-bottom: 1rem;
+}
+
+/* FOOTER ------------------------------------------- */
+
+.footer {
+    background-color: #453c38;
+    margin: 0;
+    height: 40vh;
+}
+.footer__botonVolver > a > i {
+    color: #f66e00;
+    font-size: 4.5vw;
+}
+.footer__botonVolver > a > i:hover {
+    transform: scale(1.2);
+    transition: all .2s;
+}
+.footer__logo > a > img {
+    width: 50%;
+}
+.footer__logo {
+    text-align: center;    
+}
+.footer__menu > a {
+    color: #ebe9f6;
+}
+.footer__logo > p {
+    font-family: "Big Shoulders Text", cursive;
+    color: #ebe9f6;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.footer__menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer__menu > a {
+    text-decoration: none;
+    font-size: 1.5em;
+    line-height: 50px;
+    font-weight: 100;
+    text-align: left;
+    margin: 0 1rem;
+}
+.footer__menu > a:hover {
+    color: #f66e00;
+    transform: scale(1.1);
+    transition: all .2s;
+}
+/* FOOTER SEGMENTOS */
+
+.footerSegmentos{
+    height: fit-content;
+    background-color: #453c38;
+    margin: 6rem 0 0 0;
+}
+.listaContactoFooter{
+    list-style-type: none;
+    color: #ebe9f6;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.listaContactoFooter li{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.listaContactoFooter li i{
+    margin-right: .8rem;
+    font-size: 1.5em;
+}
+.listaContactoFooter li a{
+    text-decoration: none;
+    color: #ebe9f6;
+    display: flex;
+    align-items: center;
+}
+.listaRedesFooter {
+    list-style-type: none;
+    color: #ebe9f6;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.listaRedesFooter li{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.listaRedesFooter li a:hover{
+    color: #f66e00;
+    transition: .2s;
+}
+.listaRedesFooter li a{
+    color: #ebe9f6;
+    text-decoration: none;
+}
+.listaRedesFooter li a > i{
+    font-size: 1.5em;
+    margin-right: .8rem;
+}
+
+/* ESTILOS GALERIA ------------------------------------------- */
+
+.grid div:hover{
+    transform: scale(1.2);
+    box-shadow: 10px 10px 25px 10px #453c3882;
+    transition: all .1s;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+    margin-top: 3rem;
+}
+.grid > div > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.horizontal{
+    grid-column: span 2;
+}
+.vertical{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.grande{
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+/* version TABLET ------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 992px){
+    
+    /* HEADER --------------------------------------------------- */
+    .home{
+        background-image: url("img/headerMob.jpg");
+    }
+    .competicion{
+        background-position: right;
+    }
+    .street{
+        background-image: url("img/trailGato.jpeg");
+        background-position: center;
+    }
+    .header{
+        justify-content: space-between;
+    }
+    .navbar{
+        padding: 0;
+        text-align: right;
+        height: fit-content;
+    }
+    .navbar-nav{
+        background: rgb(246,110,0);
+        background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);
+        height: 50vh;
+        align-items: flex-end;
+        justify-content: space-evenly;
+    }
+    .navbar-brand{
+        margin: 1rem;
+        padding: 0;
+    }
+    .nav-item:hover{
+        transition: .2s linear;
+        font-size: 2em;
+    }
+    .logo{
+        width: 300px;
+    }
+    .navbar-toggler{
+        margin: 1rem 2rem;
+        font-size: 3em;
+        align-self: flex-end;
+    }
+    .nav-item{
+        font-size: 2em;
+    }
+    .tituloppal {
+        padding: 2rem 0;
+        text-align: center;
+        background-color: #453c38b5;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .titulo1{
+        font-size: 4em;
+        margin: 0;
+    }
+    .bajada{
+        font-size: 2em;
+        padding-top: 2rem;
+    }
+    .tituloSegmentos{
+        margin: auto;
+        letter-spacing: 10px;
+        line-height: 60px;
+        font-weight: 600;
+        font-size: 7em;
+        text-shadow: 1px 1px 5px black;
+    }
+    .bajadaGaleria{
+        font-size: 1em;
+    }
+    /* CAROUSEL --------------------------------------------------- */
+    
+    .carouselGMR{
+        margin: 3rem 0;
+    }
+    .carousel-caption > h2 {
+        font-size: 5em;
+    }
+    .carousel-caption > p{
+        font-size: 1.2em;
+    }
+    .botonCarousel{
+        bottom: 70px;
+        font-size: 1.2em;
+        right: 35%;
+        left: 35%;
+    }
+    .bannerMarcas > li > img{
+        width: 50px;
+    }
+    /* SERVICIOS ------------------------------------------------- */
+
+    .secciones {
+        font-size: 4em;
+        margin-top: 8rem;
+    }
+    .subServicios > p{
+        font-size: 2em;
+    }
+    .listaServicios{
+        display: none;
+    }
+    .accordion{
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .card-header{
+        margin: .5rem 0;
+        padding: 1rem 2rem;
+        background-image: linear-gradient(to right, #EA5537, #6A5C55);
+    }
+    .card-header h2{
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #ebe9f6;
+        font-size: 2em;
+        text-align: center;
+    }
+    .card-header h2 > i{
+        padding: 1rem;
+    }
+    .card-header button{
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #453c38;
+        font-size: 1em;
+        text-align: center !important;
+        background-color: #ebe9f6d7;
+        border-radius: 50px;
+        width: 30%;
+        margin: 1rem auto 1rem auto;
+    }
+    .card-body{
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #6A5C55;
+        text-align: justify;
+    }
+    .link{
+        margin: 4rem 2rem;
+        font-size: 1.5em;
+    }
+    /* NOSOTROS ------------------------------------------------- */
+
+    .nosotros {
+        margin: 3rem auto 3rem auto;
+        padding: 0;
+    }
+    .nosotros > p{
+        font-size: 1.8em;
+        width: 80%;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .nosotros1{
+        top: 2%;
+        right: 10%;
+    }
+    .nosotros2{
+        top: 2%;
+        left: 10%;
+    }
+    /* CONSEJOS ------------------------------------------------- */
+
+    .bajadaConsejos{
+        font-size: 1.5em;
+        width: 90%;
+    }
+    .listaConsejos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+        align-items: center;
+        padding: 0;
+        margin: 3rem 0;
+        width: 100%;  
+        background: none;  
+    }
+    .listaConsejos li{
+        position: relative;
+        font-size: 1.3em;
+        line-height: 1.5em;
+        width: 100%;
+        height: 700px;
+        padding: 2rem .2rem;
+        margin: 1rem 0;
+    }
+    .listaConsejos li span{
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+    .video{
+        width: 90%;
+        padding: 1rem 0;
+    }
+    .video1::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: skewY(5deg);
+        background: rgba(246, 111, 0, 0.9);
+        background: linear-gradient(90deg, rgba(246,110,0,0.9) 0%, rgba(235,64,52,0.9) 100%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .video2::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: skewY(-5deg);
+        background-color: #ebe9f6;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .video2{
+        color: #f66e00 !important;
+    }
+        
+    /* CONTACTO ------------------------------------------------- */
+
+    .formulario{
+        width: 80%;
+        margin: auto;
+    }
+    legend{
+        text-align: center;
+        margin: 2rem auto;
+    }
+    .formulario > button {
+        width: 60%;
+        border: none;
+        margin: 2rem auto;
+    }
+    .listaContacto {
+        margin: auto;
+    }
+    #contacto p{
+        font-size: 1.5em;
+        font-weight: 300;
+        color: #453c38;
+        text-align: center;
+        margin: 4rem 4rem 2rem 4rem;
+    }
+    .imagenMoto{
+        width: 35%;
+        height: 50%;
+        position: relative;
+        margin: auto;
+    }
+    .listaRedes{
+        flex-wrap: wrap;
+        font-size: 1.3em;
+        margin: 4rem auto;
+        justify-content: center;
+    }
+    .listaRedes li{
+        margin: 1rem;
+    }
+    .listaRedes li a{
+        color: #453c38;
+        text-decoration: none;
+        margin-bottom: 1rem;
+    }
+    .listaRedes li a > i{
+        font-size: 2.5em;
+        margin-bottom: 1rem;
+    }
+    /* FOOTER ------------------------------------------- */
+
+    .footer__botonVolver > a > i {
+        color: #f66e00;
+        font-size: 5em;
+    }
+    .footer__logo > a > img {
+        width: 80%;
+    }
+    .footer__logo > p {
+        font-size: 1.5em;
+    }
+    .footer__menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer__menu > a {
+        text-decoration: none;
+        font-size: 2em;
+        line-height: 50px;
+        margin: 0 1rem;
+    }
+}
+    /* MAIN SEGMENTOS ------------------------------------------------- */
+    
+    .segmentos{
+        flex-direction: column;
+    }
+    .segmentos > img{
+        order: 2;
+    }
+    .segmentos > p{
+        margin: 2rem auto;
+        order: 1;
+        text-align: center;
+        width: 100%;
+    }
+    /* FOOTER SEGMENTOS ------------------------------------------------- */
+    
+    .listaContactoFooter{
+        font-size: 1em;
+        font-weight: 300;
+        margin: 1rem;
+    }
+    .listaContactoFooter li i{
+        font-size: 1em;
+    }
+    .listaRedesFooter {
+        font-size: 1em;
+        margin: 1rem;
+    }
+    .listaRedesFooter li a > i{
+        font-size: 1em;
+    }
+
+/* version MOBILE ------------------------------------------- */
+
+@media only screen and (max-width: 600px){
+    .home{
+        background-image: url("img/headerMob.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .header{
+        justify-content: space-between;
+    }
+    .competicion{
+        background-position: right;
+    }
+    .street{
+        background-image: url("img/trailGato.jpeg");
+        background-position: center;
+    }
+    .navbar{
+        padding: 0;
+        text-align: right;
+    }
+    .navbar-nav{
+        background: rgb(246,110,0);
+        background: linear-gradient(90deg, rgba(246,110,0,1) 50%, rgba(234,85,55,1) 100%);
+        height: 90vh;
+        align-items: flex-end;
+        justify-content: space-evenly;
+    }
+    .nav-item:hover{
+        transition: .2s linear;
+        font-size: 2em;
+    }
+    .logo{
+        width: 150px;
+    }
+    .tituloppal {
+        padding: 1rem 0 1rem 0;
+        text-align: center;
+        background-color: #453c38b5;
+        justify-self: flex-end;
+    }
+    .titulo1{
+        letter-spacing: 5px;
+        line-height: 60px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+    .bajada{
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.3em;
+        font-weight: 200;
+        line-height: 1.5em;
+        padding-top: 1rem;
+    }
+    .tituloSegmentos{
+        font-size: 2.8em;
+    }
+    .bajadaGaleria{
+        font-size: 1em;
+    }
+    .carouselGMR{
+        margin: 2rem 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .carousel-caption > h2 {
+        font-size: 2em;
+        letter-spacing: .1em;
+    }
+    .carousel-caption > p{
+        font-size: .5em;
+        padding-top: .5rem;
+    }
+    .carousel-caption{
+        top: 10px;
+    }
+    .botonCarousel{
+        bottom: 40px;
+        font-size: 1em;
+        z-index: 2;
+        right: 30%;
+        left: 30%;
+    }
+    .boton{
+        padding: 5px 10px;
+    }
+    .bannerMarcas{
+        flex-wrap: wrap;
+    }
+    .bannerMarcas > li > img{
+        width: 35px;
+        margin: 10px;
+    }
+    /* SERVICIOS ------------------------------------------------- */
+
+    .secciones {
+        font-size: 3em;
+        margin-top: 5rem;
+    }
+    .subServicios i{
+        font-size: 1.5em;
+    }
+    .subServicios p{
+        font-size: 1.3em;
+    }
+    .listaServicios{
+        display: none;
+    }
+    .accordion{
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .card-header{
+        margin: .5rem 0;
+        padding: 1rem 2rem;
+        background-image: linear-gradient(to right, #EA5537, #6A5C55);
+    }
+    .card-header h2{
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #ebe9f6;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .card-header h2 > i{
+        padding: 1rem;
+    }
+    .card-header button{
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #453c38;
+        font-size: 1em;
+        text-align: center !important;
+        background-color: #ebe9f6d7;
+        border-radius: 50px;
+        width: 40%;
+        margin: 1rem auto 1rem auto;
+    }
+    .card-body{
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #6A5C55;
+        text-align: justify;
+    }
+    .link{
+        margin: 2rem;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 300;
+        color: #453c38;
+    }
+    /* NOSOTROS ------------------------------------------------- */
+
+    .nosotros {
+        margin: 3rem auto 3rem auto;
+        padding: 0;
+    }
+    .nosotros > p{
+        font-size: .9em;
+        width: 80%;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .nosotros1{
+        top: 2%;
+        right: 10%;
+    }
+    .nosotros2{
+        top: 2%;
+        left: 10%;
+    }
+    /* CONSEJOS ------------------------------------------------- */
+
+    .bajadaConsejos{
+        font-size: 1em;
+        font-weight: 300;
+        width: 100%;
+    }
+    .listaConsejos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+        align-items: center;
+        padding: 0;
+        margin: 3rem 0;
+        width: 100%;  
+        background: none;  
+    }
+    .listaConsejos li{
+        position: relative;
+        font-size: 1em;
+        line-height: 1.5em;
+        width: 100%;
+        height: 500px;
+        padding: 2rem .2rem;
+        margin: 1rem 0;
+    }
+    .listaConsejos li span{
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+    .video{
+        width: 100%;
+        padding: 1rem 0;
+    }
+    .video1::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: skewY(5deg);
+        background: rgba(246, 111, 0, 0.9);
+        background: linear-gradient(90deg, rgba(246,110,0,0.9) 0%, rgba(235,64,52,0.9) 100%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .video2::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: skewY(-5deg);
+        background-color: #ebe9f6;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .video2{
+        color: #f66e00 !important;
+    }
+        
+    /* CONTACTO ------------------------------------------------- */
+
+    .formulario{
+        width: 80%;
+        margin: auto;
+    }
+    legend{
+        text-align: center;
+        margin: 2rem auto;
+    }
+    .formulario > button {
+        width: 100%;
+        border: none;
+    }
+    .listaContacto {
+        margin: 5rem auto;
+    }
+    #contacto p{
+        font-size: 1.5em;
+        font-weight: 300;
+        color: #453c38;
+        text-align: center;
+        margin: 4rem 4rem 2rem 4rem;
+    }
+    .imagenMoto{
+        width: 35%;
+        bottom: -3%;
+        right: 33%;
+        margin: 1rem auto;
+    }
+    .listaRedes{
+        flex-wrap: wrap;
+        font-size: .8em;
+        margin: 2rem auto;
+        justify-content: center;
+    }
+    .listaRedes li{
+        margin: 1rem;
+    }
+    .listaRedes li a{
+        color: #453c38;
+        text-decoration: none;
+        margin-bottom: 1rem;
+    }
+    .listaRedes li a > i{
+        font-size: 2.5em;
+        margin-bottom: 1rem;
+    }
+    /* FOOTER ------------------------------------------- */
+
+    .footer__botonVolver > a > i {
+        color: #f66e00;
+        font-size: 3em;
+    }
+    .footer__logo > a > img {
+        width: 80%;
+    }
+    .footer__logo > p {
+        font-size: .8em;
+    }
+    .footer__menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer__menu > a {
+        text-decoration: none;
+        font-size: .8em;
+        line-height: 30px;
+        margin: 0 1rem;
+    }
+    /* MAIN SEGMENTOS ------------------------------------------------- */
+
+    .segmentos > p{
+        font-size: 1em;
+    }
+    /* FOOTER SEGMENTOS ------------------------------------------------- */
+    
+    .listaContactoFooter{
+        font-size: .5em;
+        margin: .5rem;
+    }
+    .listaContactoFooter li i{
+        font-size: .8em;
+    }
+    .listaRedesFooter {
+        font-size: .5em;
+        margin: .5rem;
+    }
+    .listaRedesFooter li a > i{
+        font-size: .8em;
+    }
+    
+    
+}
