@@ -38,6 +38,9 @@
 .navbar{
     padding: 0 3rem 0 3rem;
 }
+.logo{
+    width: 300px;
+}
 .navbar-nav{
     align-items: center;
 }
@@ -241,7 +244,7 @@
 .listaServicios li:hover {
     box-shadow: 0px 10px 25px 10px #453c3822;
     transform: scale(1.05); 
-    transition: all 0.15s;
+    transition: all .1s;
     justify-content: flex-start;
     border-radius: 20px;
     z-index: 10;
