@@ -38,6 +38,9 @@
 .navbar{
     padding: 0 3rem 0 3rem;
 }
+.logo{
+    width: 300px;
+}
 .navbar-nav{
     align-items: center;
 }
@@ -241,7 +244,7 @@
 .listaServicios li:hover {
     box-shadow: 0px 10px 25px 10px #453c3822;
     transform: scale(1.05); 
-    transition: all 0.15s;
+    transition: all .1s;
     justify-content: flex-start;
     border-radius: 20px;
     z-index: 10;
@@ -1015,11 +1018,11 @@ input, textarea {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .carousel-caption > h2 {
-        font-size: 2em;
+        font-size: 4em;
         letter-spacing: .1em;
     }
     .carousel-caption > p{
-        font-size: .5em;
+        font-size: 1em;
         padding-top: .5rem;
     }
     .carousel-caption{
