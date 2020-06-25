@@ -1018,11 +1018,11 @@ input, textarea {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .carousel-caption > h2 {
-        font-size: 2em;
+        font-size: 4em;
         letter-spacing: .1em;
     }
     .carousel-caption > p{
-        font-size: .5em;
+        font-size: 1em;
         padding-top: .5rem;
     }
     .carousel-caption{
