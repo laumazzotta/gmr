@@ -73,8 +73,16 @@
     line-height: 1.5em;
     padding-top: 1rem;
 }
-.tituloSegmentos{
-    margin-top: 5rem;
+.tituloSegmentosComp{
+    margin: 3rem 5rem;
+    letter-spacing: 10px;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 7em;
+    text-shadow: 1px 1px 5px black;
+}
+.tituloSegmentosStreet{
+    margin: 3rem 0 0 50rem;
     letter-spacing: 10px;
     line-height: 60px;
     font-weight: 600;
@@ -139,7 +147,7 @@
     font-size: 1.2em;
 }
 .botonCarousel{
-    bottom: 70px;
+    bottom: 100px;
     font-size: 1.3em;
     z-index: 2;
     right: 40%;
@@ -217,7 +225,7 @@
     justify-content: center;
     align-items: center;
     width: 20%;
-    height: 400px;
+    height: 500px;
     padding: 2rem;
     margin: 0;
     position: relative;
@@ -248,7 +256,7 @@
     justify-content: flex-start;
     border-radius: 20px;
     z-index: 10;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 .listaServicios li i{
     font-size: 1em;
@@ -264,19 +272,19 @@
     z-index: 10;
 }
 .listaServicios .service:hover::after{
-    content: 'Consiste en el recambio de líquidos, inspección y lavado de todos los componentes (bujes, retenes, barrales, o-rings, arandelas, vástagos, etc) para la evaluación de desgastes y daños.';
+    content: 'Consiste en un desarme completo de la suspensión, limpieza e inspección de todos los componentes (retenes, wippers, botellas, barrales, pistones, válvulas, vástagos, sellos, etc) para la evaluación del estado de desgaste de todas sus piezas.';
 }
 .listaServicios .setup:hover::after{
-    content: 'Se trata del seteo del comportamiento de las suspensiones, de acuerdo al peso y al tipo de manejo del piloto. Con este servicio se optimiza la manera en que trabajan las suspensiones para cada persona.';
+    content: 'Se trata del revalvulado de los setup de compresión, mid-val y rebote de acuerdo al tipo de uso que se le de a la moto, peso del piloto y su nivel de manejo. Con este servicio se personalizan las suspensiones para conseguir el funcionamiento óptimo para cada piloto, situación y terreno. Tambien relizamos reducción de altura.';
 }
 .listaServicios .asesoramiento:hover::after{
-    content: 'Te damos los consejos y tips para ayudarte a rendir al máximo en tu próxima carrera, desde la preparación de tu moto hasta los aspectos a tener en cuenta para el entrenamiento, tener los componentes adecuados, etc.';
+    content: 'Todos nuestros servicios incluyen el asesoramiento y tips para el armado de la moto, puesta a punto del chasis y regulaciones para obtener el 100% del rendimiento de tus suspensiones.';
 }
 .listaServicios .mantenimiento:hover::after{
-    content: 'Consiste esencialmente en un service completo en el que además se incluye el servicio de reparación y restauración de todas las piezas defectuosas o dañadas que puedan detectarse.';
+    content: 'Consiste esencialmente en un service completo periódico para mantener tus suspensiones funcionando siempre al máximo nivel, minimizando su desgaste.';
 }
 .listaServicios .reparacion:hover::after{
-    content: 'Nos encargamos de la reparación de todas las piezas componentes de tus suspensiones, ya sea por desgaste o golpes. Este servicio incluye el diseño, torneado y cromado de las piezas que fueran necesarias.';
+    content: 'Nos especializamos en la reparación y/o fabricación de los componentes de tus suspensiones, ya sea por desgaste o daños. Este servicio incluye el diseño, la fabricación con nuestros equipos (torno, fresadora, etc) de las piezas que fueran necesarias. También hacemos rectificación y recromado de barrales, anodizados, etc.';
 }
 .link{
     margin: 3rem auto 3rem;
