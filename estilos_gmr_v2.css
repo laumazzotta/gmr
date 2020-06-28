@@ -637,10 +637,9 @@ input, textarea {
         background-image: url("img/headerMob.jpg");
     }
     .competicion{
-        background-position: right;
+        background-position: center;
     }
     .street{
-        background-image: url("img/trailGato.jpeg");
         background-position: center;
     }
     .header{
@@ -694,7 +693,15 @@ input, textarea {
         font-size: 2em;
         padding-top: 2rem;
     }
-    .tituloSegmentos{
+    .tituloSegmentosComp{
+        margin: auto;
+        letter-spacing: 10px;
+        line-height: 60px;
+        font-weight: 600;
+        font-size: 7em;
+        text-shadow: 1px 1px 5px black;
+    }
+    .tituloSegmentosStreet{
         margin: auto;
         letter-spacing: 10px;
         line-height: 60px;
@@ -972,10 +979,9 @@ input, textarea {
         justify-content: space-between;
     }
     .competicion{
-        background-position: right;
+        background-position: center;
     }
     .street{
-        background-image: url("img/trailGato.jpeg");
         background-position: center;
     }
     .navbar{
@@ -1015,8 +1021,13 @@ input, textarea {
         line-height: 1.5em;
         padding-top: 1rem;
     }
-    .tituloSegmentos{
-        font-size: 2.8em;
+    .tituloSegmentosStreet{
+        margin: 2rem auto;
+        font-size: 5em;
+    }
+    .tituloSegmentosComp{
+        margin: 2rem auto;
+        font-size: 3em;
     }
     .bajadaGaleria{
         font-size: 1em;
