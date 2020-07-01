@@ -787,17 +787,20 @@ input, textarea {
         padding: 0;
     }
     .nosotros > p{
-        font-size: 1.8em;
+        font-size: 1.5em;
         width: 80%;
         line-height: 1.5;
         text-align: left;
     }
+    .nosotros > img{
+        width: 100%;
+    }
     .nosotros1{
-        top: 2%;
+        top: 8%;
         right: 10%;
     }
     .nosotros2{
-        top: 2%;
+        top: 10%;
         left: 10%;
     }
     /* CONSEJOS ------------------------------------------------- */
@@ -1121,17 +1124,20 @@ input, textarea {
     /* NOSOTROS ------------------------------------------------- */
 
     .nosotros {
-        margin: 3rem auto 3rem auto;
+        margin: 5rem auto 3rem auto;
         padding: 0;
     }
     .nosotros > p{
-        font-size: .9em;
+        font-size: .85em;
         width: 80%;
         line-height: 1.5;
         text-align: left;
     }
+    .nosotros > img{
+        width: 100%;
+    }
     .nosotros1{
-        top: 2%;
+        top: -20px;
         right: 10%;
     }
     .nosotros2{
@@ -1292,6 +1298,28 @@ input, textarea {
     .listaRedesFooter li a > i{
         font-size: .8em;
     }
-    
-    
+
+}
+@media only screen and (max-width: 359px){
+    .nosotros {
+        margin: 5rem auto 3rem auto;
+        padding: 0;
+    }
+    .nosotros > p{
+        font-size: .7em;
+        width: 80%;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .nosotros > img{
+        width: 100%;
+    }
+    .nosotros1{
+        top: 2%;
+        right: 10%;
+    }
+    .nosotros2{
+        top: 2%;
+        left: 10%;
+    }
 }

@@ -199,16 +199,16 @@
             <h3 class="secciones">NOSOTROS</h3>
             <article class="nosotros w-100 wow slideInLeft">
                 <p class="nosotros1">
-                    Desde el año 1982 incursionando en el mundo del motociclismo tanto como pilotos, mecánicos y preparadores, hemos capitalizado suficiente experiencia para que en el año 1992 iniciemos nuestro negocio exclusivamente de suspensiones de competición. Con esta expericia, sumada a la realización de cursos de capacitación en California, logramos ser los primeros representantes fuera de los EEUU de la afamada marca RaceTech, con exclusividad para la República Argentina. 
+                    Incursionando en el mundo del motociclismo desde el año 1982 tanto como pilotos, mecánicos y preparadores, hemos capitalizado suficiente experiencia para que en el año 1992 iniciemos nuestro negocio exclusivamente de suspensiones de competición. Con esta experiencia, sumada a la realización de cursos de capacitación en California, logramos ser los primeros representantes fuera de los EEUU de la afamada marca RaceTech, con exclusividad para la República Argentina. 
                 </p>
                 <img src="img/nosotros1.png" class="d-none d-lg-block" alt="Mix de fotos nosotros">
-                <img src="img/nosotros1_mob.png" width="375" height="363" class="d-block d-lg-none" alt="Mix de fotos nosotros">
+                <img src="img/nosotros1_mob.png" class="d-block d-lg-none" alt="Mix de fotos nosotros">
             </article>
             <article class="nosotros wow slideInRight">
                 <img src="img/nosotros2.png" class="d-none d-lg-block" alt="Mix de fotos taller">
-                <img src="img/nosotros2_mob.png" width="375" height="363" class="d-block d-lg-none" alt="Mix de fotos nosotros">
+                <img src="img/nosotros2_mob.png" class="d-block d-lg-none" alt="Mix de fotos taller">
                 <p class="nosotros2">
-                    A partir del año 2000 con el nacimiento de GMR Suspensiones Especiales como marca propia, logramos la expansión de nuestros servicios, incorporando el mantenimiento de las motos Street y nos afianzamos como referentes del mundo del motociclismo a nivel nacional y regional. Nos especializamos en trabajos a medida, dando especial atención a los parámetros que cada piloto necesita para contar con un rendimiento óptimo de sus suspensiones.
+                    A partir del año 2000, con el nacimiento de GMR Suspensiones Especiales como marca propia, logramos la expansión de nuestros servicios, incorporando el mantenimiento de las motos Street y nos afianzamos como referentes del mundo del motociclismo a nivel nacional y regional. Nos especializamos en trabajos a medida, dando especial atención a los parámetros que cada piloto necesita para contar con un rendimiento óptimo de sus suspensiones.
                 </p> 
             </article>
             <div class="link">
@@ -235,14 +235,14 @@
         <section id="contacto">
             <h3 class="secciones">CONTACTO</h3>
             <div class="datosContacto">
-                <form class="formulario" action="mailto:lau.mazzotta@gmail.com" method="post" enctype="text/plain">
+                <form class="formulario">
                     <legend>Envianos tu consulta y te respoderemos a la brevedad!</legend>
                     <label>Nombre y apellido:</label>
-                    <input type="text" name="nombre"/>
+                    <input type="text" name="nombre" required/>
                     <label>Teléfono (opcional):</label>
                     <input type="number" name="telefono"/>
                     <label>Email:</label>
-                    <input type="email" name="email"/>
+                    <input type="email" name="email" required/>
                     <label>Mensaje:</label>
                     <textarea rows="5" cols="80" placeholder="Ingresá tu consulta"></textarea>
                     <button type="submit" class="boton">ENVIAR</button>
@@ -274,6 +274,7 @@
                 <div class="footer__menu col">
                     <a href="#servicios">Servicios</a>
                     <a href="#nosotros">Nosotros</a>
+                    <a href="galeria.html">Galería</a>
                     <a href="#consejos">Consejos y Reseñas</a>
                     <a href="#contacto">Contacto</a>
                 </div>
@@ -284,6 +285,21 @@
             </div>
         </section>
     </footer>
+    <script>
+        var $form = $('form#test-form'),
+        url = 'https://script.google.com/macros/s/AKfycbxwM5A07MEGWmmLSx21HvF4p-aT6XrifnluAQEjgpNScm8pvkwu/exec'
+            $('#submit-form').on('click', function(e) {
+            e.preventDefault();
+            var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+            }).success(
+                // do something
+                );
+            })
+    </script>
     <script src="Animate/wow.min.js"></script>
     <script>
         new WOW().init();
