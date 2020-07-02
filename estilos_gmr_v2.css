@@ -275,7 +275,7 @@
     content: 'Consiste en un desarme completo de la suspensión, limpieza e inspección de todos los componentes (retenes, wippers, botellas, barrales, pistones, válvulas, vástagos, sellos, etc) para la evaluación del estado de desgaste de todas sus piezas.';
 }
 .listaServicios .setup:hover::after{
-    content: 'Se trata del revalvulado de los setup de compresión, mid-val y rebote de acuerdo al tipo de uso que se le de a la moto, peso del piloto y su nivel de manejo. Con este servicio se personalizan las suspensiones para conseguir el funcionamiento óptimo para cada piloto, situación y terreno. Tambien relizamos reducción de altura.';
+    content: 'Se trata del revalvulado de los setup de compresión, mid-val y rebote de acuerdo al tipo de uso que se le de a la moto, peso del piloto y su nivel de manejo. Con este servicio se personalizan las suspensiones para conseguir el funcionamiento óptimo para cada piloto, situación y terreno. También realizamos reducción de altura.';
 }
 .listaServicios .asesoramiento:hover::after{
     content: 'Todos nuestros servicios incluyen el asesoramiento y tips para el armado de la moto, puesta a punto del chasis y regulaciones para obtener el 100% del rendimiento de tus suspensiones.';
