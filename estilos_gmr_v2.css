@@ -1284,15 +1284,21 @@ input, textarea {
     /* FOOTER SEGMENTOS ------------------------------------------------- */
     
     .listaContactoFooter{
-        font-size: .5em;
+        font-size: .7em;
         margin: .5rem;
+    }
+    .listaContactoFooter li{
+        margin: .5rem 0;
     }
     .listaContactoFooter li i{
         font-size: .8em;
     }
     .listaRedesFooter {
-        font-size: .5em;
+        font-size: .6em;
         margin: .5rem;
+    }
+    .listaRedesFooter li{
+        margin: .5rem 0;
     }
     .listaRedesFooter li a > i{
         font-size: .8em;
