@@ -980,6 +980,7 @@ input, textarea {
         justify-content: space-between;
     }
     .competicion{
+        background-image: url("img/headerCompMob.jpg");
         background-position: center;
     }
     .street{
