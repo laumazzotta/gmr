@@ -1286,9 +1286,11 @@ input, textarea {
     .listaContactoFooter{
         font-size: .7em;
         margin: .5rem;
+        text-align: center;
     }
     .listaContactoFooter li{
         margin: .5rem 0;
+        justify-content: center;
     }
     .listaContactoFooter li i{
         font-size: .8em;
@@ -1299,9 +1301,10 @@ input, textarea {
     }
     .listaRedesFooter li{
         margin: .5rem 0;
+        justify-content: center;
     }
     .listaRedesFooter li a > i{
-        font-size: .8em;
+        font-size: 2em;
     }
     /* GALERIA */
 
