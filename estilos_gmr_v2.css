@@ -485,7 +485,7 @@ input, textarea {
 .footer {
     background-color: #453c38;
     margin: 0;
-    height: 40vh;
+    height: 35vh;
 }
 .footer__botonVolver > a > i {
     color: #f66e00;
