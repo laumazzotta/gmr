@@ -485,7 +485,7 @@ input, textarea {
 .footer {
     background-color: #453c38;
     margin: 0;
-    height: 35vh;
+    height: fit-content;
 }
 .footer__botonVolver > a > i {
     color: #f66e00;
@@ -555,6 +555,7 @@ input, textarea {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: left;
 }
 .listaContactoFooter li i{
     margin-right: .8rem;
@@ -1220,7 +1221,7 @@ input, textarea {
         border: none;
     }
     .listaContacto {
-        margin: 5rem auto;
+        margin: 5rem;
     }
     #contacto p{
         font-size: 1.5em;
@@ -1285,7 +1286,7 @@ input, textarea {
     
     .listaContactoFooter{
         font-size: .7em;
-        margin: .5rem;
+        margin: .8rem;
         text-align: center;
     }
     .listaContactoFooter li{
@@ -1294,17 +1295,19 @@ input, textarea {
     }
     .listaContactoFooter li i{
         font-size: .8em;
+        margin-right: .5rem;
     }
     .listaRedesFooter {
         font-size: .6em;
-        margin: .5rem;
+        margin: .8rem;
     }
     .listaRedesFooter li{
         margin: .5rem 0;
         justify-content: right;
     }
     .listaRedesFooter li a > i{
-        font-size: 2em;
+        font-size: 1.5em;
+        margin-right: .5rem;
     }
     /* GALERIA */
 
