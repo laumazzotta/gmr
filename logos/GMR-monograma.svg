@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Monograma GMR">
+  <title>Monograma GMR</title>
+  <rect x="4" y="4" width="172" height="172" fill="none" stroke="#F66E00" stroke-width="2"/>
+  <g transform="translate(38,58)">
+    <rect x="0" y="0" width="14" height="14" fill="#F66E00"/>
+    <rect x="0" y="14" width="14" height="36" fill="#F5F2EF"/>
+    <rect x="0" y="50" width="14" height="14" fill="#F66E00"/>
+  </g>
+  <text x="130" y="106" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="60" letter-spacing="-1" fill="#F5F2EF">GMR</text>
+</svg>
