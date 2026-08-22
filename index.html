@@ -199,6 +199,9 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .fotos .g-tall{grid-row:span 2}
 .duotono img{filter:grayscale(1) contrast(1.08) brightness(.92)}
 .duotono::after{content:'';position:absolute;inset:0;background:var(--a500);mix-blend-mode:color;opacity:.62;pointer-events:none}
+.fotos .duotono img{transition:filter .4s ease}
+.fotos .duotono::after{opacity:0}
+.fotos .duotono:hover img,.fotos .duotono:focus-visible img{filter:none}
 @media(max-width:760px){.fotos{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}.fotos .g-wide{grid-column:span 2}.fotos .g-tall{grid-row:span 2}}
 @media(max-width:480px){.fotos{grid-template-columns:1fr;grid-auto-rows:260px}.fotos .g-wide{grid-column:span 1}.fotos .g-tall{grid-row:span 1}}
 .galeria-cta{margin-top:34px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
@@ -218,7 +221,7 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 body.bloqueado{overflow:hidden}
 
 /* videos */
-.videos{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(2px,1vw,2px)}
+.videos{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(2px,1vw,2px)}
 @media(max-width:1000px){.videos{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.videos{grid-template-columns:1fr}}
 .video{border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;transition:border-color .2s}
@@ -284,9 +287,9 @@ footer .marca img{height:24px}
     </a>
     <nav class="links" id="nav">
       <a href="#servicios">Servicios</a>
-      <a href="#nosotros">Nosotros</a>
       <a href="#competicion">Competición</a>
       <a href="#street">Street</a>
+      <a href="#nosotros">Nosotros</a>
       <!-- <a href="galeria.html">Galería</a> -->
       <a href="#consejos">Consejos</a>
       <a href="#contacto">Contacto</a>
@@ -298,9 +301,9 @@ footer .marca img{height:24px}
   </div>
   <div class="panel" id="panel">
     <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Nosotros</a>
     <a href="#competicion">Competición</a>
     <a href="#street">Street</a>
+    <a href="#nosotros">Nosotros</a>
     <!-- <a href="galeria.html">Galería</a> -->
     <a href="#consejos">Consejos y reseñas</a>
     <a href="#contacto">Contacto</a>
@@ -336,6 +339,28 @@ footer .marca img{height:24px}
 <div class="marcas" aria-label="Marcas con las que trabajamos">
   <div class="tira" id="tira"></div>
 </div>
+
+<!-- POR QUÉ ELEGIR GMR -->
+<section id="por-que-elegir" class="surface">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Por qué elegir GMR</h2>
+      <span class="mono sec-num">05 razones</span>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-stat rv">
+        <p class="porque-num"><span class="n">+40</span><span class="u">años</span></p>
+        <p class="porque-cap">de experiencia en motociclismo, entre pilotos, mecánicos y preparadores.</p>
+      </div>
+      <ul class="porque-list">
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con los mejores insumos. La calidad no se negocia.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Fabricación propia de piezas y repuestos.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con pilotos de todo el país.</p></li>
+        <li class="rv destacado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Primeros representantes de Race Tech en Argentina.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICIOS -->
 <section id="servicios">
@@ -436,30 +461,8 @@ footer .marca img{height:24px}
   </div>
 </section>
 
-<!-- POR QUÉ ELEGIR GMR -->
-<section id="por-que-elegir" class="surface">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2>Por qué elegir GMR</h2>
-      <span class="mono sec-num">05 razones</span>
-    </div>
-    <div class="porque-grid">
-      <div class="porque-stat rv">
-        <p class="porque-num"><span class="n">+40</span><span class="u">años</span></p>
-        <p class="porque-cap">de experiencia en motociclismo, entre pilotos, mecánicos y preparadores.</p>
-      </div>
-      <ul class="porque-list">
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con los mejores insumos. La calidad no se negocia.</p></li>
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Fabricación propia de piezas y repuestos.</p></li>
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con pilotos de todo el país.</p></li>
-        <li class="rv destacado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Primeros representantes de Race Tech en Argentina.</p></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- COMPETICIÓN Y STREET -->
-<section id="competicion-street">
+<section id="competicion-street" class="surface">
   <div class="wrap">
     <!-- <div class="sec-head rv">
       <h2>Competición y street</h2>
@@ -659,9 +662,9 @@ footer .marca img{height:24px}
       <img src="logos/GMR-logo-horizontal-blanco.svg" alt="GMR Suspensiones Especiales — Gustavo Mazzotta Racing">
     </a>
     <nav>
+      <a href="#servicios">Servicios</a>
       <a href="#competicion">Competición</a>
       <a href="#street">Street</a>
-      <a href="#servicios">Servicios</a>
       <a href="#nosotros">Nosotros</a>
       <!-- <a href="galeria.html">Galería</a> -->
       <a href="#contacto">Contacto</a>
@@ -675,6 +678,7 @@ const marcas = ['Ducati','Honda','Beta','Husqvarna','Kawasaki','BMW','KTM','Suzu
 document.getElementById('tira').innerHTML = [...marcas, ...marcas].map(m => `<span>${m}</span>`).join('');
 
 const vids = [
+  {id:'F_BtO5zKghw', kind:'Suspensiones', t:'Suspensiones Voge 800 y 900: todo lo que tenés que saber'},
   {id:'i0gJtRkjegU', kind:'Review', t:'Honda CB250 New Twister'},
   {id:'cSBRW06ZWr8', kind:'Review', t:'KTM 390 Duke'},
   {id:'sLOssqlwtDk', kind:'Review', t:'Honda XRE300'},
@@ -714,6 +718,71 @@ if (acordeon) {
   });
 }
 
+const fotosNosotros = document.getElementById('fotosNosotros');
+const lightboxNosotros = document.getElementById('lightboxNosotros');
+if (fotosNosotros && lightboxNosotros) {
+  const fotos = [...fotosNosotros.querySelectorAll('.foto img')];
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCont = document.getElementById('lightboxCont');
+  const lightboxCerrar = document.getElementById('lightboxCerrar');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const dosDig = n => String(n).padStart(2, '0');
+  let actual = 0, ultimoFoco = null;
+
+  function mostrarFoto(i){
+    actual = (i + fotos.length) % fotos.length;
+    lightboxImg.src = fotos[actual].src;
+    lightboxImg.alt = fotos[actual].alt;
+    lightboxCont.textContent = dosDig(actual + 1) + ' / ' + dosDig(fotos.length);
+  }
+  function abrirLightbox(i){
+    ultimoFoco = document.activeElement;
+    mostrarFoto(i);
+    lightboxNosotros.classList.add('abierto');
+    document.body.classList.add('bloqueado');
+    lightboxCerrar.focus();
+  }
+  function cerrarLightbox(){
+    lightboxNosotros.classList.remove('abierto');
+    document.body.classList.remove('bloqueado');
+    lightboxImg.src = '';
+    if (ultimoFoco) ultimoFoco.focus();
+  }
+
+  fotosNosotros.addEventListener('click', e => {
+    const f = e.target.closest('.foto');
+    if (f) abrirLightbox(+f.dataset.idx);
+  });
+  fotosNosotros.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const f = e.target.closest('.foto');
+    if (!f) return;
+    e.preventDefault();
+    abrirLightbox(+f.dataset.idx);
+  });
+  lightboxCerrar.addEventListener('click', cerrarLightbox);
+  lightboxPrev.addEventListener('click', () => mostrarFoto(actual - 1));
+  lightboxNext.addEventListener('click', () => mostrarFoto(actual + 1));
+  lightboxNosotros.addEventListener('click', e => {
+    if (e.target === lightboxNosotros || e.target.classList.contains('lightbox-body')) cerrarLightbox();
+  });
+  addEventListener('keydown', e => {
+    if (!lightboxNosotros.classList.contains('abierto')) return;
+    if (e.key === 'Escape') cerrarLightbox();
+    if (e.key === 'ArrowLeft') mostrarFoto(actual - 1);
+    if (e.key === 'ArrowRight') mostrarFoto(actual + 1);
+  });
+  let x0 = null;
+  lightboxNosotros.addEventListener('touchstart', e => { x0 = e.changedTouches[0].clientX; }, {passive:true});
+  lightboxNosotros.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const d = e.changedTouches[0].clientX - x0;
+    if (Math.abs(d) > 55) mostrarFoto(actual + (d < 0 ? 1 : -1));
+    x0 = null;
+  }, {passive:true});
+}
+
 const hamb = document.getElementById('hamb'), panel = document.getElementById('panel');
 hamb.addEventListener('click', () => {
   const open = panel.classList.toggle('open');
@@ -726,12 +795,14 @@ panel.addEventListener('click', e => {
 
 const railFill = document.getElementById('railFill');
 const navLinks = [...document.querySelectorAll('#nav a[href^="#"]')];
+const navTargetIds = navLinks.map(a => a.getAttribute('href').slice(1));
+const navTargets = navTargetIds.length ? [...document.querySelectorAll(navTargetIds.map(id => '#' + id).join(','))] : [];
 function onScroll(){
   const h = document.documentElement;
   const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
   railFill.style.height = Math.min(100, p * 100) + '%';
   let act = '';
-  document.querySelectorAll('section[id]').forEach(s => { if (s.getBoundingClientRect().top <= 140) act = s.id; });
+  navTargets.forEach(s => { if (s.getBoundingClientRect().top <= 140) act = s.id; });
   navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + act));
 }
 addEventListener('scroll', onScroll, {passive:true}); onScroll();
