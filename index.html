@@ -203,18 +203,13 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .hito-fotos img.rostro-arriba{object-position:center 12%}
 .hito-fotos figure::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,17,18,.8),rgba(16,17,18,0) 42%);z-index:1;pointer-events:none}
 .hito-fotos figcaption{position:absolute;left:10px;bottom:9px;right:10px;z-index:2;color:#fff;font-size:9px;letter-spacing:.14em;margin:0}
-.hito-hoy .hito-fotos{grid-template-columns:repeat(4,1fr)}
+.hito-hoy .hito-fotos{grid-template-columns:repeat(3,1fr)}
 .hito-hoy .hito-fotos figure{aspect-ratio:1}
-.hito-galeria{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--surface);text-align:center;text-decoration:none;color:var(--text);transition:border-color .2s,background-color .2s}
-.hito-galeria:hover{border-color:var(--a500);background:rgba(246,110,0,.08)}
-.hito-galeria .mono{color:var(--a500)}
-.hito-galeria .cant{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
 #fotosNosotros .duotono img{transition:filter .4s ease}
 #fotosNosotros .duotono::after{opacity:0}
 #fotosNosotros .duotono:hover img,#fotosNosotros .duotono:focus-visible img{filter:none}
 @media(max-width:860px){
   .hito-cont{grid-template-columns:1fr}
-  .hito-hoy .hito-fotos{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   .hito{grid-template-columns:1fr;column-gap:0}
@@ -230,7 +225,7 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .lightbox-top .cont{letter-spacing:.16em}
 .lightbox-top button{margin-left:auto;background:none;border:1px solid var(--line);color:var(--text);font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
 .lightbox-top button:hover{border-color:var(--a500);color:var(--a300)}
-.lightbox-body{flex:1;display:grid;place-items:center;padding:clamp(12px,3vw,32px);min-height:0}
+.lightbox-body{flex:1;display:grid;grid-template-rows:minmax(0,1fr);place-items:center;padding:clamp(12px,3vw,32px);min-height:0;overflow:hidden}
 .lightbox-body img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .lightbox-nav{display:flex;justify-content:center;gap:2px;padding:0 var(--pad) 22px}
 .lightbox-nav button{background:none;border:1px solid var(--line);color:var(--text);font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;cursor:pointer}
@@ -268,9 +263,15 @@ body.bloqueado{overflow:hidden}
 .dato dd{margin:0;font-size:16px}
 .dato a{text-decoration:none;border-bottom:1px solid rgba(246,110,0,.6);padding-bottom:1px}
 .dato a:hover{color:var(--a300)}
-.redes{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.redes a{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:10px 14px;color:rgba(245,242,239,.8)}
-.redes a:hover{border-color:var(--a500);color:#fff}
+.redes-wrap{margin-top:clamp(30px,5vw,52px);padding-top:26px;border-top:1px solid var(--line)}
+.redes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:16px;background:var(--line);border:1px solid var(--line)}
+.redes a{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:var(--bg);padding:20px 18px;color:rgba(245,242,239,.85);transition:background .2s,color .2s}
+.redes a:hover{background:var(--a500);color:#fff}
+.redes-icon{flex:none;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);color:var(--a500);transition:background .2s,border-color .2s,color .2s}
+.redes-icon svg{width:18px;height:18px;display:block}
+.redes a:hover .redes-icon{background:#fff;border-color:#fff;color:var(--a500)}
+.mapa{margin-top:26px;border:1px solid var(--line);position:relative;padding-top:56.25%;height:0;overflow:hidden}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.2) contrast(1.05)}
 
 footer{background:var(--bg);color:var(--muted);border-top:1px solid var(--line);padding-block:34px}
 .fbar{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:space-between}
@@ -466,8 +467,8 @@ footer .marca img{height:24px}
         <p>Todos nuestros servicios incluyen asesoramiento personalizado para el armado de la moto, la puesta a punto del chasis y las regulaciones necesarias para aprovechar el 100% del rendimiento de tus suspensiones.</p>
       </div>
       <figure class="servicios-photo duotono">
-        <img src="img/racetech-crop.jpg" alt="Gustavo Mazzotta junto a un representante de Race Tech en el taller, primeros años">
-        <span class="mono tag">Race Tech · Archivo</span>
+        <img src="img/dakar-gus.jpg" alt="Gustavo Mazzotta junto a su moto Nº701 en el Dakar">
+        <span class="mono tag">Dakar · Archivo</span>
       </figure>
     </div>
     <div class="cta-linea rv">
@@ -554,7 +555,7 @@ footer .marca img{height:24px}
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Nosotros</h2>
-      <p>Cuatro décadas dentro del motociclismo: como pilotos, mecánicos y preparadores.</p>
+      <p>Más de 40 años dedicados al motociclismo: como pilotos, mecánicos y preparadores.</p>
       <span class="mono sec-num">1982 — hoy</span>
     </div>
     <div class="hitos" id="fotosNosotros">
@@ -571,7 +572,7 @@ footer .marca img{height:24px}
           </div>
           <div class="hito-fotos">
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
-              <img src="img/nosotros-racetech-vintage.jpg" alt="Gustavo Mazzotta con el equipo Race Tech en los primeros años de competición">
+              <img src="img/551582_3616076241000_2081329189_n.jpg" alt="Gustavo Mazzotta con compañeros y motos Yamaha en la montaña, primeros años de competición">
               <figcaption class="mono">Primeros años</figcaption>
             </figure>
           </div>
@@ -590,12 +591,12 @@ footer .marca img{height:24px}
           </div>
           <div class="hito-fotos par">
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
-              <img src="img/nosotros-van-racetech.jpg" alt="Van pintada con el logo de Race Tech, primeros años del taller">
-              <figcaption class="mono">Race Tech · Argentina</figcaption>
+              <img src="img/racetech.jpg" alt="Gustavo Mazzotta junto a un representante de Race Tech en el taller">
+              <figcaption class="mono">Capacitación en RACE TECH</figcaption>
             </figure>
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
-              <img src="img/nosotros-fox-shock.jpg" alt="Gustavo Mazzotta con un amortiguador Fox en el taller">
-              <figcaption class="mono">Taller</figcaption>
+              <img src="img/nosotros-van-racetech.jpg" alt="Van pintada con el logo de Race Tech, primeros años del taller">
+              <figcaption class="mono">Representantes oficiales · Argentina</figcaption>
             </figure>
           </div>
         </div>
@@ -614,11 +615,11 @@ footer .marca img{height:24px}
           <div class="hito-fotos par">
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
               <img src="img/nosotros-tienda-gmr.jpg" alt="Carpa y camioneta GMR en un evento de motocross">
-              <figcaption class="mono">Presencia en carreras de todo el país</figcaption>
+              <figcaption class="mono">Acompañamos pilotos en todo el país</figcaption>
             </figure>
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
               <img src="img/dakarGus.jpg" alt="Gustavo Mazzotta junto a su moto del Dakar">
-              <figcaption class="mono">Dakar</figcaption>
+              <figcaption class="mono">Mecánico oficial Dakar</figcaption>
             </figure>
           </div>
         </div>
@@ -629,25 +630,21 @@ footer .marca img{height:24px}
         <div class="hito-cont">
           <div class="hito-texto">
             <h3>El taller, hoy</h3>
-            <p>Seguimos haciendo lo mismo que el primer día, con más herramientas y la misma obsesión por el detalle: cada suspensión que sale del taller está medida, ajustada y probada para un piloto concreto.</p>
+            <p>Seguimos trabajando como desde primer día, con más herramientas y más conocimiento pero con la misma obsesión por el detalle: cada suspensión que sale del taller está medida, ajustada y probada para cada piloto.</p>
           </div>
           <div class="hito-fotos">
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
               <img src="img/mesatrabajo.jpg" alt="Banco de trabajo con resorte, dibujo técnico y piezas mecanizadas en el taller GMR">
-              <figcaption class="mono">Diseño de piezas</figcaption>
+              <figcaption class="mono">Diseño en Autocad</figcaption>
             </figure>
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
-              <img src="img/nosotros-horquillas.jpg" alt="Gustavo Mazzotta y su hijo con horquillas recién mecanizadas">
+              <img src="img/nosotros-fox-shock.jpg" alt="Gustavo Mazzotta y su hijo con horquillas recién mecanizadas">
               <figcaption class="mono">Trabajos</figcaption>
             </figure>
-            <!-- <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
-              <img class="rostro-arriba" src="img/nosotros-laguna.jpg" alt="Gustavo Mazzotta y acompañante con sus motos en una laguna de montaña">
-              <figcaption class="mono">Motos en la laguna</figcaption>
-            </figure> -->
-            <a class="hito-galeria" href="galeria.html">
-              <span class="mono">Ver galería</span>
-              <span class="cant">+50 fotos</span>
-            </a>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img class="rostro-arriba" src="img/nosotros-fresadora.jpg" alt="Gustavo Mazzotta trabajando en la fresadora del taller">
+              <figcaption class="mono">Fabricando piezas</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -685,7 +682,7 @@ footer .marca img{height:24px}
     <div class="sec-head rv">
       <h2>Contacto</h2>
       <p>Escribinos tu consulta y te respondemos a la brevedad.</p>
-      <span class="mono sec-num">Lun a vie</span>
+      <!-- <span class="mono sec-num">Lun a vie</span> -->
     </div>
     <div class="cgrid">
       <form id="form" class="rv" novalidate>
@@ -723,13 +720,18 @@ footer .marca img{height:24px}
           <div class="dato"><dt>Email</dt><dd><a href="mailto:gusmazzo@yahoo.com.ar">gusmazzo@yahoo.com.ar</a></dd></div>
           <div class="dato"><dt>Taller</dt><dd>General San Martín, Buenos Aires, Argentina</dd></div>
         </dl>
-        <p class="mono eyebrow" style="margin:30px 0 0">Seguinos en las redes</p>
-        <div class="redes">
-          <a href="https://www.facebook.com/gmrsuspensiones.com.ar/">Facebook</a>
-          <a href="https://www.instagram.com/mazzotta_gmr_suspensiones/?hl=es-la">Instagram</a>
-          <a href="https://www.youtube.com/channel/UCWG4rHSeRSNcY1JCIyHqKJw">YouTube</a>
-          <a href="https://gmr-suspensiones-especiales.business.site/">Google</a>
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.3576383626446!2d-58.537564924164776!3d-34.56981617296645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb76da562aef3%3A0xb4e25df8b729f24a!2sGMR%20Suspensiones%20Especiales!5e0!3m2!1ses!2sar!4v1788275826473!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ubicación del taller GMR Suspensiones Especiales"></iframe>
         </div>
+      </div>
+    </div>
+    <div class="redes-wrap rv">
+      <p class="mono eyebrow">Seguinos en las redes</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/gmrsuspensiones.com.ar/" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h-3a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>Facebook</a>
+        <a href="https://www.instagram.com/mazzotta_gmr_suspensiones/?hl=es-la" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span>Instagram</a>
+        <a href="https://www.youtube.com/channel/UCWG4rHSeRSNcY1JCIyHqKJw" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="4"/><polygon points="10.5,9.5 10.5,14.5 15,12" fill="currentColor" stroke="none"/></svg></span>YouTube</a>
+        <a href="https://maps.app.goo.gl/8HRKHDrSsRUuEVRR6" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.58 7-12A7 7 0 0 0 5 9c0 4.42 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></span>Google</a>
       </div>
     </div>
   </div>
@@ -754,7 +756,7 @@ footer .marca img{height:24px}
 </footer>
 
 <script>
-const marcas = ['Ducati','Honda','Beta','Husqvarna','Kawasaki','BMW','KTM','Suzuki','Yamaha','Can-Am','Benelli'];
+const marcas = ['Ducati','Honda','Beta','Husqvarna','Kawasaki','BMW','KTM','Suzuki','Yamaha','Can-Am','Benelli','KOVE'];
 document.getElementById('tira').innerHTML = [...marcas, ...marcas].map(m => `<span>${m}</span>`).join('');
 
 const vids = [
