@@ -32,7 +32,6 @@ h1,h2,h3,.display{font-family:var(--display);font-weight:700;text-transform:uppe
 section{padding-block:clamp(48px,8vw,88px);position:relative}
 .surface{background:var(--surface)}
 .sec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-bottom:clamp(28px,5vw,48px)}
-#servicios .sec-head{border-top:0}
 .sec-head h2{font-size:clamp(30px,5vw,54px)}
 .sec-head p{margin:0;max-width:52ch;color:var(--muted);font-size:15.5px;line-height:1.55}
 .sec-num{margin-left:auto;color:var(--muted-2)}
@@ -110,7 +109,8 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .media .alta{aspect-ratio:4/3}
 .media .par{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .media .par img{aspect-ratio:1/1}
-.media .par-tall img{aspect-ratio:3/5}
+.media .par-tall img{aspect-ratio:4/5}
+.media.corta .alta{aspect-ratio:16/9}
 @media(max-width:860px){.ambito-grid{grid-template-columns:1fr}.ambito-grid .media{order:-1}}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);padding:8px 12px;color:var(--muted)}
@@ -127,11 +127,21 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .servicios-note .tag{display:block;color:var(--a500);margin-bottom:9px}
 .servicios-note h3{font-size:clamp(20px,2.2vw,24px);margin-bottom:10px}
 .servicios-note p{margin:0;max-width:64ch;color:rgba(245,242,239,.78)}
-.servicios-photo{flex:none;width:220px;aspect-ratio:6/5;position:relative;overflow:hidden;border:1px solid var(--line);margin-left:auto}
+.servicios-photo{flex:none;width:320px;aspect-ratio:6/5;position:relative;overflow:hidden;margin-left:auto}
 .servicios-photo img{width:100%;height:100%;object-fit:cover}
 .servicios-photo .tag{position:absolute;left:10px;bottom:9px;z-index:2;color:#fff;font-size:9px;letter-spacing:.14em;margin:0}
 .servicios-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,17,18,.75),rgba(16,17,18,0) 55%);z-index:1}
 @media(max-width:900px){.servicios-photo{display:none}}
+.servicios-photo.suspension{aspect-ratio:3/2;background:none;overflow:visible;perspective:900px;perspective-origin:50% 50%}
+.servicios-photo.suspension::before{content:none}
+.servicios-photo.suspension img{width:100%;height:100%;object-fit:contain;will-change:transform;transform-origin:50% 50%;
+  transform:translate3d(var(--tx,0px),var(--ty,0px),0) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--sc,1));
+  filter:drop-shadow(0 14px 30px rgba(246,110,0,.38)) drop-shadow(0 34px 60px rgba(0,0,0,.55))}
+@media(min-width:901px){
+  .servicios-note{position:relative;padding-right:clamp(260px,30vw,460px);min-height:clamp(230px,22vw,320px)}
+  .servicios-photo.suspension{position:absolute;right:calc(-1 * (var(--pad) + max(0px,(100vw - 1280px)/2)));top:50%;transform:translateY(-50%);width:clamp(340px,36vw,600px);margin:0}
+}
+@media(prefers-reduced-motion:reduce){.servicios-photo.suspension img{transform:none}}
 
 /* servicios: acordeón */
 .servicios-list{border-top:1px solid var(--line)}
@@ -180,6 +190,16 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .porque-list p{margin:0;font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(16px,1.8vw,19px);line-height:1.3;color:var(--text)}
 .porque-list li.destacado p{color:var(--a500)}
 @media(max-width:800px){.porque-grid{grid-template-columns:1fr}}
+
+/* testimonios */
+.testi-stars{color:var(--a500)}
+.testimonios-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.testimonio-card{background:var(--surface);border:1px solid var(--line);padding:30px 26px 26px;display:flex;flex-direction:column;gap:18px}
+.testimonio-quote{font-family:var(--display);font-weight:700;color:var(--a500);font-size:2.6rem;line-height:1}
+.testimonio-card p{margin:0;font-size:15.5px;line-height:1.55;color:rgba(245,242,239,.86)}
+.testimonio-footer{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.testimonio-footer .testi-stars{font-size:12px;letter-spacing:2px}
+@media(max-width:900px){.testimonios-grid{grid-template-columns:1fr}}
 
 /* nosotros — timeline */
 .duotono img{filter:grayscale(1) contrast(1.08) brightness(.92)}
@@ -335,14 +355,14 @@ footer .marca img{height:24px}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="mono eyebrow" style="margin:0 0 22px">Gustavo Mazzotta<span class="l2"> Racing</span> · Desde 1982</p>
+      <p class="mono eyebrow" style="margin:0 0 22px">Gustavo Mazzotta<span class="l2"> Racing</span></p>
       <h1>Mantenimiento y preparación de <span class="l2">suspensiones</span></h1>
-      <p class="lead">Más de 40 años de experiencia dando servicio técnico profesional para motocross, enduro y calle. Trabajamos todas las marcas, customizando el ajuste para cada piloto.</p>
+      <p class="lead">Más de 45 años de experiencia dando servicio técnico profesional para motocross, enduro y calle. Trabajamos todas las marcas, customizando el ajuste para cada piloto.</p>
       <div class="acciones">
         <a class="btn amb" href="#contacto">Contactanos</a>
         <a class="btn ghost" href="#servicios">Ver servicios</a>
       </div>
-      <p class="mono credencial">Cada regulación se calcula para tu peso, tu moto, tu nivel y el terreno donde rodás.</p>
+      <p class="mono credencial">Cada setup se calcula para tu peso, tu moto, tu nivel y el terreno donde rodás.</p>
     </div>
     <div class="hero-media rv">
       <div class="marco">
@@ -367,21 +387,61 @@ footer .marca img{height:24px}
     </div>
     <div class="porque-grid">
       <div class="porque-stat rv">
-        <p class="porque-num"><span class="n">+40</span><span class="u">años</span></p>
-        <p class="porque-cap">de experiencia en motociclismo, entre pilotos, mecánicos y preparadores.</p>
+        <p class="porque-num"><span class="n">+45</span><span class="u">años</span></p>
+        <p class="porque-cap">de experiencia en motociclismo, como pilotos, mecánicos y preparadores.</p>
       </div>
       <ul class="porque-list">
         <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con los mejores insumos. La calidad no se negocia.</p></li>
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Fabricación propia de piezas y repuestos.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Diseño y fabricación propia de piezas especiales.</p></li>
         <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con pilotos de todo el país.</p></li>
-        <li class="rv destacado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Primeros representantes de Race Tech en Argentina.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Garantía de 6 meses en nuestros trabajos.</p></li>
+        <li class="rv destacado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Primeros representantes de Race Tech fuera de EE UU.</p></li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <span class="mono sec-num">4.8 <span class="testi-stars">★★★★★</span> · +100 reseñas en Google</span>
+    </div>
+    <div class="testimonios-grid">
+      <article class="testimonio-card rv">
+        <span class="testimonio-quote" aria-hidden="true">“</span>
+        <p>Antes de dejar la moto nos mostraron el taller y nos explicaron todo el proceso. Se nota que saben lo que hacen.</p>
+        <div class="testimonio-footer">
+          <span class="testi-stars">★★★★★</span>
+          <span class="mono tag">Enrique · BMW F750GS</span>
+        </div>
+      </article>
+      <article class="testimonio-card rv">
+        <span class="testimonio-quote" aria-hidden="true">“</span>
+        <p>El trabajo en el monoshock quedó de primer nivel, impecable. Totalmente recomendable.</p>
+        <div class="testimonio-footer">
+          <span class="testi-stars">★★★★★</span>
+          <span class="mono tag">Mariano · KTM 390 ADV</span>
+        </div>
+      </article>
+      <article class="testimonio-card rv">
+        <span class="testimonio-quote" aria-hidden="true">“</span>
+        <p>Reparación de amortiguador para Benelli TNT 300. El laburo quedó espectacular, y resuelto de un día para el otro. Labura muy bien y dan garantía por seis meses. Volvería a confiarles la moto ante cualquier otra eventualidad.</p>
+        <div class="testimonio-footer">
+          <span class="testi-stars">★★★★★</span>
+          <span class="mono tag">Pablo · Benelli TNT 300</span>
+        </div>
+      </article>
+    </div>
+    <div class="acciones rv" style="margin-top:36px">
+      <a class="btn ghost" href="https://maps.app.goo.gl/8HRKHDrSsRUuEVRR6" target="_blank">Ver todas las reseñas en Google</a>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICIOS -->
-<section id="servicios">
+<section id="servicios" class="surface">
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Nuestros Servicios</h2>
@@ -400,7 +460,7 @@ footer .marca img{height:24px}
         <div class="serv-row-body">
           <div class="serv-row-body-inner">
             <div class="serv-row-body-content">
-              <p>Revalvulamos los setup de compresión, mid-valve y rebote según el uso que le des a la moto, tu peso y tu nivel de manejo, para conseguir el funcionamiento óptimo en cada situación y terreno. También hacemos reducción de altura.</p>
+              <p>Calibramos los setup de compresión, mid-valve y rebote según el uso que le des a la moto, tu peso y tu nivel de manejo, para conseguir el funcionamiento óptimo en cada situación y terreno. También hacemos reducción de altura.</p>
               <dl class="serv-incluye">
                 <div class="fila"><span>Incluye</span></div>
                 <div class="fila"><dt>Revalvulado compresión</dt><dd>Sí</dd></div>
@@ -438,7 +498,7 @@ footer .marca img{height:24px}
         <div class="serv-row-body">
           <div class="serv-row-body-inner">
             <div class="serv-row-body-content">
-              <p>Un service completo con frecuencia regular para que las suspensiones trabajen siempre al máximo nivel y su desgaste sea el mínimo posible.</p>
+              <p>Relizamos un service completo con frecuencia regular para que las suspensiones trabajen siempre al máximo nivel y su desgaste sea el mínimo posible.</p>
             </div>
           </div>
         </div>
@@ -454,7 +514,7 @@ footer .marca img{height:24px}
         <div class="serv-row-body">
           <div class="serv-row-body-inner">
             <div class="serv-row-body-content">
-              <p>Reparamos y fabricamos componentes dañados o desgastados: diseñamos y mecanizamos las piezas necesarias en nuestro taller —torno, fresadora y equipamiento propio— y hacemos rectificación y recromado de barrales, anodizados y más.</p>
+              <p>Diseñamos y mecanizamos las piezas necesarias según el requerimiento de cada trabajo en nuestro taller —torno, fresadora y equipamiento propio— y hacemos rectificación y recromado de barrales, anodizados y más.</p>
             </div>
           </div>
         </div>
@@ -466,9 +526,8 @@ footer .marca img{height:24px}
         <span class="mono tag">Incluido en los 05 servicios</span>
         <p>Todos nuestros servicios incluyen asesoramiento personalizado para el armado de la moto, la puesta a punto del chasis y las regulaciones necesarias para aprovechar el 100% del rendimiento de tus suspensiones.</p>
       </div>
-      <figure class="servicios-photo duotono">
-        <img src="img/dakar-gus.jpg" alt="Gustavo Mazzotta junto a su moto Nº701 en el Dakar">
-        <span class="mono tag">Dakar · Archivo</span>
+      <figure class="servicios-photo suspension">
+        <img src="img/GMR_moto_suspensiones_3D.svg" alt="Detalle de suspensiones delantera y trasera puestas a punto por Gustavo Mazzotta">
       </figure>
     </div>
     <div class="cta-linea rv">
@@ -480,7 +539,7 @@ footer .marca img{height:24px}
 </section>
 
 <!-- COMPETICIÓN Y STREET -->
-<section id="competicion-street" class="surface">
+<section id="competicion-street">
   <div class="wrap">
     <!-- <div class="sec-head rv">
       <h2>Competición y street</h2>
@@ -496,7 +555,7 @@ footer .marca img{height:24px}
       <div class="ambito-grid">
         <div class="texto rv">
           <p>Acompañamos y asesoramos a pilotos de motocross, enduro y rally en todos sus niveles, profesionales y amateurs. Trabajamos junto a cada uno hasta encontrar el set-up justo, el que le saca el máximo rendimiento al piloto y a la máquina.</p>
-          <p>El punto de partida es siempre el mismo: cómo corrés, dónde corrés y qué necesitás que haga la moto en cada tramo. A partir de ahí revalvulamos, ajustamos y probamos.</p>
+          <p>El punto de partida es siempre el mismo: cómo corrés, dónde corrés y qué necesitás ajustar en la respuesta de la moto. A partir de ahí revalvulamos, ajustamos y probamos.</p>
           <div class="chips">
             <span class="chip">Motocross</span><span class="chip">Enduro</span><span class="chip">Rally</span>
             <span class="chip">Cuatriciclos</span><span class="chip">Todas las marcas</span>
@@ -505,11 +564,11 @@ footer .marca img{height:24px}
             <a class="btn amb" href="#contacto">Trabajemos en tu próxima carrera</a>
           </div>
         </div>
-        <div class="media rv">
+        <div class="media rv corta">
           <img class="alta" src="img/headerComp.jpg" alt="Piloto de motocross en salto durante una carrera">
           <div class="par par-tall">
-            <!-- <img src="img/774814_10200462942796562_557416935_o.jpg" alt="Piloto acompañado por GMR Suspensiones en competencia"> -->
-            <!-- <img src="img/tomygomez.png" alt="Tomy Gómez, piloto acompañado por GMR Suspensiones"> -->
+            <img src="img/competicion2.JPG" alt="Piloto acompañado por GMR Suspensiones en competencia">
+            <img src="img/tomygomez.png" alt="Tomy Gómez, piloto acompañado por GMR Suspensiones">
           </div>
         </div>
       </div>
@@ -529,7 +588,7 @@ footer .marca img{height:24px}
           </div>
         </div>
         <div class="texto rv">
-          <p>Toda moto necesita mantenimiento en sus suspensiones, y la pérdida de fluido no es el único aviso. Con el uso y el paso del tiempo los aceites se degradan y contaminan, y van perdiendo buena parte de sus propiedades sin que se note a simple vista.</p>
+          <p>Toda moto necesita mantenimiento en sus suspensiones, y la pérdida de fluido no es el único aviso. Con el uso y el paso del tiempo los aceites se degradan y contaminan, y van perdiendo buena parte de sus propiedades sin que se note a simple vista, produciendo un desgaste prematuro en los componentes.</p>
           <p>Nos especializamos en la reparación de todo tipo de amortiguadores: hidráulicos, presurizados, con control electrónico y suspensiones activas. También hacemos reformas para reducir la altura de la moto de manera segura.</p>
           <ul class="benef">
             <li>Un andar más seguro, suave y confortable</li>
@@ -555,25 +614,49 @@ footer .marca img{height:24px}
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Nosotros</h2>
-      <p>Más de 40 años dedicados al motociclismo: como pilotos, mecánicos y preparadores.</p>
-      <span class="mono sec-num">1982 — hoy</span>
+      <p>Más de 50 años inmersos en el mundo del motociclismo.</p>
+      <span class="mono sec-num">1976 — hoy</span>
     </div>
     <div class="hitos" id="fotosNosotros">
+      <div class="hito rv">
+        <span class="hito-anio mono">1976</span>
+        <div class="hito-marca"><span class="hito-punto"></span></div>
+        <div class="hito-cont">
+          <div class="hito-texto">
+            <h3>La primera moto</h3>
+            <p>Ahí empezó todo...</p>
+          </div>
+          <div class="hito-fotos par">
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/enduru-gus-1985.jpg" alt="Gustavo Mazzotta arriba de su primera moto de enduro">
+              <figcaption class="mono">La primera moto</figcaption>
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/primera_carrera.jpg" alt="Gustavo Mazzotta con su moto de enduro embarrada junto a otros pilotos en su primera carrera">
+              <figcaption class="mono">Primera carrera</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
       <div class="hito rv">
         <span class="hito-anio mono">1982</span>
         <div class="hito-marca"><span class="hito-punto"></span></div>
         <div class="hito-cont">
           <div class="hito-texto">
             <h3>Arriba de la moto</h3>
-            <p>Empezamos en el mundo del motociclismo como pilotos, mecánicos y preparadores. De ahí sale la experiencia que después ordenó todo lo demás.</p>
+            <p>Nos metimos en el mundo del motociclismo como pilotos, mecánicos y preparadores. De ahí sale la experiencia que después ordenó todo lo demás.</p>
             <div class="chips">
               <span class="chip">Piloto</span><span class="chip">Mecánico</span><span class="chip">Preparador</span>
             </div>
           </div>
-          <div class="hito-fotos">
+          <div class="hito-fotos par">
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
-              <img src="img/551582_3616076241000_2081329189_n.jpg" alt="Gustavo Mazzotta con compañeros y motos Yamaha en la montaña, primeros años de competición">
-              <figcaption class="mono">Primeros años</figcaption>
+              <img src="img/nosotros-racetech-vintage.jpg" alt="Gustavo Mazzotta con compañeros y motos Yamaha en la montaña, primeros años de competición">
+              <!-- <figcaption class="mono">Primeras competencias</figcaption> -->
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/carreras_92.jpg" alt="Gustavo Mazzotta con su moto de motocross número 150 en el paddock">
+              <!-- <figcaption class="mono">Compitiendo en motocross</figcaption> -->
             </figure>
           </div>
         </div>
@@ -592,11 +675,11 @@ footer .marca img{height:24px}
           <div class="hito-fotos par">
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
               <img src="img/racetech.jpg" alt="Gustavo Mazzotta junto a un representante de Race Tech en el taller">
-              <figcaption class="mono">Capacitación en RACE TECH</figcaption>
+              <figcaption class="mono">Con Paul Thede, dueño de Race Tech, California '93</figcaption>
             </figure>
             <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
               <img src="img/nosotros-van-racetech.jpg" alt="Van pintada con el logo de Race Tech, primeros años del taller">
-              <figcaption class="mono">Representantes oficiales · Argentina</figcaption>
+              <!-- <figcaption class="mono">Representantes oficiales de Race Tech</figcaption> -->
             </figure>
           </div>
         </div>
@@ -916,6 +999,46 @@ document.getElementById('porMail').addEventListener('click', function(){
   this.href = 'mailto:gusmazzo@yahoo.com.ar?subject=' + encodeURIComponent('Consulta web — GMR Suspensiones') +
     '&body=' + encodeURIComponent(armarMensaje());
 });
+
+/* suspensiones: tilt 3D siguiendo el cursor */
+const figSusp = document.querySelector('.servicios-photo.suspension');
+const imgSusp = figSusp && figSusp.querySelector('img');
+if (imgSusp && matchMedia('(hover:hover) and (pointer:fine)').matches &&
+    !matchMedia('(prefers-reduced-motion:reduce)').matches) {
+  const ROT = 15, DESP = 26, SUAVE = .09;
+  let objX = 0, objY = 0, objS = 1, x = 0, y = 0, s = 1, raf = null;
+  const limitar = v => Math.max(-1, Math.min(1, v));
+
+  function cuadro(){
+    x += (objX - x) * SUAVE;
+    y += (objY - y) * SUAVE;
+    s += (objS - s) * SUAVE;
+    const est = imgSusp.style;
+    est.setProperty('--ry', (x * ROT).toFixed(2) + 'deg');
+    est.setProperty('--rx', (-y * ROT).toFixed(2) + 'deg');
+    est.setProperty('--tx', (x * DESP).toFixed(2) + 'px');
+    est.setProperty('--ty', (y * DESP * .5).toFixed(2) + 'px');
+    est.setProperty('--sc', s.toFixed(4));
+    raf = (Math.abs(objX - x) > .0008 || Math.abs(objY - y) > .0008 || Math.abs(objS - s) > .0005)
+      ? requestAnimationFrame(cuadro) : null;
+  }
+  const arrancar = () => { if (!raf) raf = requestAnimationFrame(cuadro); };
+
+  addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const r = figSusp.getBoundingClientRect();
+    if (!r.width || r.bottom < 0 || r.top > innerHeight) return;
+    objX = limitar((e.clientX - (r.left + r.width / 2)) / (innerWidth / 2));
+    objY = limitar((e.clientY - (r.top + r.height / 2)) / (innerHeight / 2));
+    arrancar();
+  }, {passive:true});
+
+  const volver = () => { objX = 0; objY = 0; arrancar(); };
+  document.addEventListener('pointerleave', volver);
+  addEventListener('blur', volver);
+  figSusp.addEventListener('pointerenter', () => { objS = 1.05; arrancar(); });
+  figSusp.addEventListener('pointerleave', () => { objS = 1; arrancar(); });
+}
 
 document.getElementById('anio').textContent = new Date().getFullYear();
 </script>
