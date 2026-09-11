@@ -95,29 +95,42 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .tira span{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-inline:26px;border-right:1px solid var(--line);white-space:nowrap}
 @keyframes correr{to{transform:translateX(-50%)}}
 
-/* ámbitos: competición / street */
-.amb-sub{padding-top:clamp(40px,6vw,64px)}
+/* ámbitos: competición / street — banda a sangre */
 .amb-sub + .amb-sub{border-top:1px solid var(--line)}
-.amb-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:clamp(22px,4vw,36px)}
-.amb-head h3{font-size:clamp(26px,4vw,40px)}
-.amb-head .mono{color:var(--a500)}
-.ambito-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,4.5vw,56px);align-items:start;padding-bottom:clamp(40px,6vw,64px)}
-.ambito-grid .texto>p{margin:0 0 18px;max-width:54ch;color:rgba(245,242,239,.82)}
-.ambito-grid .texto>p:last-of-type{margin-bottom:0}
-.media{display:grid;gap:2px;border:1px solid var(--line);padding:2px;background:var(--line)}
-.media img{width:100%;object-fit:cover;background:var(--surface)}
-.media .alta{aspect-ratio:4/3}
-.media .par{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-.media .par img{aspect-ratio:1/1}
-.media .par-tall img{aspect-ratio:4/5}
-.media.corta .alta{aspect-ratio:16/9}
-@media(max-width:860px){.ambito-grid{grid-template-columns:1fr}.ambito-grid .media{order:-1}}
+.amb-banner{position:relative;overflow:hidden;max-width:1800px;margin-inline:auto;aspect-ratio:2.6/1;min-height:300px;max-height:640px}
+.amb-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
+.amb-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,17,18,.94) 0%,rgba(16,17,18,.78) 32%,rgba(16,17,18,0) 66%)}
+.amb-banner-copy{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(24px,4vw,48px);max-width:540px;z-index:1}
+@media(min-width:1081px){.amb-banner-copy{left:calc(var(--pad) + var(--rail))}}
+.amb-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.amb-eyebrow-bar{width:34px;height:3px;background:var(--a500);display:block}
+.amb-eyebrow .mono{color:var(--a300)}
+.amb-banner h3{font-size:clamp(38px,7vw,76px);line-height:.95}
+.amb-banner-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:rgba(245,242,239,.92);max-width:46ch}
+
+.amb-body{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,4.5vw,56px);padding-block:clamp(40px,6vw,60px)}
+#competicion .amb-body{border-bottom:1px solid var(--line)}
+.amb-body .texto>p{margin:0 0 18px;max-width:58ch;font-size:17.5px;line-height:1.6;color:rgba(245,242,239,.86)}
+.amb-body .texto>p:last-of-type{margin-bottom:0;color:rgba(245,242,239,.7)}
+.amb-fotos{display:grid;grid-template-columns:1.5fr .75fr;gap:2px;margin-top:32px}
+.amb-fotos img{width:100%;height:auto;display:block}
+
+.amb-ficha{border:1px solid var(--line);background:var(--surface);padding:26px 24px 28px;align-self:start}
+.amb-ficha>.mono{display:block;margin:0 0 18px;color:var(--muted-2)}
+.amb-rows{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
+.amb-rows div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;color:rgba(245,242,239,.85)}
+.amb-rows .tag{color:var(--a500);font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+.amb-ficha .benef{margin-top:0}
+.amb-ficha .chips{margin-top:22px}
+.amb-ficha .btn.amb{margin-top:24px;width:100%;justify-content:space-between}
+
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);padding:8px 12px;color:var(--muted)}
 .benef{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--line)}
 .benef li{border-bottom:1px solid var(--line);padding:12px 0 12px 26px;position:relative;font-size:15.5px;color:rgba(245,242,239,.82)}
 .benef li::before{content:'';position:absolute;left:0;top:22px;width:13px;height:1px;background:var(--a500)}
-.ambito-grid .acciones{margin-top:28px}
+@media(max-width:860px){.amb-body{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.amb-fotos{grid-template-columns:1fr 1fr}}
 
 /* servicios */
 .serv-icon{color:var(--a500)}
@@ -154,7 +167,7 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .serv-item-name .serv-icon svg{width:20px;height:20px}
 .serv-item.is-active .serv-item-name .serv-icon{background:var(--a500);border-color:var(--a500);color:#fff}
 .serv-item-name .tag{display:block;color:var(--a500);flex-basis:100%;margin:0}
-.serv-item-name h3{font-size:clamp(20px,2.4vw,28px);flex-basis:100%}
+.serv-item-name h3{font-size:clamp(28px,3.6vw,42px);flex-basis:100%}
 .serv-item-desc p{margin:0;color:rgba(245,242,239,.75)}
 .serv-incluye{border:1px solid var(--line);margin:14px 0 0}
 .serv-incluye .fila{display:flex;justify-content:space-between;gap:16px;padding:11px 16px;border-bottom:1px solid var(--line)}
@@ -177,9 +190,9 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .porque-num .u{font-family:var(--display);font-weight:700;text-transform:uppercase;color:var(--text);font-size:clamp(22px,3vw,32px)}
 .porque-cap{margin:18px 0 0;max-width:34ch;color:var(--muted);font-size:15.5px;line-height:1.6}
 .porque-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.porque-list li{display:flex;gap:16px;align-items:flex-start;padding-block:22px;border-bottom:1px solid var(--line)}
-.porque-list svg{flex:none;width:22px;height:22px;color:var(--a500);margin-top:3px}
-.porque-list p{margin:0;font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(16px,1.8vw,19px);line-height:1.3;color:var(--text)}
+.porque-list li{display:flex;gap:18px;align-items:flex-start;padding-block:30px;border-bottom:1px solid var(--line)}
+.porque-list svg{flex:none;width:28px;height:28px;color:var(--a500);margin-top:4px}
+.porque-list p{margin:0;font-family:var(--body);font-weight:500;font-size:clamp(20px,2.6vw,26px);line-height:1.4;color:var(--text)}
 .porque-list li.destacado p{color:var(--a500)}
 @media(max-width:800px){.porque-grid{grid-template-columns:1fr}}
 
@@ -200,6 +213,14 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .testi-nav svg{width:18px;height:18px}
 .testi-nav:hover{background:var(--a500);border-color:var(--a500);color:#fff}
 @media(prefers-reduced-motion:reduce){.testi-carrusel{height:auto;overflow:visible}.testi-cards{position:static;transform:none;width:100%;height:auto;display:grid;gap:16px}.testi-cards .testimonio-card{position:static}}
+@media(max-width:640px){
+  .testi-carrusel{height:380px}
+  .testi-cards{width:min(15.5rem,62vw);height:340px}
+  .testimonio-card{padding:20px 16px 16px;gap:12px}
+  .testimonio-quote{font-size:2rem}
+  .testimonio-card p{font-size:13.5px;line-height:1.5}
+  .testimonio-footer{padding-top:12px}
+}
 
 /* nosotros — timeline */
 .duotono img{filter:grayscale(1) contrast(1.08) brightness(.92)}
@@ -383,7 +404,7 @@ footer .marca img{height:24px}
   <div class="wrap">
     <div class="sec-head rv">
       <h2>Por qué elegir GMR</h2>
-      <span class="mono sec-num">05 razones</span>
+      <!-- <span class="mono sec-num">05 razones</span> -->
     </div>
     <div class="porque-grid">
       <div class="porque-stat rv">
@@ -577,57 +598,66 @@ footer .marca img{height:24px}
 </section>
 
 <!-- COMPETICIÓN Y STREET -->
-<section id="competicion-street">
-  <div class="wrap">
-    <!-- <div class="sec-head rv">
+<section id="competicion-street" class="surface">
+  <!-- <div class="wrap">
+    <div class="sec-head rv">
       <h2>Competición y street</h2>
       <p>Service, reparación y setup personalizado de suspensiones para moto y cuatriciclo: preparamos tanto la máquina de carrera como la de todos los días.</p>
       <span class="mono sec-num">Pista y calle</span>
-    </div> -->
+    </div>
+  </div> -->
 
-    <div class="amb-sub" id="competicion">
-      <div class="amb-head rv">
+  <div class="amb-sub" id="competicion">
+    <div class="amb-banner rv">
+      <img src="img/headerComp.jpg" alt="Piloto de motocross en salto durante una carrera" style="object-position:center 40%">
+      <div class="amb-banner-copy">
+        <div class="amb-eyebrow"><span class="amb-eyebrow-bar"></span><span class="mono">01 · Pista y campo</span></div>
         <h3>Competición</h3>
-        <span class="mono">01 · Pista y campo</span>
+        <p>Set-up para el piloto que corre: motocross, enduro y rally, en todos los niveles.</p>
       </div>
-      <div class="ambito-grid">
+    </div>
+    <div class="wrap">
+      <div class="amb-body">
         <div class="texto rv">
           <p>Acompañamos y asesoramos a pilotos de motocross, enduro y rally en todos sus niveles, profesionales y amateurs. Trabajamos junto a cada uno hasta encontrar el set-up justo, el que le saca el máximo rendimiento al piloto y a la máquina.</p>
           <p>El punto de partida es siempre el mismo: cómo corrés, dónde corrés y qué necesitás ajustar en la respuesta de la moto. A partir de ahí revalvulamos, ajustamos y probamos.</p>
-          <div class="chips">
-            <span class="chip">Motocross</span><span class="chip">Enduro</span><span class="chip">Rally</span>
-            <span class="chip">Cuatriciclos</span><span class="chip">Todas las marcas</span>
-          </div>
-          <div class="acciones">
-            <a class="btn amb" href="#contacto">Trabajemos en tu próxima carrera</a>
-          </div>
         </div>
-        <div class="media rv corta">
-          <img class="alta" src="img/headerComp.jpg" alt="Piloto de motocross en salto durante una carrera">
-          <div class="par par-tall">
-            <img src="img/competicion2.JPG" alt="Piloto acompañado por GMR Suspensiones en competencia">
-            <img src="img/tomygomez.png" alt="Tomy Gómez, piloto acompañado por GMR Suspensiones">
+        <aside class="amb-ficha rv">
+          <span class="mono">Qué preparamos</span>
+          <div class="amb-rows">
+            <div><span>Motocross</span><span class="tag">MX</span></div>
+            <div><span>Enduro</span><span class="tag">EN</span></div>
+            <div><span>Rally</span><span class="tag">RL</span></div>
+            <div><span>Cuatriciclos</span><span class="tag">ATV</span></div>
+            <div><span>Todas las marcas</span><span class="tag">·</span></div>
           </div>
-        </div>
+          <a class="btn amb" href="#contacto">Trabajemos en tu próxima carrera <span>→</span></a>
+        </aside>
       </div>
     </div>
+  </div>
 
-    <div class="amb-sub" id="street">
-      <div class="amb-head rv">
+  <div class="amb-sub" id="street">
+    <div class="amb-banner rv">
+      <img src="img/carouselStreetWeb.jpg" alt="Moto de calle en curva por ruta de montaña" style="object-position:center 12%">
+      <div class="amb-banner-copy">
+        <div class="amb-eyebrow"><span class="amb-eyebrow-bar"></span><span class="mono">02 · Calle y ruta</span></div>
         <h3>Street</h3>
-        <span class="mono">02 · Calle y ruta</span>
+        <p>La moto de todos los días también merece una suspensión a punto.</p>
       </div>
-      <div class="ambito-grid">
-        <div class="media rv">
-          <img class="alta" src="img/carouselStreetWeb.jpg" alt="Moto de calle en curva por ruta de montaña">
-          <div class="par">
+    </div>
+    <div class="wrap">
+      <div class="amb-body">
+        <div class="texto rv">
+          <p>Toda moto necesita mantenimiento en sus suspensiones, y la pérdida de fluido no es el único aviso. Con el uso y el paso del tiempo los aceites se degradan y contaminan, y van perdiendo buena parte de sus propiedades sin que se note a simple vista, produciendo un desgaste prematuro en los componentes.</p>
+          <p>Nos especializamos en la reparación de todo tipo de amortiguadores: hidráulicos, presurizados, con control electrónico y suspensiones activas. También hacemos reformas para reducir la altura de la moto de manera segura.</p>
+          <div class="amb-fotos">
             <img src="img/streetGato.jpeg" alt="Maxiscooter en el taller GMR">
             <img src="img/trail.jpeg" alt="Moto trail preparada por GMR Suspensiones">
           </div>
         </div>
-        <div class="texto rv">
-          <p>Toda moto necesita mantenimiento en sus suspensiones, y la pérdida de fluido no es el único aviso. Con el uso y el paso del tiempo los aceites se degradan y contaminan, y van perdiendo buena parte de sus propiedades sin que se note a simple vista, produciendo un desgaste prematuro en los componentes.</p>
-          <p>Nos especializamos en la reparación de todo tipo de amortiguadores: hidráulicos, presurizados, con control electrónico y suspensiones activas. También hacemos reformas para reducir la altura de la moto de manera segura.</p>
+        <aside class="amb-ficha rv">
+          <span class="mono">Qué ganás</span>
           <ul class="benef">
             <li>Un andar más seguro, suave y confortable</li>
             <li>Menor desgaste de neumáticos y transmisión</li>
@@ -638,10 +668,8 @@ footer .marca img{height:24px}
             <span class="chip">Trail</span><span class="chip">Touring</span><span class="chip">Custom</span>
             <span class="chip">Pista</span><span class="chip">Maxiscooters</span>
           </div>
-          <div class="acciones">
-            <a class="btn amb" href="#contacto">Contactanos para mejorar tu moto</a>
-          </div>
-        </div>
+          <a class="btn amb" href="#contacto">Contactanos para mejorar tu moto <span>→</span></a>
+        </aside>
       </div>
     </div>
   </div>
@@ -1128,19 +1156,25 @@ document.getElementById('anio').textContent = new Date().getFullYear();
   testiNext.addEventListener('click', () => { current = idx(current + 1); colocar(false); });
   testiPrev.addEventListener('click', () => { current = idx(current - 1); colocar(false); });
 
-  // al pasar el mouse sobre las cards, la rueda del mouse gira el carrusel en vez de scrollear la página;
-  // fuera del carrusel el scroll de la página sigue funcionando normal.
-  let ruedaOcupada = false;
-  testiCarrusel.addEventListener('wheel', e => {
+  // navegación con flechas del teclado, solo mientras la sección de testimonios está visible en pantalla
+  const seccionTesti = document.getElementById('testimonios');
+  let testiVisible = false;
+  const observador = new IntersectionObserver(([entrada]) => {
+    testiVisible = entrada.isIntersecting;
+  }, {threshold: 0.3});
+  observador.observe(seccionTesti);
+
+  let teclaOcupada = false;
+  document.addEventListener('keydown', e => {
+    if (!testiVisible) return;
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
     e.preventDefault();
-    if (ruedaOcupada) return;
-    const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-    if (Math.abs(delta) < 4) return;
-    ruedaOcupada = true;
-    current = idx(current + (delta > 0 ? 1 : -1));
+    if (teclaOcupada) return;
+    teclaOcupada = true;
+    current = idx(current + (e.key === 'ArrowRight' ? 1 : -1));
     colocar(false);
-    setTimeout(() => { ruedaOcupada = false; }, 550);
-  }, {passive: false});
+    setTimeout(() => { teclaOcupada = false; }, 550);
+  });
 })();
 </script>
 </body>
