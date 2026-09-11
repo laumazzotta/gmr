@@ -6,7 +6,11 @@
 <title>GMR Suspensiones Especiales — Gustavo Mazzotta Racing</title>
 <meta name="description" content="Service, reparación y setup personalizado de suspensiones para moto y cuatriciclo. Competición y street. General San Martín, Buenos Aires. Desde 1992.">
 <meta name="keywords" content="suspensiones, motociclismo, motos, cuatriciclos, motocross, enduro, dakar, amortiguadores, setup, revalvulado, GMR">
-<link rel="icon" type="image/svg+xml" href="logos/GMR-simbolo-barral.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-light-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-light-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon/favicon-light-192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="favicon/favicon-light-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon/favicon-light-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -47,18 +51,21 @@ section{padding-block:clamp(48px,8vw,88px);position:relative}
 
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(20,22,23,.92);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{max-width:none}
 .bar{display:flex;align-items:center;gap:22px;height:74px}
 .marca{display:block;text-decoration:none;flex:none}
-.marca img{height:30px;width:auto;display:block}
+.marca img{height:46px;width:auto;display:block}
 nav.links{margin-left:auto;display:flex;gap:20px}
 nav.links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding-block:6px;border-bottom:1px solid transparent;white-space:nowrap}
 nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
-.btn{display:inline-flex;align-items:center;gap:9px;width:max-content;max-width:100%;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border:1px solid var(--text);background:var(--text);color:var(--bg);cursor:pointer;border-radius:0;transition:background .18s,color .18s,border-color .18s}
+.btn{display:inline-flex;align-items:center;gap:9px;width:max-content;max-width:100%;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border:1px solid var(--text);background:var(--text);color:var(--bg);cursor:pointer;border-radius:0;transition:background .18s,color .18s,border-color .18s}
 .btn:hover{background:var(--a500);border-color:var(--a500);color:#fff}
 .btn.ghost{background:transparent;color:var(--text);border-color:rgba(245,242,239,.4)}
 .btn.ghost:hover{background:var(--text);color:var(--bg)}
-.btn.amb{background:var(--a500);border-color:var(--a500);color:#fff}
-.btn.amb:hover{background:var(--a600);border-color:var(--a600)}
+.btn.amb{background:linear-gradient(180deg,var(--a300) 0%,var(--a500) 55%,var(--a600) 100%);border:1px solid var(--a500);color:#fff;position:relative;overflow:hidden;z-index:0}
+.btn.amb::after{content:'';position:absolute;top:0;left:0;width:60%;height:100%;z-index:1;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);mix-blend-mode:overlay;transform:translateX(180%);transition:transform .6s ease}
+.btn.amb:hover::after{transform:translateX(-180%)}
+.btn.amb:hover{border-color:var(--a300)}
 .hamb-wrap{display:none;margin-left:auto}
 .hamb{display:block;background:none;border:1px solid var(--line);color:var(--text);padding:10px 12px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 .panel{display:none;border-top:1px solid var(--line);background:var(--surface)}
@@ -91,21 +98,34 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 
 /* ticker marcas */
 .marcas{border-bottom:1px solid var(--line);overflow:hidden;padding-block:16px;background:var(--surface)}
-.tira{display:flex;width:max-content;animation:correr 42s linear infinite}
+.tira{display:flex;width:max-content;animation:correr 42s linear infinite;will-change:transform;backface-visibility:hidden;transform:translateZ(0)}
 .tira span{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-inline:26px;border-right:1px solid var(--line);white-space:nowrap}
 @keyframes correr{to{transform:translateX(-50%)}}
 
 /* ámbitos: competición / street — banda a sangre */
 .amb-sub + .amb-sub{border-top:1px solid var(--line)}
-.amb-banner{position:relative;overflow:hidden;max-width:1800px;margin-inline:auto;aspect-ratio:2.6/1;min-height:300px;max-height:640px}
+.amb-banner{position:relative;overflow:hidden;max-width:1800px;width:100%;margin-inline:auto;aspect-ratio:2.6/1;min-height:300px;max-height:640px}
+@media(max-width:640px){.amb-banner{aspect-ratio:auto;height:340px;min-height:0}}
 .amb-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
-.amb-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,17,18,.94) 0%,rgba(16,17,18,.78) 32%,rgba(16,17,18,0) 66%)}
+.amb-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(16,17,18,.94) 0%,rgba(16,17,18,.78) 32%,rgba(16,17,18,0) 66%)}
 .amb-banner-copy{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(24px,4vw,48px);max-width:540px;z-index:1}
 @media(min-width:1081px){.amb-banner-copy{left:calc(var(--pad) + var(--rail))}}
 .amb-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .amb-eyebrow-bar{width:34px;height:3px;background:var(--a500);display:block}
 .amb-eyebrow .mono{color:var(--a300)}
 .amb-banner h3{font-size:clamp(38px,7vw,76px);line-height:.95}
+
+/* entrada de los banners de ámbito: fundido + zoom de imagen + copy escalonado */
+.amb-banner.rv{transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.3,1)}
+.amb-banner.rv img{transform:scale(1.08);transition:transform .8s cubic-bezier(.16,.8,.24,1)}
+.amb-banner.rv.vis img{transform:scale(1)}
+.amb-banner.rv .amb-banner-copy>*{opacity:0;transform:translateY(16px);transition:opacity .4s ease,transform .4s cubic-bezier(.2,.7,.3,1)}
+.amb-banner.rv.vis .amb-banner-copy>*{opacity:1;transform:none}
+.amb-banner.rv.vis .amb-eyebrow{transition-delay:.12s}
+.amb-banner.rv.vis h3{transition-delay:.18s}
+.amb-banner.rv.vis .amb-banner-copy>p{transition-delay:.24s}
+.amb-banner.rv .amb-eyebrow-bar{transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.amb-banner.rv.vis .amb-eyebrow-bar{transform:scaleX(1);transition-delay:.12s}
 .amb-banner-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:rgba(245,242,239,.92);max-width:46ch}
 
 .amb-body{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,4.5vw,56px);padding-block:clamp(40px,6vw,60px)}
@@ -130,7 +150,10 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .benef li{border-bottom:1px solid var(--line);padding:12px 0 12px 26px;position:relative;font-size:15.5px;color:rgba(245,242,239,.82)}
 .benef li::before{content:'';position:absolute;left:0;top:22px;width:13px;height:1px;background:var(--a500)}
 @media(max-width:860px){.amb-body{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:560px){.amb-fotos{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){
+  .amb-fotos{grid-template-columns:1fr}
+  .amb-fotos img:last-child{display:none}
+}
 
 /* servicios */
 .serv-icon{color:var(--a500)}
@@ -180,7 +203,7 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 @media(prefers-reduced-motion:reduce){.serv-item{opacity:1;transition:none}}
 
 .cta-linea{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:36px}
-.cta-linea p{margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(18px,2.4vw,24px);line-height:1.15;max-width:22ch}
+.cta-linea p{margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3vw,30px);line-height:1.15;max-width:22ch}
 
 /* por qué elegir */
 .porque-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,64px);align-items:start}
@@ -326,6 +349,8 @@ footer .marca img{height:24px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
+  .amb-banner.rv img{transform:none}
+  .amb-banner.rv .amb-banner-copy>*,.amb-banner.rv .amb-eyebrow-bar{opacity:1;transform:none}
 }
 </style>
 </head>
@@ -342,7 +367,7 @@ footer .marca img{height:24px}
 <header>
   <div class="wrap bar">
     <a class="marca" href="#home" aria-label="GMR Suspensiones Especiales, inicio">
-      <img src="logos/GMR-logo-horizontal.svg" alt="GMR Suspensiones Especiales">
+      <img src="logos/GMR-logo-2026-metal.svg" alt="GMR Suspensiones Especiales">
     </a>
     <nav class="links" id="nav">
       <a href="#servicios">Servicios</a>
@@ -890,7 +915,7 @@ footer .marca img{height:24px}
 <footer>
   <div class="wrap fbar">
     <a class="marca" href="#home">
-      <img src="logos/GMR-logo-horizontal-blanco.svg" alt="GMR Suspensiones Especiales — Gustavo Mazzotta Racing">
+      <img src="logos/GMR-logo-2026-plata.svg" alt="GMR Suspensiones Especiales — Gustavo Mazzotta Racing">
     </a>
     <nav>
       <a href="#servicios">Servicios</a>
