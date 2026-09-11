@@ -1,305 +1,1181 @@
 <!DOCTYPE html>
-<html id="home" lang="es">
+<html lang="es-AR">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171708437-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-171708437-1');
-    </script>
-    <title>GMR Suspensiones Especiales - Gustavo Mazzotta Racing</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="description" content="GMR Suspensiones Especiales">
-    <meta name="keywords" content="suspensiones, motociclismo, motos, cuatriciclos, mecánica, motocross, enduro, dakar, amortiguadores, GMR">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400,0:700;1,200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" type="text/css" href="Animate/animate.css"/>
-    <!-- icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- my CSS -->
-    <link rel="stylesheet" type="text/css" href="estilos_gmr_v2.css"/>
-    <style>
-        html{
-            scroll-behavior: smooth;
-        }
-        h1, h2, h3{
-            font-family: 'Big Shoulders Text', cursive;    
-        }
-        p, a, li, form{
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GMR Suspensiones Especiales — Gustavo Mazzotta Racing</title>
+<meta name="description" content="Service, reparación y setup personalizado de suspensiones para moto y cuatriciclo. Competición y street. General San Martín, Buenos Aires. Desde 1992.">
+<meta name="keywords" content="suspensiones, motociclismo, motos, cuatriciclos, motocross, enduro, dakar, amortiguadores, setup, revalvulado, GMR">
+<link rel="icon" type="image/svg+xml" href="logos/GMR-simbolo-barral.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101112; --surface:#141617; --line:#2C2F31; --text:#F5F2EF;
+  --muted:rgba(245,242,239,.6); --muted-2:rgba(245,242,239,.5);
+  --a200:#FCD5AE; --a300:#FBA75E; --a500:#F66E00; --a600:#D65E00; --a700:#A84800; --a900:#4A2000;
+  --rail:48px; --pad:clamp(20px,5vw,40px); --gap:24px;
+  --display:'Barlow Condensed',Arial Narrow,sans-serif; --body:'Barlow',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:78px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--a500);outline-offset:3px}
+h1,h2,h3,.display{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;margin:0}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:500}
+.eyebrow{color:var(--muted)}
+
+.wrap{max-width:1280px;margin:0 auto;padding-inline:var(--pad)}
+section{padding-block:clamp(48px,8vw,88px);position:relative}
+.surface{background:var(--surface)}
+.sec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-bottom:clamp(28px,5vw,48px)}
+.sec-head h2{font-size:clamp(30px,5vw,54px)}
+.sec-head p{margin:0;max-width:52ch;color:var(--muted);font-size:15.5px;line-height:1.55}
+.sec-num{margin-left:auto;color:var(--muted-2)}
+
+/* riel técnico */
+.rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:40;pointer-events:none;border-right:1px solid var(--line)}
+.rail::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}
+.rail-fill{position:absolute;left:50%;top:0;width:2px;transform:translateX(-1px);height:0;background:var(--a500)}
+.rail-tick{position:absolute;left:50%;width:12px;height:1px;background:var(--line);transform:translateX(-50%)}
+.rail-label{position:absolute;left:50%;transform:translate(-50%,-50%) rotate(-90deg);color:var(--muted-2);font-family:var(--mono);font-size:10px;letter-spacing:.16em;white-space:nowrap}
+@media(max-width:1080px){.rail{display:none}}
+@media(min-width:1081px){header .wrap,section .wrap,footer .wrap{padding-left:calc(var(--pad) + var(--rail))}}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(20,22,23,.92);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:22px;height:74px}
+.marca{display:block;text-decoration:none;flex:none}
+.marca img{height:30px;width:auto;display:block}
+nav.links{margin-left:auto;display:flex;gap:20px}
+nav.links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding-block:6px;border-bottom:1px solid transparent;white-space:nowrap}
+nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
+.btn{display:inline-flex;align-items:center;gap:9px;width:max-content;max-width:100%;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:13px 22px;border:1px solid var(--text);background:var(--text);color:var(--bg);cursor:pointer;border-radius:0;transition:background .18s,color .18s,border-color .18s}
+.btn:hover{background:var(--a500);border-color:var(--a500);color:#fff}
+.btn.ghost{background:transparent;color:var(--text);border-color:rgba(245,242,239,.4)}
+.btn.ghost:hover{background:var(--text);color:var(--bg)}
+.btn.amb{background:var(--a500);border-color:var(--a500);color:#fff}
+.btn.amb:hover{background:var(--a600);border-color:var(--a600)}
+.hamb-wrap{display:none;margin-left:auto}
+.hamb{display:block;background:none;border:1px solid var(--line);color:var(--text);padding:10px 12px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.panel{display:none;border-top:1px solid var(--line);background:var(--surface)}
+.panel a{display:block;padding:15px var(--pad);border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text)}
+.panel.open{display:block}
+@media(max-width:1080px){nav.links,.bar>.btn{display:none}.hamb-wrap{display:block}}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,76px) 0;border-bottom:1px solid var(--line);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,48px);align-items:center}
+.hero-copy{padding-bottom:clamp(40px,7vw,76px)}
+.hero h1{font-size:clamp(44px,7.4vw,92px);letter-spacing:0}
+.hero h1 .l2{display:block;color:var(--a500)}
+.hero .lead{max-width:46ch;margin:24px 0 30px;font-size:clamp(16px,2vw,18.5px);color:rgba(245,242,239,.8)}
+.acciones{display:flex;gap:12px;flex-wrap:wrap}
+.credencial{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);max-width:54ch;line-height:1.9}
+.hero-media{position:relative}
+.hero-media .marco{position:relative;overflow:hidden;aspect-ratio:4/4.3;margin-left:6px}
+.hero-media::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--a500);z-index:2}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block;background:#0f1011}
+.hero-media .marco::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,17,18,.8),rgba(16,17,18,0) 42%)}
+.hero-media .tag{position:absolute;left:20px;bottom:16px;z-index:2;color:#fff;font-size:11px;letter-spacing:.14em}
+@media(min-width:901px){
+  .hero{padding-block:clamp(40px,7vw,76px) 0}
+  .hero .wrap{max-width:none;padding-right:0}
+  .hero-grid{grid-template-columns:minmax(0,600px) 1fr;align-items:stretch;gap:clamp(28px,5vw,64px)}
+  .hero-copy{padding-bottom:clamp(40px,7vw,76px);display:flex;flex-direction:column;justify-content:center}
+  .hero-media .marco{aspect-ratio:auto;height:100%}
+}
+
+/* ticker marcas */
+.marcas{border-bottom:1px solid var(--line);overflow:hidden;padding-block:16px;background:var(--surface)}
+.tira{display:flex;width:max-content;animation:correr 42s linear infinite}
+.tira span{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-inline:26px;border-right:1px solid var(--line);white-space:nowrap}
+@keyframes correr{to{transform:translateX(-50%)}}
+
+/* ámbitos: competición / street — banda a sangre */
+.amb-sub + .amb-sub{border-top:1px solid var(--line)}
+.amb-banner{position:relative;overflow:hidden;max-width:1800px;margin-inline:auto;aspect-ratio:2.6/1;min-height:300px;max-height:640px}
+.amb-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
+.amb-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,17,18,.94) 0%,rgba(16,17,18,.78) 32%,rgba(16,17,18,0) 66%)}
+.amb-banner-copy{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(24px,4vw,48px);max-width:540px;z-index:1}
+@media(min-width:1081px){.amb-banner-copy{left:calc(var(--pad) + var(--rail))}}
+.amb-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.amb-eyebrow-bar{width:34px;height:3px;background:var(--a500);display:block}
+.amb-eyebrow .mono{color:var(--a300)}
+.amb-banner h3{font-size:clamp(38px,7vw,76px);line-height:.95}
+.amb-banner-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:rgba(245,242,239,.92);max-width:46ch}
+
+.amb-body{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,4.5vw,56px);padding-block:clamp(40px,6vw,60px)}
+#competicion .amb-body{border-bottom:1px solid var(--line)}
+.amb-body .texto>p{margin:0 0 18px;max-width:58ch;font-size:17.5px;line-height:1.6;color:rgba(245,242,239,.86)}
+.amb-body .texto>p:last-of-type{margin-bottom:0;color:rgba(245,242,239,.7)}
+.amb-fotos{display:grid;grid-template-columns:1.5fr .75fr;gap:2px;margin-top:32px}
+.amb-fotos img{width:100%;height:auto;display:block}
+
+.amb-ficha{border:1px solid var(--line);background:var(--surface);padding:26px 24px 28px;align-self:start}
+.amb-ficha>.mono{display:block;margin:0 0 18px;color:var(--muted-2)}
+.amb-rows{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
+.amb-rows div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;color:rgba(245,242,239,.85)}
+.amb-rows .tag{color:var(--a500);font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+.amb-ficha .benef{margin-top:0}
+.amb-ficha .chips{margin-top:22px}
+.amb-ficha .btn.amb{margin-top:24px;width:100%;justify-content:space-between}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);padding:8px 12px;color:var(--muted)}
+.benef{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--line)}
+.benef li{border-bottom:1px solid var(--line);padding:12px 0 12px 26px;position:relative;font-size:15.5px;color:rgba(245,242,239,.82)}
+.benef li::before{content:'';position:absolute;left:0;top:22px;width:13px;height:1px;background:var(--a500)}
+@media(max-width:860px){.amb-body{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.amb-fotos{grid-template-columns:1fr 1fr}}
+
+/* servicios */
+.serv-icon{color:var(--a500)}
+.serv-icon svg{width:32px;height:32px;display:block}
+.servicios-note{display:flex;gap:24px;align-items:center;margin-top:clamp(28px,4vw,40px);padding-bottom:clamp(28px,4vw,40px);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.servicios-note .serv-icon{flex:none}
+.servicios-note .tag{display:block;color:var(--a500);margin-bottom:9px}
+.servicios-note h3{font-size:clamp(20px,2.2vw,24px);margin-bottom:10px}
+.servicios-note p{margin:0;max-width:64ch;color:rgba(245,242,239,.78)}
+.servicios-photo{flex:none;width:320px;aspect-ratio:6/5;position:relative;overflow:hidden;margin-left:auto}
+.servicios-photo img{width:100%;height:100%;object-fit:cover}
+.servicios-photo .tag{position:absolute;left:10px;bottom:9px;z-index:2;color:#fff;font-size:10.5px;letter-spacing:.12em;margin:0}
+.servicios-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,17,18,.75),rgba(16,17,18,0) 55%);z-index:1}
+@media(max-width:900px){.servicios-photo{display:none}}
+.servicios-photo.suspension{aspect-ratio:3/2;background:none;overflow:visible;perspective:900px;perspective-origin:50% 50%}
+.servicios-photo.suspension::before{content:none}
+.servicios-photo.suspension img{width:100%;height:100%;object-fit:contain;will-change:transform;transform-origin:50% 50%;
+  transform:translate3d(var(--tx,0px),var(--ty,0px),0) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--sc,1));
+  filter:drop-shadow(0 14px 30px rgba(246,110,0,.38)) drop-shadow(0 34px 60px rgba(0,0,0,.55))}
+@media(min-width:901px){
+  .servicios-note{position:relative;padding-right:clamp(260px,30vw,460px);min-height:clamp(230px,22vw,320px)}
+  .servicios-photo.suspension{position:absolute;right:calc(-1 * (var(--pad) + max(0px,(100vw - 1280px)/2)));top:50%;transform:translateY(-50%);width:clamp(340px,36vw,600px);margin:0}
+}
+@media(prefers-reduced-motion:reduce){.servicios-photo.suspension img{transform:none}}
+
+/* servicios: scroll sincronizado */
+#servicios .sec-head{position:sticky;top:78px;z-index:2;background:var(--surface);margin-bottom:0;padding-bottom:18px;border-top:0}
+.servicios-list{border-top:1px solid var(--line)}
+.serv-item{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,3vw,32px);padding-block:clamp(28px,4vw,44px);border-bottom:1px solid var(--line);align-items:start;opacity:.32;transition:opacity .5s ease}
+.serv-item.is-active{opacity:1}
+.serv-item-name{display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;row-gap:8px}
+.serv-row-num{font-family:var(--mono);font-size:12px;color:var(--muted-2);width:20px;flex:none}
+.serv-item-name .serv-icon{flex:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);transition:background .25s,border-color .25s,color .25s}
+.serv-item-name .serv-icon svg{width:20px;height:20px}
+.serv-item.is-active .serv-item-name .serv-icon{background:var(--a500);border-color:var(--a500);color:#fff}
+.serv-item-name .tag{display:block;color:var(--a500);flex-basis:100%;margin:0}
+.serv-item-name h3{font-size:clamp(28px,3.6vw,42px);flex-basis:100%}
+.serv-item-desc p{margin:0;color:rgba(245,242,239,.75)}
+.serv-incluye{border:1px solid var(--line);margin:14px 0 0}
+.serv-incluye .fila{display:flex;justify-content:space-between;gap:16px;padding:11px 16px;border-bottom:1px solid var(--line)}
+.serv-incluye .fila:first-child{background:var(--surface)}
+.serv-incluye .fila:first-child span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.serv-incluye .fila:last-child{border-bottom:0}
+.serv-incluye dt{color:var(--muted);font-size:13.5px}
+.serv-incluye dd{margin:0;color:var(--text);font-size:13.5px}
+@media(max-width:700px){.serv-item{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.serv-item{opacity:1;transition:none}}
+
+.cta-linea{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:36px}
+.cta-linea p{margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(18px,2.4vw,24px);line-height:1.15;max-width:22ch}
+
+/* por qué elegir */
+.porque-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,64px);align-items:start}
+.porque-stat{border-top:2px solid var(--a500);padding-top:20px}
+.porque-num{margin:0;display:flex;align-items:baseline;gap:10px;line-height:.9}
+.porque-num .n{font-family:var(--display);font-weight:700;color:var(--a500);font-size:clamp(64px,9vw,110px)}
+.porque-num .u{font-family:var(--display);font-weight:700;text-transform:uppercase;color:var(--text);font-size:clamp(22px,3vw,32px)}
+.porque-cap{margin:18px 0 0;max-width:34ch;color:var(--muted);font-size:15.5px;line-height:1.6}
+.porque-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.porque-list li{display:flex;gap:18px;align-items:flex-start;padding-block:30px;border-bottom:1px solid var(--line)}
+.porque-list svg{flex:none;width:28px;height:28px;color:var(--a500);margin-top:4px}
+.porque-list p{margin:0;font-family:var(--body);font-weight:500;font-size:clamp(20px,2.6vw,26px);line-height:1.4;color:var(--text)}
+.porque-list li.destacado p{color:var(--a500)}
+@media(max-width:800px){.porque-grid{grid-template-columns:1fr}}
+
+/* testimonios */
+.testi-stars{color:var(--a500)}
+.testimonio-card{background:var(--surface);border:1px solid var(--line);padding:30px 26px 26px;display:flex;flex-direction:column;gap:18px}
+.testimonio-quote{font-family:var(--display);font-weight:700;color:var(--a500);font-size:2.6rem;line-height:1}
+.testimonio-card p{margin:0;font-size:15.5px;line-height:1.55;color:rgba(245,242,239,.86);flex:1;min-height:0;overflow-y:auto}
+.testimonio-footer{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.testimonio-footer .testi-stars{font-size:12px;letter-spacing:2px}
+
+/* testimonios: carrusel infinito controlado por botones (estilo GreenSock) */
+.testi-carrusel{position:relative;width:100%;height:500px;overflow:hidden}
+.testi-cards{position:absolute;list-style:none;margin:0;padding:0;width:min(27rem,88vw);height:420px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.testi-cards .testimonio-card{position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.testi-actions{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:6px}
+.testi-nav{width:46px;height:46px;flex:none;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;display:grid;place-items:center;transition:background .18s,border-color .18s,color .18s}
+.testi-nav svg{width:18px;height:18px}
+.testi-nav:hover{background:var(--a500);border-color:var(--a500);color:#fff}
+@media(prefers-reduced-motion:reduce){.testi-carrusel{height:auto;overflow:visible}.testi-cards{position:static;transform:none;width:100%;height:auto;display:grid;gap:16px}.testi-cards .testimonio-card{position:static}}
+@media(max-width:640px){
+  .testi-carrusel{height:380px}
+  .testi-cards{width:min(15.5rem,62vw);height:340px}
+  .testimonio-card{padding:20px 16px 16px;gap:12px}
+  .testimonio-quote{font-size:2rem}
+  .testimonio-card p{font-size:13.5px;line-height:1.5}
+  .testimonio-footer{padding-top:12px}
+}
+
+/* nosotros — timeline */
+.duotono img{filter:grayscale(1) contrast(1.08) brightness(.92)}
+.duotono::after{content:'';position:absolute;inset:0;background:var(--a500);mix-blend-mode:color;opacity:.62;pointer-events:none}
+.hitos{--hito-gap:clamp(40px,6vw,64px);margin-top:clamp(36px,5vw,58px)}
+.hito{display:grid;grid-template-columns:60px 20px 1fr;column-gap:16px;padding-bottom:var(--hito-gap)}
+.hito:last-child{padding-bottom:0}
+.hito-anio{color:var(--a500);padding-top:3px}
+.hito-marca{position:relative;display:flex;justify-content:center}
+.hito-marca::before{content:'';position:absolute;top:14px;bottom:calc(-1 * var(--hito-gap));left:50%;width:1px;background:var(--line);transform:translateX(-50%)}
+.hito:last-child .hito-marca::before{content:none}
+.hito-punto{width:8px;height:8px;flex:none;margin-top:6px;border-radius:50%;border:2px solid var(--a500);background:var(--bg)}
+.hito-hoy .hito-punto{background:var(--a500)}
+.hito-cont{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,48px);align-items:start}
+.hito-cont h3{font-size:clamp(22px,2.8vw,30px);margin:0 0 12px}
+.hito-texto p{margin:0;color:var(--muted);max-width:52ch}
+.hito-fotos{display:grid;grid-template-columns:1fr;gap:2px}
+.hito-fotos.par{grid-template-columns:1fr 1fr}
+.hito-fotos figure{margin:0;position:relative;overflow:hidden;background:var(--surface);cursor:pointer;aspect-ratio:4/3}
+.hito-fotos img{width:100%;height:100%;object-fit:cover;display:block}
+.hito-fotos img.rostro-arriba{object-position:center 12%}
+.hito-fotos figure::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,17,18,.8),rgba(16,17,18,0) 42%);z-index:1;pointer-events:none}
+.hito-fotos figcaption{position:absolute;left:10px;bottom:9px;right:10px;z-index:2;color:#fff;font-size:10.5px;letter-spacing:.12em;margin:0}
+.hito-hoy .hito-fotos{grid-template-columns:repeat(3,1fr)}
+.hito-hoy .hito-fotos figure{aspect-ratio:1}
+#fotosNosotros .duotono img{transition:filter .4s ease}
+#fotosNosotros .duotono::after{opacity:0}
+#fotosNosotros .duotono:hover img,#fotosNosotros .duotono:focus-visible img{filter:none}
+@media(max-width:860px){
+  .hito-cont{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hito{grid-template-columns:1fr;column-gap:0}
+  .hito-marca{display:none}
+  .hito-anio{display:block;margin-bottom:6px}
+}
+@media(max-width:480px){.hito-fotos.par{grid-template-columns:1fr}}
+
+/* lightbox nosotros */
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(10,11,12,.97);display:none;flex-direction:column}
+.lightbox.abierto{display:flex}
+.lightbox-top{display:flex;align-items:center;gap:16px;padding:16px var(--pad);border-bottom:1px solid var(--line);color:var(--muted)}
+.lightbox-top .cont{letter-spacing:.12em}
+.lightbox-top button{margin-left:auto;background:none;border:1px solid var(--line);color:var(--text);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.lightbox-top button:hover{border-color:var(--a500);color:var(--a300)}
+.lightbox-body{flex:1;display:grid;grid-template-rows:minmax(0,1fr);place-items:center;padding:clamp(12px,3vw,32px);min-height:0;overflow:hidden}
+.lightbox-body img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.lightbox-nav{display:flex;justify-content:center;gap:2px;padding:0 var(--pad) 22px}
+.lightbox-nav button{background:none;border:1px solid var(--line);color:var(--text);font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:13px 26px;cursor:pointer}
+.lightbox-nav button:hover{background:var(--a500);border-color:var(--a500);color:#fff}
+body.bloqueado{overflow:hidden}
+
+/* videos */
+.videos{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(2px,1vw,2px)}
+@media(max-width:1000px){.videos{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.videos{grid-template-columns:1fr}}
+.video{border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;transition:border-color .2s}
+.video:hover{border-color:var(--a500)}
+.thumb{position:relative;aspect-ratio:16/9;background:var(--bg);cursor:pointer;border:0;padding:0;width:100%;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:opacity .25s}
+.thumb:hover img{opacity:1}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(246,110,0,.94);display:grid;place-items:center}
+.play::after{content:'';border-left:13px solid #fff;border-block:8px solid transparent;margin-left:4px}
+.thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .meta{padding:16px 16px 20px}
+.video .kind{color:var(--a500);display:block;margin-bottom:8px}
+.video h3{font-size:17px}
+
+/* contacto */
+.cgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,6vw,72px)}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+.campo{margin-bottom:20px}
+.campo label{display:block;margin-bottom:8px;color:var(--muted)}
+.campo input,.campo textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--text);font-family:var(--body);font-size:16px;padding:9px 2px;transition:border-color .2s;border-radius:0}
+.campo textarea{resize:vertical;min-height:96px}
+.campo input:focus,.campo textarea:focus{outline:0;border-color:var(--a500)}
+.nota{color:var(--muted-2);font-size:13px;margin:14px 0 0;line-height:1.5}
+.datos{border-top:1px solid var(--line)}
+.dato{display:grid;grid-template-columns:104px 1fr;gap:16px;padding-block:15px;border-bottom:1px solid var(--line);align-items:baseline}
+.dato dt{color:var(--muted-2);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.dato dd{margin:0;font-size:16px}
+.dato a{text-decoration:none;border-bottom:1px solid rgba(246,110,0,.6);padding-bottom:1px}
+.dato a:hover{color:var(--a300)}
+.redes-wrap{margin-top:clamp(30px,5vw,52px);padding-top:26px;border-top:1px solid var(--line)}
+.redes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:16px;background:var(--line);border:1px solid var(--line)}
+.redes a{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:var(--bg);padding:20px 18px;color:rgba(245,242,239,.85);transition:background .2s,color .2s}
+.redes a:hover{background:var(--a500);color:#fff}
+.redes-icon{flex:none;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);color:var(--a500);transition:background .2s,border-color .2s,color .2s}
+.redes-icon svg{width:18px;height:18px;display:block}
+.redes a:hover .redes-icon{background:#fff;border-color:#fff;color:var(--a500)}
+.mapa{margin-top:26px;border:1px solid var(--line);position:relative;padding-top:56.25%;height:0;overflow:hidden}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.2) contrast(1.05)}
+
+footer{background:var(--bg);color:var(--muted);border-top:1px solid var(--line);padding-block:34px}
+.fbar{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+footer .marca img{height:24px}
+.fbar nav{display:flex;gap:18px;flex-wrap:wrap}
+.fbar a{text-decoration:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+.fbar a:hover{color:var(--a500)}
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
 </head>
-<body id="body" class="p-0 container-fluid">
-    <!-- HEADER -->
-    <header class="header home d-flex flex-column">
-            <nav class="navbar navbar-expand-lg align-items-stretch sticky-top" style="background-color: #453c38b5; z-index: 2;">
-                <a class="navbar-brand" href="index.html"><img class="logo" src="logoOpNaranja.png" alt="Logo GMR Suspensiones"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color: #ebe9f6;"></i></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end align-items-stretch" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link px-4" href="#servicios">SERVICIOS</a>
-                        <a class="nav-item nav-link px-4" href="#nosotros">NOSOTROS</a>
-                        <a class="nav-item nav-link px-4" href="galeria.html">GALERÍA</a>
-                        <a class="nav-item nav-link px-4" href="#consejos">CONSEJOS Y RESEÑAS</a>
-                        <a class="nav-item nav-link px-4" href="#contacto"><strong>CONTACTO</strong></a>
-                    </div>
-                </div>
-            </nav>
-            <div class="tituloppal wow fadeInLeftBig">
-                <h1 class="titulo1" style="color: #ebe9f6;">GUSTAVO MAZZOTTA RACING</h1>
-                <h2 class="bajada" style="color: #ebe9f6;">Servicio profesional de mantenimiento,<br>reparación y preparación de <br>suspensiones</h2> 
+<body>
+
+<div class="rail" aria-hidden="true">
+  <div class="rail-fill" id="railFill"></div>
+  <div class="rail-tick" style="top:12%"></div><div class="rail-label" style="top:12%">0 mm</div>
+  <div class="rail-tick" style="top:37%"></div><div class="rail-label" style="top:37%">100</div>
+  <div class="rail-tick" style="top:62%"></div><div class="rail-label" style="top:62%">200</div>
+  <div class="rail-tick" style="top:87%"></div><div class="rail-label" style="top:87%">300</div>
+</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="marca" href="#home" aria-label="GMR Suspensiones Especiales, inicio">
+      <img src="logos/GMR-logo-horizontal.svg" alt="GMR Suspensiones Especiales">
+    </a>
+    <nav class="links" id="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#competicion">Competición</a>
+      <a href="#street">Street</a>
+      <a href="#nosotros">Nosotros</a>
+      <!-- <a href="galeria.html">Galería</a> -->
+      <a href="#consejos">Consejos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn ghost" href="https://wa.me/5491123915016">WhatsApp</a>
+    <div class="hamb-wrap">
+      <button class="hamb" id="hamb" aria-expanded="false" aria-controls="panel">Menú</button>
+    </div>
+  </div>
+  <div class="panel" id="panel">
+    <a href="#servicios">Servicios</a>
+    <a href="#competicion">Competición</a>
+    <a href="#street">Street</a>
+    <a href="#nosotros">Nosotros</a>
+    <!-- <a href="galeria.html">Galería</a> -->
+    <a href="#consejos">Consejos y reseñas</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/5491123915016">Escribinos por WhatsApp</a>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="mono eyebrow" style="margin:0 0 22px">Gustavo Mazzotta<span class="l2"> Racing</span></p>
+      <h1>Mantenimiento y preparación de <span class="l2">suspensiones</span></h1>
+      <p class="lead">Más de 45 años de experiencia dando servicio técnico profesional para motocross, enduro y calle. Trabajamos todas las marcas, customizando el ajuste para cada piloto.</p>
+      <div class="acciones">
+        <a class="btn amb" href="#contacto">Contactanos</a>
+        <a class="btn ghost" href="#servicios">Ver servicios</a>
+      </div>
+      <p class="mono credencial">Cada setup se calcula para tu peso, tu moto, tu nivel y el terreno donde rodás.</p>
+    </div>
+    <div class="hero-media rv">
+      <div class="marco">
+        <video class="hero-video" src="video/video_hero.mp4" autoplay muted loop playsinline preload="auto" poster="img/headerMob.jpg" aria-label="Piloto de motocross inclinado en curva cerrada con suspensión GMR"></video>
+        <!-- <span class="mono tag">GMR Racing · Pista</span> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<div class="marcas" aria-label="Marcas con las que trabajamos">
+  <div class="tira" id="tira"></div>
+</div>
+
+<!-- POR QUÉ ELEGIR GMR -->
+<section id="por-que-elegir" class="surface">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Por qué elegir GMR</h2>
+      <!-- <span class="mono sec-num">05 razones</span> -->
+    </div>
+    <div class="porque-grid">
+      <div class="porque-stat rv">
+        <p class="porque-num"><span class="n">+45</span><span class="u">años</span></p>
+        <p class="porque-cap">de experiencia en motociclismo, como pilotos, mecánicos y preparadores.</p>
+      </div>
+      <ul class="porque-list">
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con los mejores insumos. La calidad no se negocia.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Diseño y fabricación propia de piezas especiales.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Trabajamos con pilotos de todo el país.</p></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Garantía de 6 meses en nuestros trabajos.</p></li>
+        <li class="rv destacado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Primeros representantes de Race Tech fuera de EE UU.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <span class="mono sec-num">4.8 <span class="testi-stars">★★★★★</span> · +100 reseñas en Google</span>
+    </div>
+    <div class="testi-carrusel rv" id="testiCarrusel">
+      <ul class="testi-cards" id="testiCards">
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Antes de dejar la moto nos mostraron el taller y nos explicaron todo el proceso. Se nota que saben lo que hacen.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Enrique · BMW F750GS</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>El trabajo en el monoshock quedó de primer nivel, impecable. Totalmente recomendable.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Mariano · KTM 390 ADV</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Reparación de amortiguador para Benelli TNT 300. El laburo quedó espectacular, y resuelto de un día para el otro. Labura muy bien y dan garantía por seis meses. Volvería a confiarles la moto ante cualquier otra eventualidad.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Pablo · Benelli TNT 300</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Profesionales de la suspensión... vieja escuela y nueva escuela.... sin cuentos... todas las motos.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Alejandro · Local Guide en Google</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Excelente trato, cuidado en los detalles y esmerada atención preventa. Sin dudas voy a volver!</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Diego · Local Guide en Google</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Excelente trabajo me hicieron en una Falcon 2012. Reparación de monoshock, muy satisfecho no tan solo por la atención sino por el trabajo. Muchas gracias. 100% recomendado.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Daniel · Falcon 2012</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Consulté a tres fuentes quién me podía reparar el amortiguador de mi moto, y todos me recomendaron GMR. Quiero agradecer además del trabajo realizado, la excelente atención de Cooper que tuvo hacia mi persona en todo momento que estuve en contacto con él.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Pablo Ferro · Cliente GMR</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Excelente. Me repararon una horquilla invertida de ZXR 250 1999... súper recomendables.</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Carlos · Kawasaki ZXR 250</span>
+          </div>
+        </li>
+        <li class="testimonio-card">
+          <span class="testimonio-quote" aria-hidden="true">“</span>
+          <p>Crack! Experiencia, profesional, detalle, en suspensiones especiales para motos, UTV, ATV, de los máximos exponentes. Desde Claudio Pesce a muchos de los actuadores campeones de enduro, super Enduro, MX. Él es endurista de alma. Y la recomendación boca en boca en todo el país es su mejor presentación. Excelente persona y mejor profesional!</p>
+          <div class="testimonio-footer">
+            <span class="testi-stars">★★★★★</span>
+            <span class="mono tag">Motos Argentinas · Reseña en Google</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="testi-actions rv">
+      <button class="testi-nav" id="testiPrev" aria-label="Testimonio anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15,5 8,12 15,19"/></svg>
+      </button>
+      <button class="testi-nav" id="testiNext" aria-label="Testimonio siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9,5 16,12 9,19"/></svg>
+      </button>
+    </div>
+    <!-- <div class="acciones rv" style="margin-top:36px">
+      <a class="btn ghost" href="https://maps.app.goo.gl/8HRKHDrSsRUuEVRR6" target="_blank">Ver todas las reseñas en Google</a>
+    </div> -->
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="surface">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Nuestros Servicios</h2>
+      <!-- <p>Trabajamos sobre horquillas y amortiguadores de moto y cuatriciclo, de competición y de calle.</p> -->
+      <!-- <span class="mono sec-num">05 prestaciones</span> -->
+    </div>
+    <div class="servicios-list" id="serviciosList">
+      <div class="serv-item">
+        <div class="serv-item-name">
+          <span class="serv-row-num">01</span>
+          <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="5" x2="7" y2="23"/><circle cx="7" cy="16" r="2.4"/><line x1="14" y1="5" x2="14" y2="23"/><circle cx="14" cy="9" r="2.4"/><line x1="21" y1="5" x2="21" y2="23"/><circle cx="21" cy="18" r="2.4"/></svg></span>
+          <span class="mono tag">Revalvulado a medida</span>
+          <h3>Setup personalizado</h3>
+        </div>
+        <div class="serv-item-desc">
+          <p>Calibramos los setup de compresión, mid-valve y rebote según el uso que le des a la moto, tu peso y tu nivel de manejo, para conseguir el funcionamiento óptimo en cada situación y terreno. También hacemos reducción de altura.</p>
+          <dl class="serv-incluye">
+            <div class="fila"><span>Incluye</span></div>
+            <div class="fila"><dt>Revalvulado compresión</dt><dd>Sí</dd></div>
+            <div class="fila"><dt>Revalvulado rebote</dt><dd>Sí</dd></div>
+            <div class="fila"><dt>Reducción de altura</dt><dd>A pedido</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="serv-item">
+        <div class="serv-item-name">
+          <span class="serv-row-num">02</span>
+          <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.5"/><line x1="17.5" y1="17.5" x2="24" y2="24"/></svg></span>
+          <span class="mono tag">Desarme e inspección</span>
+          <h3>Service completo</h3>
+        </div>
+        <div class="serv-item-desc">
+          <p>Desarmamos la suspensión por completo, limpiamos e inspeccionamos cada componente —retenes, wipers, botellas, barrales, pistones, válvulas, vástagos y sellos— para evaluar el desgaste real de todas las piezas.</p>
+        </div>
+      </div>
+      <div class="serv-item">
+        <div class="serv-item-name">
+          <span class="serv-row-num">03</span>
+          <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="10"/><line x1="14" y1="14" x2="14" y2="7"/><line x1="14" y1="14" x2="19" y2="14"/></svg></span>
+          <span class="mono tag">Periódico</span>
+          <h3>Mantenimiento</h3>
+        </div>
+        <div class="serv-item-desc">
+          <p>Relizamos un service completo con frecuencia regular para que las suspensiones trabajen siempre al máximo nivel y su desgaste sea el mínimo posible.</p>
+        </div>
+      </div>
+      <div class="serv-item">
+        <div class="serv-item-name">
+          <span class="serv-row-num">04</span>
+          <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="14,5 21.79,9.5 21.79,18.5 14,23 6.21,18.5 6.21,9.5"/><circle cx="14" cy="14" r="3.2"/></svg></span>
+          <span class="mono tag">Mecanizado propio</span>
+          <h3>Reparación y fabricación</h3>
+        </div>
+        <div class="serv-item-desc">
+          <p>Diseñamos y mecanizamos las piezas necesarias según el requerimiento de cada trabajo en nuestro taller —torno, fresadora y equipamiento propio— y hacemos rectificación y recromado de barrales, anodizados y más.</p>
+        </div>
+      </div>
+    </div>
+    <div class="servicios-note rv">
+      <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="13.5" x2="15" y2="13.5"/><polyline points="9.5,18.5 12,21 18.5,15"/></svg></span>
+      <div>
+        <span class="mono tag">Incluido en los 05 servicios</span>
+        <p>Todos nuestros servicios incluyen asesoramiento personalizado para el armado de la moto, la puesta a punto del chasis y las regulaciones necesarias para aprovechar el 100% del rendimiento de tus suspensiones.</p>
+      </div>
+      <figure class="servicios-photo suspension">
+        <img src="img/GMR_moto_suspensiones_3D.svg" alt="Detalle de suspensiones delantera y trasera puestas a punto por Gustavo Mazzotta">
+      </figure>
+    </div>
+    <div class="cta-linea rv">
+      <p>¿Necesitás un presupuesto?<br>Contanos qué moto tenés y cómo la usás.</p>
+      <a class="btn amb" href="#contacto">Pedir presupuesto</a>
+      <a class="btn ghost" href="https://wa.me/5491123915016">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETICIÓN Y STREET -->
+<section id="competicion-street" class="surface">
+  <!-- <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Competición y street</h2>
+      <p>Service, reparación y setup personalizado de suspensiones para moto y cuatriciclo: preparamos tanto la máquina de carrera como la de todos los días.</p>
+      <span class="mono sec-num">Pista y calle</span>
+    </div>
+  </div> -->
+
+  <div class="amb-sub" id="competicion">
+    <div class="amb-banner rv">
+      <img src="img/headerComp.jpg" alt="Piloto de motocross en salto durante una carrera" style="object-position:center 40%">
+      <div class="amb-banner-copy">
+        <div class="amb-eyebrow"><span class="amb-eyebrow-bar"></span><span class="mono">01 · Pista y campo</span></div>
+        <h3>Competición</h3>
+        <p>Set-up para el piloto que corre: motocross, enduro y rally, en todos los niveles.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="amb-body">
+        <div class="texto rv">
+          <p>Acompañamos y asesoramos a pilotos de motocross, enduro y rally en todos sus niveles, profesionales y amateurs. Trabajamos junto a cada uno hasta encontrar el set-up justo, el que le saca el máximo rendimiento al piloto y a la máquina.</p>
+          <p>El punto de partida es siempre el mismo: cómo corrés, dónde corrés y qué necesitás ajustar en la respuesta de la moto. A partir de ahí revalvulamos, ajustamos y probamos.</p>
+        </div>
+        <aside class="amb-ficha rv">
+          <span class="mono">Qué preparamos</span>
+          <div class="amb-rows">
+            <div><span>Motocross</span><span class="tag">MX</span></div>
+            <div><span>Enduro</span><span class="tag">EN</span></div>
+            <div><span>Rally</span><span class="tag">RL</span></div>
+            <div><span>Cuatriciclos</span><span class="tag">ATV</span></div>
+            <div><span>Todas las marcas</span><span class="tag">·</span></div>
+          </div>
+          <a class="btn amb" href="#contacto">Trabajemos en tu próxima carrera <span>→</span></a>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="amb-sub" id="street">
+    <div class="amb-banner rv">
+      <img src="img/carouselStreetWeb.jpg" alt="Moto de calle en curva por ruta de montaña" style="object-position:center 12%">
+      <div class="amb-banner-copy">
+        <div class="amb-eyebrow"><span class="amb-eyebrow-bar"></span><span class="mono">02 · Calle y ruta</span></div>
+        <h3>Street</h3>
+        <p>La moto de todos los días también merece una suspensión a punto.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="amb-body">
+        <div class="texto rv">
+          <p>Toda moto necesita mantenimiento en sus suspensiones, y la pérdida de fluido no es el único aviso. Con el uso y el paso del tiempo los aceites se degradan y contaminan, y van perdiendo buena parte de sus propiedades sin que se note a simple vista, produciendo un desgaste prematuro en los componentes.</p>
+          <p>Nos especializamos en la reparación de todo tipo de amortiguadores: hidráulicos, presurizados, con control electrónico y suspensiones activas. También hacemos reformas para reducir la altura de la moto de manera segura.</p>
+          <div class="amb-fotos">
+            <img src="img/streetGato.jpeg" alt="Maxiscooter en el taller GMR">
+            <img src="img/trail.jpeg" alt="Moto trail preparada por GMR Suspensiones">
+          </div>
+        </div>
+        <aside class="amb-ficha rv">
+          <span class="mono">Qué ganás</span>
+          <ul class="benef">
+            <li>Un andar más seguro, suave y confortable</li>
+            <li>Menor desgaste de neumáticos y transmisión</li>
+            <li>Más vida útil para tus suspensiones</li>
+            <li>Reducción de altura hecha de forma segura</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Trail</span><span class="chip">Touring</span><span class="chip">Custom</span>
+            <span class="chip">Pista</span><span class="chip">Maxiscooters</span>
+          </div>
+          <a class="btn amb" href="#contacto">Contactanos para mejorar tu moto <span>→</span></a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Nosotros</h2>
+      <p>Más de 50 años inmersos en el mundo del motociclismo.</p>
+      <span class="mono sec-num">1976 — hoy</span>
+    </div>
+    <div class="hitos" id="fotosNosotros">
+      <div class="hito rv">
+        <span class="hito-anio mono">1976</span>
+        <div class="hito-marca"><span class="hito-punto"></span></div>
+        <div class="hito-cont">
+          <div class="hito-texto">
+            <h3>La primera moto</h3>
+            <p>Ahí empezó todo...</p>
+          </div>
+          <div class="hito-fotos par">
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/enduru-gus-1985.jpg" alt="Gustavo Mazzotta arriba de su primera moto de enduro">
+              <figcaption class="mono">La primera moto</figcaption>
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/primera_carrera.jpg" alt="Gustavo Mazzotta con su moto de enduro embarrada junto a otros pilotos en su primera carrera">
+              <figcaption class="mono">Primera carrera</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="hito rv">
+        <span class="hito-anio mono">1982</span>
+        <div class="hito-marca"><span class="hito-punto"></span></div>
+        <div class="hito-cont">
+          <div class="hito-texto">
+            <h3>Arriba de la moto</h3>
+            <p>Nos metimos en el mundo del motociclismo como pilotos, mecánicos y preparadores. De ahí sale la experiencia que después ordenó todo lo demás.</p>
+            <div class="chips">
+              <span class="chip">Piloto</span><span class="chip">Mecánico</span><span class="chip">Preparador</span>
             </div>
-    </header>
-    <main id="main">
-        <!-- CAROUSEL -->
-        <section class="carouselGMR">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/carouselCompWeb.jpg" class="d-block w-100" alt="Competicion GMR">
-                        <div class="carousel-caption">
-                            <h2>COMPETICIÓN</h2>
-                            <p>Optimizar el rendimiento de tus suspensiones te dará una grán ventaja en la pista.</p>
-                        </div>
-                        <a href="competicion.html" class="btn position-absolute boton botonCarousel" role="button"><span>Conocé más</span></a>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/carouselStreetWeb.jpg" class="d-block w-100" alt="Street GMR">
-                        <div class="carousel-caption">
-                            <h2>STREET</h2>
-                            <p>Te ayudamos a lograr que el andar de tu moto sea más confortable que nunca.</p>
-                        </div>
-                        <a href="street.html" class="btn position-absolute boton botonCarousel" role="button"><span>Conocé más</span></a>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+          </div>
+          <div class="hito-fotos par">
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/nosotros-racetech-vintage.jpg" alt="Gustavo Mazzotta con compañeros y motos Yamaha en la montaña, primeros años de competición">
+              <!-- <figcaption class="mono">Primeras competencias</figcaption> -->
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/carreras_92.jpg" alt="Gustavo Mazzotta con su moto de motocross número 150 en el paddock">
+              <!-- <figcaption class="mono">Compitiendo en motocross</figcaption> -->
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="hito rv">
+        <span class="hito-anio mono">1992</span>
+        <div class="hito-marca"><span class="hito-punto"></span></div>
+        <div class="hito-cont">
+          <div class="hito-texto">
+            <h3>Solo suspensiones</h3>
+            <p>Abrimos el taller dedicado exclusivamente a suspensiones de competición. Tras capacitarnos en California con <strong>Paul Thede</strong> -fundador de Race Tech y referente mundial en la industria de las suspensiones- fuimos los primeros representantes de Race Tech fuera de Estados Unidos.</p>
+            <div class="chips">
+              <span class="chip">Race Tech</span><span class="chip">Exclusividad Argentina</span>
             </div>
-        </section>
-        <!-- BANNER MARCAS -->
-        <section class="my-5 mx-0">
-            <ul class="bannerMarcas d-flex flex-row justify-content-around align-items-center">
-                <li><img src="Logos_marcas/Ducati.svg" alt="ducati" width="80"></li>
-                <li><img src="Logos_marcas/Honda.svg" alt="honda" width="100"></li>
-                <li><img src="Logos_marcas/beta.png" alt="beta" width="100"></li>
-                <li><img src="Logos_marcas/husq.svg" alt="husqvarna" width="100"></li>
-                <li><img src="Logos_marcas/Kawasaki.svg" alt="kawasaki" width="100"></li>
-                <li><img src="Logos_marcas/BMW.png" alt="bmw" width="100"></li>
-                <li><img src="Logos_marcas/ktm.png" alt="ktm" width="100"></li>
-                <li><img src="Logos_marcas/Suzuki-logo-625x768.png" alt="suzuki" width="80"></li>
-                <li><img src="Logos_marcas/Yamaha-Logo-768x338.png" alt="yamaha" width="100"></li>
-                <li><img src="Logos_marcas/can-am.png" alt="yamaha" width="100"></li>
-                <li><img src="Logos_marcas/benelli.png" alt="benelli" width="100"></li>
-            </ul>
-        </section>
-        <!-- SERVICIOS -->
-        <section id="servicios">
-            <h3 class="secciones">SERVICIOS</h3>
-            <div class="subServicios d-flex flex-column align-items-center m-5 wow bounceInLeft">
-                <i class="fas fa-thumbs-up my-4" style="color: #6a5c55; font-size: 3em; margin: 5px;"></i>
-                <p>Lo que hacemos</p>
+          </div>
+          <div class="hito-fotos par">
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/racetech.jpg" alt="Gustavo Mazzotta junto a un representante de Race Tech en el taller">
+              <figcaption class="mono">Race Tech, California '93</figcaption>
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/nosotros-van-racetech.jpg" alt="Van pintada con el logo de Race Tech, primeros años del taller">
+              <!-- <figcaption class="mono">Representantes oficiales de Race Tech</figcaption> -->
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="hito rv">
+        <span class="hito-anio mono">2000</span>
+        <div class="hito-marca"><span class="hito-punto"></span></div>
+        <div class="hito-cont">
+          <div class="hito-texto">
+            <h3>Nace GMR</h3>
+            <p>Con marca propia sumamos el mantenimiento de motos street y nos consolidamos como referentes a nivel nacional y regional, siempre con trabajos a medida de cada piloto.</p>
+            <div class="chips">
+              <span class="chip">Marca propia</span><span class="chip">Street + Competición</span><span class="chip">Dakar</span>
             </div>
-            <div>
-                <ul class="listaServicios m-0 p-0 w-100 h-100 wow bounceInRight">
-                    <li class="service" id="serviceCompleto"><i class="fas fa-tools"></i>Service completo</li>
-                    <li class="setup" id="setupPersonalizado"><i class="far fa-calendar-check"></i>Setup personalizado</li>
-                    <li class="asesoramiento" id="asesoramiento"><i class="fas fa-user-cog"></i>Asesoramiento para puesta a punto</li>
-                    <li class="mantenimiento" id="mantenimiento"><i class="fas fa-history"></i>Mantenimiento</li>
-                    <li class="reparacion" id="reparacion"><i class="fas fa-cogs"></i>Reparación</li>
-                </ul>
-                <div class="accordion d-block d-lg-none w-100" id="accordionExample">
-                    <div class="card border-0 rounded-0">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0"><i class="fas fa-tools"></i>Service completo</h2>
-                            <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Ver +
-                            </button>
-                        </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Consiste en un desarme completo de la suspensión, limpieza e inspección de todos los componentes (retenes, wippers, botellas, barrales, pistones, válvulas, vástagos, sellos, etc) para la evaluación del estado de desgaste de todas sus piezas.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-0 rounded-0">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0"><i class="far fa-calendar-check"></i>Setup personalizado</h2>
-                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Ver +
-                                </button>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Se trata del revalvulado de los setup de compresión, mid-val y rebote de acuerdo al tipo de uso que se le de a la moto, peso del piloto y su nivel de manejo. Con este servicio se personalizan las suspensiones para conseguir el funcionamiento óptimo para cada piloto, situación y terreno. También realizamos reducción de altura.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-0 rounded-0">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0"><i class="fas fa-user-cog"></i>Asesoramiento para puesta a punto</h2>
-                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Ver +
-                                </button>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Todos nuestros servicios incluyen el asesoramiento y tips para el armado de la moto, puesta a punto del chasis y regulaciones para obtener el 100% del rendimiento de tus suspensiones.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-0 rounded-0">
-                        <div class="card-header" id="headingFour">
-                            <h2 class="mb-0"><i class="fas fa-history"></i>Mantenimiento</h2>
-                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Ver +
-                                </button>
-                        </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Consiste esencialmente en un service completo periódico para mantener tus suspensiones funcionando siempre al máximo nivel, minimizando su desgaste.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-0 rounded-0">
-                        <div class="card-header" id="headingFive">
-                            <h2 class="mb-0"><i class="fas fa-cogs"></i>Reparación</h2>
-                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Ver +
-                                </button>
-                        </div>
-                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                            <div class="card-body">
-                                Nos especializamos en la reparación y/o fabricación de los componentes de tus suspensiones, ya sea por desgaste o daños. Este servicio incluye el diseño, la fabricación con nuestros equipos (torno, fresadora, etc) de las piezas que fueran necesarias. También hacemos rectificación y recromado de barrales, anodizados, etc.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="link">
-                <p class="my-5">Contactanos para obtener más información y pedir tu presupuesto!</p>
-                <a href="#contacto" class="boton"><span>Pedir presupuesto</span></a>
-            </div>
-        </section>
-        <!-- NOSOTROS -->
-        <section id="nosotros"> 
-            <h3 class="secciones">NOSOTROS</h3>
-            <article class="nosotros w-100 wow slideInLeft">
-                <p class="nosotros1">
-                    Incursionando en el mundo del motociclismo desde el año 1982 tanto como pilotos, mecánicos y preparadores, hemos capitalizado suficiente experiencia para que en el año 1992 iniciemos nuestro negocio exclusivamente de suspensiones de competición. Con esta experiencia, sumada a la realización de cursos de capacitación en California, logramos ser los primeros representantes fuera de los EEUU de la afamada marca RaceTech, con exclusividad para la República Argentina. 
-                </p>
-                <img src="img/nosotros1.png" class="d-none d-lg-block" alt="Mix de fotos nosotros">
-                <img src="img/nosotros1_mob.png" width="375" height="363" class="d-block d-lg-none" alt="Mix de fotos nosotros">
-            </article>
-            <article class="nosotros wow slideInRight">
-                <img src="img/nosotros2.png" class="d-none d-lg-block" alt="Mix de fotos taller">
-                <img src="img/nosotros2_mob.png" width="375" height="363" class="d-block d-lg-none" alt="Mix de fotos taller">
-                <p class="nosotros2">
-                    A partir del año 2000, con el nacimiento de GMR Suspensiones Especiales como marca propia, logramos la expansión de nuestros servicios, incorporando el mantenimiento de las motos Street y nos afianzamos como referentes del mundo del motociclismo a nivel nacional y regional. Nos especializamos en trabajos a medida, dando especial atención a los parámetros que cada piloto necesita para contar con un rendimiento óptimo de sus suspensiones.
-                </p> 
-            </article>
-            <div class="link">
-                <p class="my-5">Te gustaría ver un poco más de nuestra trayectoria? Accedé a nuestra colección de fotos y videos!</p>
-                <a href="galeria.html" class="boton"><span>Galería</span></a>
-            </div>
-        </section>
-        <!-- CONSEJOS -->
-        <section id="consejos">
-            <h3 class="secciones">CONSEJOS Y RESEÑAS</h3>
-            <div class="bajadaConsejos">
-                <p>Te compartimos algunos consejos, experiencias, testeos y reviews de los últimos lanzamientos en el mundo del motociclismo.</p>
-            </div>
-            <article class="textosConsejos">
-                <ul class="listaConsejos wow bounceInRight">
-                    <li class="video1"><span><i class="fas fa-video"></i><br>REVIEW<br></span><p>Honda CB250 New Twister</p><iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/i0gJtRkjegU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                    <li class="video2"><span><i class="fas fa-video"></i><br>REVIEW<br></span><p>KTM 390 Duke</p><iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/cSBRW06ZWr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                    <li class="video1"><span><i class="fas fa-video"></i><br>REVIEW<br></span><p>Honda XRE300</p><iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/sLOssqlwtDk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                    <li class="video2"><span><i class="fas fa-motorcycle"></i><br>EXPERIENCIA ENDURO<br></span><p>Desafío del Indio 2019</p><iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/QedExQ-2EhY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                </ul>
-            </article>
-        </section> 
-        <!-- CONTACTO -->
-        <section id="contacto">
-            <h3 class="secciones">CONTACTO</h3>
-            <div class="datosContacto">
-                <form class="formulario" name="contact" method="POST" data-netlify="true">
-                    <legend>Envianos tu consulta y te responderemos a la brevedad!</legend>
-                    <label>Nombre y apellido:</label>
-                    <input type="text" name="nombre" required/>
-                    <label>Teléfono (opcional):</label>
-                    <input type="number" name="telefono"/>
-                    <label>Email:</label>
-                    <input type="email" name="email" required/>
-                    <label>Mensaje:</label>
-                    <textarea name="message" rows="5" cols="80" placeholder="Ingresá tu consulta"></textarea>
-                    <button type="submit" class="boton">ENVIAR</button>
-                </form>
-                <ul class="listaContacto">
-                    <li><i class="fas fa-user-circle"></i>Gustavo Mazzotta</li>
-                    <li><a href="https://wa.me/5491123915016"><i class="fab fa-whatsapp" style="color: #47C756;"></i>Whatsapp</a></li>
-                    <li><i class="fas fa-phone-alt"></i>011 4754 0161</li>
-                    <li><i class="far fa-envelope"></i><a href="mailto:gusmazzo@yahoo.com.ar">gusmazzo@yahoo.com.ar</a></li>
-                    <li><i class="fas fa-map-marked-alt"></i>Las Heras 2334 "B", General San Martín, Buenos Aires, Argentina</li>
-                </ul>
-                <img class="imagenMoto wow bounceInRight" src="img/imagenMoto.png" alt="moto">
-            </div>
-                <p>Seguinos en las Redes!</p>
-                <ul class="listaRedes col wow bounceInRight">
-                    <li><a href="https://www.facebook.com/gmrsuspensiones.com.ar/?eid=ARBR95OEngmDgUEiXfz0SQ5FV3vU9csj-kicLa6UXERpOP9kxCSw1--u1-2wTG1NGHEpvCTBa5BokdWz&timeline_context_item_type=intro_card_work&timeline_context_item_source=1246656587&fref=tag" target="_blank"><i class="fab fa-facebook"></i><br>GMR suspensiones especiales</a></li>
-                    <li><a href="https://www.instagram.com/mazzotta_gmr_suspensiones/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i><br>@mazzotta_gmr_suspensiones</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCWG4rHSeRSNcY1JCIyHqKJw" target="_blank"><i class="fab fa-youtube"></i><br>Gustavo Mazzotta</a></li>
-                    <li><a href="https://gmr-suspensiones-especiales.business.site/" target="_blank"><i class="fab fa-google-plus-g"></i><br>GMR suspensiones especiales</a></li>
-                </ul>
-        </section>
-    </main>
-    <!-- FOOTER -->
-    <footer id="footer">
-        <section class="footer">
-            <div class="row mx-0 d-flex fixed-bottom justify-content-end footer__botonVolver">
-                <a href="#home"><i class="fas fa-chevron-circle-up"></i></a>
-            </div>
-            <div class="row mx-0">
-                <div class="footer__menu col my-5">
-                    <a href="#servicios">Servicios</a>
-                    <a href="#nosotros">Nosotros</a>
-                    <a href="galeria.html">Galería</a>
-                    <a href="#consejos">Consejos y Reseñas</a>
-                    <a href="#contacto">Contacto</a>
-                </div>
-                <div class="footer__logo col mx-auto my-5">
-                    <a href="index.html"><img src="logoOpNaranja.png" alt="Logo GMR"></a>
-                    <p>Gustavo Mazzotta Racing</p>
-                </div>
-            </div>
-        </section>
-    </footer>
-    <script src="Animate/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+          </div>
+          <div class="hito-fotos par">
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/nosotros-tienda-gmr.jpg" alt="Carpa y camioneta GMR en un evento de motocross">
+              <figcaption class="mono">Acompañamos pilotos en todo el país</figcaption>
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/dakarGus.jpg" alt="Gustavo Mazzotta junto a su moto del Dakar">
+              <figcaption class="mono">Mecánico oficial Dakar</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="hito hito-hoy rv">
+        <span class="hito-anio mono">Hoy</span>
+        <div class="hito-marca"><span class="hito-punto"></span></div>
+        <div class="hito-cont">
+          <div class="hito-texto">
+            <h3>El taller, hoy</h3>
+            <p>Seguimos trabajando como desde primer día, con más herramientas y más conocimiento pero con la misma obsesión por el detalle: cada suspensión que sale del taller está medida, ajustada y probada para cada piloto.</p>
+          </div>
+          <div class="hito-fotos">
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/mesatrabajo.jpg" alt="Banco de trabajo con resorte, dibujo técnico y piezas mecanizadas en el taller GMR">
+              <figcaption class="mono">Diseño en Autocad</figcaption>
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img src="img/nosotros-fox-shock.jpg" alt="Gustavo Mazzotta y su hijo con horquillas recién mecanizadas">
+              <figcaption class="mono">Trabajos</figcaption>
+            </figure>
+            <figure class="duotono foto" tabindex="0" role="button" aria-label="Ampliar foto">
+              <img class="rostro-arriba" src="img/nosotros-fresadora.jpg" alt="Gustavo Mazzotta trabajando en la fresadora del taller">
+              <figcaption class="mono">Fabricando piezas</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightboxNosotros" role="dialog" aria-modal="true" aria-label="Visor de fotos de Nosotros">
+  <div class="lightbox-top">
+    <span class="cont mono" id="lightboxCont">01 / 09</span>
+    <button id="lightboxCerrar" aria-label="Cerrar visor">Cerrar (Esc)</button>
+  </div>
+  <div class="lightbox-body"><img id="lightboxImg" src="" alt=""></div>
+  <div class="lightbox-nav">
+    <button id="lightboxPrev" aria-label="Foto anterior">← Anterior</button>
+    <button id="lightboxNext" aria-label="Foto siguiente">Siguiente →</button>
+  </div>
+</div>
+
+<!-- CONSEJOS -->
+<section id="consejos" class="surface">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Consejos y reseñas</h2>
+      <p>Testeos, experiencias y reviews de los últimos lanzamientos del mundo del motociclismo.</p>
+      <span class="mono sec-num">Canal de YouTube</span>
+    </div>
+    <div class="videos" id="videos"></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Contacto</h2>
+      <p>Escribinos tu consulta y te respondemos a la brevedad.</p>
+      <!-- <span class="mono sec-num">Lun a vie</span> -->
+    </div>
+    <div class="cgrid">
+      <form id="form" class="rv" novalidate>
+        <div class="campo">
+          <label class="mono" for="n">Nombre y apellido</label>
+          <input id="n" name="n" type="text" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label class="mono" for="m">Moto o cuatriciclo</label>
+          <input id="m" name="m" type="text" placeholder="Marca, modelo y año">
+        </div>
+        <div class="campo">
+          <label class="mono" for="t">Teléfono (opcional)</label>
+          <input id="t" name="t" type="tel" autocomplete="tel">
+        </div>
+        <div class="campo">
+          <label class="mono" for="e">Email</label>
+          <input id="e" name="e" type="email" autocomplete="email">
+        </div>
+        <div class="campo">
+          <label class="mono" for="msj">Mensaje</label>
+          <textarea id="msj" name="msj" placeholder="Contanos qué necesitás y cómo usás la moto"></textarea>
+        </div>
+        <div class="acciones">
+          <button class="btn amb" type="submit">Enviar por WhatsApp</button>
+          <a class="btn ghost" id="porMail" href="mailto:gusmazzo@yahoo.com.ar">Enviar por email</a>
+        </div>
+        <p class="nota">El formulario arma el mensaje y lo abre en WhatsApp o en tu cliente de correo. Nada se guarda en el sitio.</p>
+      </form>
+      <div class="rv">
+        <dl class="datos">
+          <div class="dato"><dt>Referente</dt><dd>Gustavo Mazzotta</dd></div>
+          <div class="dato"><dt>WhatsApp</dt><dd><a href="https://wa.me/5491123915016">+54 9 11 2391 5016</a></dd></div>
+          <div class="dato"><dt>Teléfono</dt><dd><a href="tel:+541147540161">011 4754 0161</a></dd></div>
+          <div class="dato"><dt>Email</dt><dd><a href="mailto:gusmazzo@yahoo.com.ar">gusmazzo@yahoo.com.ar</a></dd></div>
+          <div class="dato"><dt>Taller</dt><dd>General San Martín, Buenos Aires, Argentina</dd></div>
+        </dl>
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.3576383626446!2d-58.537564924164776!3d-34.56981617296645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb76da562aef3%3A0xb4e25df8b729f24a!2sGMR%20Suspensiones%20Especiales!5e0!3m2!1ses!2sar!4v1788275826473!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ubicación del taller GMR Suspensiones Especiales"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="redes-wrap rv">
+      <p class="mono eyebrow">Seguinos en las redes</p>
+      <div class="redes">
+        <a href="https://www.facebook.com/gmrsuspensiones.com.ar/" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h-3a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>Facebook</a>
+        <a href="https://www.instagram.com/mazzotta_gmr_suspensiones/?hl=es-la" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span>Instagram</a>
+        <a href="https://www.youtube.com/channel/UCWG4rHSeRSNcY1JCIyHqKJw" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="4"/><polygon points="10.5,9.5 10.5,14.5 15,12" fill="currentColor" stroke="none"/></svg></span>YouTube</a>
+        <a href="https://maps.app.goo.gl/8HRKHDrSsRUuEVRR6" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.58 7-12A7 7 0 0 0 5 9c0 4.42 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></span>Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fbar">
+    <a class="marca" href="#home">
+      <img src="logos/GMR-logo-horizontal-blanco.svg" alt="GMR Suspensiones Especiales — Gustavo Mazzotta Racing">
+    </a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#competicion">Competición</a>
+      <a href="#street">Street</a>
+      <a href="#nosotros">Nosotros</a>
+      <!-- <a href="galeria.html">Galería</a> -->
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <span class="mono">© <span id="anio"></span> GMR Suspensiones Especiales</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+const marcas = ['Ducati','Honda','Beta','Husqvarna','Kawasaki','BMW','KTM','Suzuki','Yamaha','Can-Am','Benelli','KOVE'];
+document.getElementById('tira').innerHTML = [...marcas, ...marcas].map(m => `<span>${m}</span>`).join('');
+
+const vids = [
+  {id:'F_BtO5zKghw', kind:'Suspensiones', t:'Suspensiones Voge 800 y 900: todo lo que tenés que saber'},
+  {id:'i0gJtRkjegU', kind:'Review', t:'Honda CB250 New Twister'},
+  {id:'cSBRW06ZWr8', kind:'Review', t:'KTM 390 Duke'},
+  {id:'sLOssqlwtDk', kind:'Review', t:'Honda XRE300'},
+  {id:'QedExQ-2EhY', kind:'Experiencia enduro', t:'Desafío del Indio 2019'}
+];
+document.getElementById('videos').innerHTML = vids.map(v => `
+  <article class="video rv">
+    <button class="thumb" data-id="${v.id}" aria-label="Reproducir: ${v.t}">
+      <img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="lazy">
+      <span class="play"></span>
+    </button>
+    <div class="meta"><span class="mono kind">${v.kind}</span><h3>${v.t}</h3></div>
+  </article>`).join('');
+
+document.getElementById('videos').addEventListener('click', e => {
+  const b = e.target.closest('.thumb');
+  if (!b) return;
+  b.outerHTML = `<div class="thumb"><iframe src="https://www.youtube.com/embed/${b.dataset.id}?autoplay=1"
+    title="Video GMR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
+});
+
+const serviciosItems = [...document.querySelectorAll('#serviciosList .serv-item')];
+if (serviciosItems.length) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    serviciosItems.forEach(item => item.classList.add('is-active'));
+  } else {
+    function onServiciosScroll(){
+      const centro = innerHeight / 2;
+      let activo = serviciosItems[0], distMin = Infinity;
+      serviciosItems.forEach(item => {
+        const r = item.getBoundingClientRect();
+        const dist = Math.abs((r.top + r.bottom) / 2 - centro);
+        if (dist < distMin) { distMin = dist; activo = item; }
+      });
+      serviciosItems.forEach(item => item.classList.toggle('is-active', item === activo));
+    }
+    addEventListener('scroll', onServiciosScroll, {passive:true});
+    onServiciosScroll();
+  }
+}
+
+const fotosNosotros = document.getElementById('fotosNosotros');
+const lightboxNosotros = document.getElementById('lightboxNosotros');
+if (fotosNosotros && lightboxNosotros) {
+  const fotos = [...fotosNosotros.querySelectorAll('.foto img')];
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCont = document.getElementById('lightboxCont');
+  const lightboxCerrar = document.getElementById('lightboxCerrar');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const dosDig = n => String(n).padStart(2, '0');
+  let actual = 0, ultimoFoco = null;
+
+  function mostrarFoto(i){
+    actual = (i + fotos.length) % fotos.length;
+    lightboxImg.src = fotos[actual].src;
+    lightboxImg.alt = fotos[actual].alt;
+    lightboxCont.textContent = dosDig(actual + 1) + ' / ' + dosDig(fotos.length);
+  }
+  function abrirLightbox(i){
+    ultimoFoco = document.activeElement;
+    mostrarFoto(i);
+    lightboxNosotros.classList.add('abierto');
+    document.body.classList.add('bloqueado');
+    lightboxCerrar.focus();
+  }
+  function cerrarLightbox(){
+    lightboxNosotros.classList.remove('abierto');
+    document.body.classList.remove('bloqueado');
+    lightboxImg.src = '';
+    if (ultimoFoco) ultimoFoco.focus();
+  }
+
+  fotosNosotros.addEventListener('click', e => {
+    const f = e.target.closest('.foto');
+    if (f) abrirLightbox(fotos.indexOf(f.querySelector('img')));
+  });
+  fotosNosotros.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const f = e.target.closest('.foto');
+    if (!f) return;
+    e.preventDefault();
+    abrirLightbox(fotos.indexOf(f.querySelector('img')));
+  });
+  lightboxCerrar.addEventListener('click', cerrarLightbox);
+  lightboxPrev.addEventListener('click', () => mostrarFoto(actual - 1));
+  lightboxNext.addEventListener('click', () => mostrarFoto(actual + 1));
+  lightboxNosotros.addEventListener('click', e => {
+    if (e.target === lightboxNosotros || e.target.classList.contains('lightbox-body')) cerrarLightbox();
+  });
+  addEventListener('keydown', e => {
+    if (!lightboxNosotros.classList.contains('abierto')) return;
+    if (e.key === 'Escape') cerrarLightbox();
+    if (e.key === 'ArrowLeft') mostrarFoto(actual - 1);
+    if (e.key === 'ArrowRight') mostrarFoto(actual + 1);
+  });
+  let x0 = null;
+  lightboxNosotros.addEventListener('touchstart', e => { x0 = e.changedTouches[0].clientX; }, {passive:true});
+  lightboxNosotros.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const d = e.changedTouches[0].clientX - x0;
+    if (Math.abs(d) > 55) mostrarFoto(actual + (d < 0 ? 1 : -1));
+    x0 = null;
+  }, {passive:true});
+}
+
+const hamb = document.getElementById('hamb'), panel = document.getElementById('panel');
+hamb.addEventListener('click', () => {
+  const open = panel.classList.toggle('open');
+  hamb.setAttribute('aria-expanded', open);
+  hamb.textContent = open ? 'Cerrar' : 'Menú';
+});
+panel.addEventListener('click', e => {
+  if (e.target.tagName === 'A') { panel.classList.remove('open'); hamb.textContent = 'Menú'; hamb.setAttribute('aria-expanded', false); }
+});
+
+const railFill = document.getElementById('railFill');
+const navLinks = [...document.querySelectorAll('#nav a[href^="#"]')];
+const navTargetIds = navLinks.map(a => a.getAttribute('href').slice(1));
+const navTargets = navTargetIds.length ? [...document.querySelectorAll(navTargetIds.map(id => '#' + id).join(','))] : [];
+function onScroll(){
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+  railFill.style.height = Math.min(100, p * 100) + '%';
+  let act = '';
+  navTargets.forEach(s => { if (s.getBoundingClientRect().top <= 140) act = s.id; });
+  navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + act));
+}
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+const io = new IntersectionObserver(ents => {
+  ents.forEach(en => { if (en.isIntersecting) { en.target.classList.add('vis'); io.unobserve(en.target); } });
+}, {rootMargin:'-40px 0px -60px'});
+document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 60 + 'ms'; io.observe(el); });
+
+const form = document.getElementById('form');
+function armarMensaje(){
+  const v = id => (document.getElementById(id).value || '').trim();
+  return [
+    'Consulta desde la web de GMR Suspensiones',
+    v('n') && 'Nombre: ' + v('n'),
+    v('m') && 'Moto: ' + v('m'),
+    v('t') && 'Teléfono: ' + v('t'),
+    v('e') && 'Email: ' + v('e'),
+    v('msj') && '\nMensaje: ' + v('msj')
+  ].filter(Boolean).join('\n');
+}
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const n = document.getElementById('n');
+  if (!n.value.trim()) { n.focus(); n.style.borderColor = '#F66E00'; return; }
+  open('https://wa.me/5491123915016?text=' + encodeURIComponent(armarMensaje()), '_blank');
+});
+document.getElementById('porMail').addEventListener('click', function(){
+  this.href = 'mailto:gusmazzo@yahoo.com.ar?subject=' + encodeURIComponent('Consulta web — GMR Suspensiones') +
+    '&body=' + encodeURIComponent(armarMensaje());
+});
+
+/* suspensiones: tilt 3D siguiendo el cursor */
+const figSusp = document.querySelector('.servicios-photo.suspension');
+const imgSusp = figSusp && figSusp.querySelector('img');
+if (imgSusp && matchMedia('(hover:hover) and (pointer:fine)').matches &&
+    !matchMedia('(prefers-reduced-motion:reduce)').matches) {
+  const ROT = 15, DESP = 26, SUAVE = .09;
+  let objX = 0, objY = 0, objS = 1, x = 0, y = 0, s = 1, raf = null;
+  const limitar = v => Math.max(-1, Math.min(1, v));
+
+  function cuadro(){
+    x += (objX - x) * SUAVE;
+    y += (objY - y) * SUAVE;
+    s += (objS - s) * SUAVE;
+    const est = imgSusp.style;
+    est.setProperty('--ry', (x * ROT).toFixed(2) + 'deg');
+    est.setProperty('--rx', (-y * ROT).toFixed(2) + 'deg');
+    est.setProperty('--tx', (x * DESP).toFixed(2) + 'px');
+    est.setProperty('--ty', (y * DESP * .5).toFixed(2) + 'px');
+    est.setProperty('--sc', s.toFixed(4));
+    raf = (Math.abs(objX - x) > .0008 || Math.abs(objY - y) > .0008 || Math.abs(objS - s) > .0005)
+      ? requestAnimationFrame(cuadro) : null;
+  }
+  const arrancar = () => { if (!raf) raf = requestAnimationFrame(cuadro); };
+
+  addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const r = figSusp.getBoundingClientRect();
+    if (!r.width || r.bottom < 0 || r.top > innerHeight) return;
+    objX = limitar((e.clientX - (r.left + r.width / 2)) / (innerWidth / 2));
+    objY = limitar((e.clientY - (r.top + r.height / 2)) / (innerHeight / 2));
+    arrancar();
+  }, {passive:true});
+
+  const volver = () => { objX = 0; objY = 0; arrancar(); };
+  document.addEventListener('pointerleave', volver);
+  addEventListener('blur', volver);
+  figSusp.addEventListener('pointerenter', () => { objS = 1.05; arrancar(); });
+  figSusp.addEventListener('pointerleave', () => { objS = 1; arrancar(); });
+}
+
+document.getElementById('anio').textContent = new Date().getFullYear();
+
+/* testimonios: carrusel coverflow (centro grande, costados chicos y pegados), controlado por prev/next */
+(function(){
+  const testiCarrusel = document.getElementById('testiCarrusel');
+  const testiCards = document.getElementById('testiCards');
+  const testiNext = document.getElementById('testiNext');
+  const testiPrev = document.getElementById('testiPrev');
+  if (!testiCarrusel || !testiCards || !testiNext || !testiPrev || typeof gsap === 'undefined' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const items = [...testiCards.children];
+  const total = items.length;
+  let current = 0;
+
+  // solo se ven 3 tarjetas a la vez: la del centro (grande) y una a cada lado (chicas, pegadas);
+  // dos posiciones más ocultas a cada extremo quedan pre-posicionadas e invisibles, listas para
+  // entrar prolijamente cuando se sigue navegando en la misma dirección.
+  const SLOTS = {
+    center:      {xPercent: 0,    scale: 1,    opacity: 1,    zIndex: 5},
+    izq:         {xPercent: -62,  scale: 0.8,  opacity: 0.55, zIndex: 3},
+    der:         {xPercent: 62,   scale: 0.8,  opacity: 0.55, zIndex: 3},
+    izqOculta:   {xPercent: -105, scale: 0.65, opacity: 0,    zIndex: 1},
+    derOculta:   {xPercent: 105,  scale: 0.65, opacity: 0,    zIndex: 1}
+  };
+  const ROLES = [['izqOculta', -2], ['izq', -1], ['center', 0], ['der', 1], ['derOculta', 2]];
+
+  const idx = n => (n % total + total) % total;
+
+  function colocar(instantaneo) {
+    const visibles = new Set();
+    ROLES.forEach(([rol, offset]) => {
+      const el = items[idx(current + offset)];
+      visibles.add(el);
+      const props = SLOTS[rol];
+      el.setAttribute('aria-hidden', rol === 'center' ? 'false' : (props.opacity === 0 ? 'true' : 'false'));
+      if (instantaneo) gsap.set(el, props);
+      else gsap.to(el, {...props, duration: 0.55, ease: 'power3.out'});
+    });
+    items.forEach(el => { if (!visibles.has(el)) el.setAttribute('aria-hidden', 'true'); });
+  }
+
+  gsap.set(items, {xPercent: 105, scale: 0.65, opacity: 0});
+  colocar(true);
+
+  testiNext.addEventListener('click', () => { current = idx(current + 1); colocar(false); });
+  testiPrev.addEventListener('click', () => { current = idx(current - 1); colocar(false); });
+
+  // navegación con flechas del teclado, solo mientras la sección de testimonios está visible en pantalla
+  const seccionTesti = document.getElementById('testimonios');
+  let testiVisible = false;
+  const observador = new IntersectionObserver(([entrada]) => {
+    testiVisible = entrada.isIntersecting;
+  }, {threshold: 0.3});
+  observador.observe(seccionTesti);
+
+  let teclaOcupada = false;
+  document.addEventListener('keydown', e => {
+    if (!testiVisible) return;
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    if (teclaOcupada) return;
+    teclaOcupada = true;
+    current = idx(current + (e.key === 'ArrowRight' ? 1 : -1));
+    colocar(false);
+    setTimeout(() => { teclaOcupada = false; }, 550);
+  });
+})();
+</script>
 </body>
 </html>
