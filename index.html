@@ -159,10 +159,13 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .serv-icon{color:var(--a500)}
 .serv-icon svg{width:32px;height:32px;display:block}
 .servicios-note{display:flex;gap:24px;align-items:center;margin-top:clamp(28px,4vw,40px);padding-bottom:clamp(28px,4vw,40px);border-bottom:1px solid var(--line);flex-wrap:wrap}
-.servicios-note .serv-icon{flex:none}
-.servicios-note .tag{display:block;color:var(--a500);margin-bottom:9px}
-.servicios-note h3{font-size:clamp(20px,2.2vw,24px);margin-bottom:10px}
-.servicios-note p{margin:0;max-width:64ch;color:rgba(245,242,239,.78)}
+.servicios-note-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.servicios-note-head .serv-icon{flex:none}
+.servicios-note .tag{color:var(--a500);margin:0}
+.check-list{margin:0;padding:0;list-style:none;max-width:64ch;display:flex;flex-direction:column;gap:14px}
+.check-list li{display:flex;align-items:flex-start;gap:14px}
+.check-list svg{flex:none;width:22px;height:22px;color:var(--a500);margin-top:2px}
+.check-list p{margin:0;font-size:clamp(17px,1.8vw,20px);line-height:1.35;font-weight:500;color:rgba(245,242,239,.92)}
 .servicios-photo{flex:none;width:320px;aspect-ratio:6/5;position:relative;overflow:hidden;margin-left:auto}
 .servicios-photo img{width:100%;height:100%;object-fit:cover}
 .servicios-photo .tag{position:absolute;left:10px;bottom:9px;z-index:2;color:#fff;font-size:10.5px;letter-spacing:.12em;margin:0}
@@ -617,10 +620,16 @@ footer .marca img{height:24px}
       </div>
     </div>
     <div class="servicios-note rv">
-      <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="13.5" x2="15" y2="13.5"/><polyline points="9.5,18.5 12,21 18.5,15"/></svg></span>
-      <div>
-        <span class="mono tag">Incluido en los 05 servicios</span>
-        <p>Todos nuestros servicios incluyen asesoramiento personalizado para el armado de la moto, la puesta a punto del chasis y las regulaciones necesarias para aprovechar el 100% del rendimiento de tus suspensiones.</p>
+      <div class="servicios-note-body">
+        <div class="servicios-note-head">
+          <span class="serv-icon" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="16" height="22" rx="1"/><line x1="9.5" y1="9" x2="18.5" y2="9"/><line x1="9.5" y1="13.5" x2="15" y2="13.5"/><polyline points="9.5,18.5 12,21 18.5,15"/></svg></span>
+          <span class="mono tag">Todos nuestros servicios incluyen</span>
+        </div>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Asesoramiento personalizado para el armado de la moto</p></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Puesta a punto del chasis</p></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,13 9,18 20,6"/></svg><p>Regulaciones necesarias para aprovechar al 100% el rendimiento de tus suspensiones</p></li>
+        </ul>
       </div>
       <figure class="servicios-photo suspension">
         <img src="img/GMR_moto_suspensiones_3D.svg" alt="Detalle de suspensiones delantera y trasera puestas a punto por Gustavo Mazzotta">
