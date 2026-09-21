@@ -95,6 +95,15 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
   .hero-copy{padding-bottom:clamp(40px,7vw,76px);display:flex;flex-direction:column;justify-content:center}
   .hero-media .marco{aspect-ratio:auto;height:100%}
 }
+@media(max-width:900px){
+  .hero{position:relative;min-height:600px;display:flex;align-items:center}
+  .hero-grid{display:block;width:100%}
+  .hero-media{position:absolute;inset:0;z-index:0}
+  .hero-media .marco{position:absolute;inset:0;height:100%;aspect-ratio:auto;margin-left:0}
+  .hero-media::before{display:none}
+  .hero-media .marco::after{background:linear-gradient(180deg,rgba(16,17,18,.55) 0%,rgba(16,17,18,.72) 45%,rgba(16,17,18,.88) 100%)}
+  .hero-copy{position:relative;z-index:1;padding-bottom:clamp(40px,7vw,76px)}
+}
 
 /* ticker marcas */
 .marcas{border-bottom:1px solid var(--line);overflow:hidden;padding-block:16px;background:var(--surface)}
