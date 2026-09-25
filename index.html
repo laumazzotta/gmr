@@ -438,12 +438,29 @@ footer .marca img{height:24px}
     </div>
     <div class="hero-media rv">
       <div class="marco">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-label="Piloto de motocross saltando, con suspensiones preparadas por GMR">
-          <source src="video/hero-mezher-mobile.hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L120.B0"' media="(max-width:900px)">
-          <source src="video/hero-mezher-mobile.mp4" type="video/mp4" media="(max-width:900px)">
-          <source src="video/hero-mezher.hevc.mp4" type='video/mp4; codecs="hvc1.1.6.L120.B0"'>
-          <source src="video/hero-mezher.mp4" type="video/mp4">
-        </video>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-label="Piloto de motocross saltando, con suspensiones preparadas por GMR"></video>
+        <script>
+        /* Safari evalúa el atributo media de <source> contra screen.width y no contra el viewport,
+           así que con la ventana angosta se bajaba el archivo de desktop (recorte apaisado) y en la
+           caja vertical del mobile quedaba un primer plano casi sin movimiento. Elegimos acá el
+           archivo según el viewport real. Va inline y pegado al <video> para que la descarga arranque
+           durante el parseo, sin esperar al script del final del body.
+           El codec sí lo negocia el navegador: HEVC si puede, si no H.264. */
+        (function () {
+          var v = document.currentScript.previousElementSibling;
+          /* el clip es de 60 fps: a media velocidad quedan 30 fps reales en pantalla, o sea cámara
+             lenta fluida sin servir un archivo el doble de largo. Se fija acá y no en el script del
+             final porque ese va después de GSAP, y si el CDN tarda el video arrancaría a 1x. */
+          v.defaultPlaybackRate = v.playbackRate = 0.5;
+          var base = matchMedia('(max-width:900px)').matches ? 'video/hero-mezher-mobile' : 'video/hero-mezher';
+          [[base + '.hevc.mp4', 'video/mp4; codecs="hvc1.1.6.L120.B0"'], [base + '.mp4', 'video/mp4']]
+            .forEach(function (f) {
+              var s = document.createElement('source');
+              s.src = f[0]; s.type = f[1];
+              v.appendChild(s);
+            });
+        })();
+        </script>
         <!-- <span class="mono tag">GMR Racing · Pista</span> -->
       </div>
     </div>
@@ -985,11 +1002,7 @@ document.getElementById('tira').innerHTML = [...marcas, ...marcas].map(m => `<sp
    con la animación del ticker de marcas que está justo debajo, y eso la trababa al hacer scroll */
 const heroVideo = document.querySelector('.hero-video');
 if (heroVideo) {
-  /* el clip está filmado a 60 fps: a media velocidad quedan 30 fps reales en pantalla, o sea
-     cámara lenta fluida sin tener que servir un archivo el doble de largo */
-  heroVideo.defaultPlaybackRate = 0.5;
-  heroVideo.playbackRate = 0.5;
-
+  /* el archivo y la velocidad (0.5x) se definen en el script inline que está junto al <video> */
   const quieto = matchMedia('(prefers-reduced-motion: reduce)');
   if (quieto.matches) heroVideo.addEventListener('loadeddata', () => heroVideo.pause(), {once: true});
 
@@ -997,6 +1010,13 @@ if (heroVideo) {
     if (entrada.isIntersecting && !quieto.matches) heroVideo.play().catch(() => {});
     else heroVideo.pause();
   }).observe(heroVideo);
+
+  /* iOS en Modo de bajo consumo rechaza el autoplay y el hero queda congelado en el primer cuadro.
+     Reintentamos apenas haya una interacción, y dejamos de escuchar cuando ya arrancó. */
+  const gestos = ['touchstart', 'pointerdown', 'scroll'];
+  const reintentar = () => { if (!quieto.matches && heroVideo.paused) heroVideo.play().catch(() => {}); };
+  gestos.forEach(ev => addEventListener(ev, reintentar, {passive: true}));
+  heroVideo.addEventListener('playing', () => gestos.forEach(ev => removeEventListener(ev, reintentar)), {once: true});
 }
 
 const vids = [
