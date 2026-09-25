@@ -118,6 +118,9 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
 .amb-banner{position:relative;overflow:hidden;max-width:1800px;width:100%;margin-inline:auto;aspect-ratio:2.6/1;min-height:300px;max-height:640px}
 @media(max-width:640px){.amb-banner{aspect-ratio:auto;height:340px;min-height:0}}
 .amb-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
+.amb-banner picture{display:block;width:100%;height:100%}
+#competicion .amb-banner img{object-position:center 20%}
+@media(max-width:640px){#competicion .amb-banner img{object-position:center 58%}}
 .amb-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(16,17,18,.94) 0%,rgba(16,17,18,.78) 32%,rgba(16,17,18,0) 66%)}
 .amb-banner-copy{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(24px,4vw,48px);max-width:540px;z-index:1}
 @media(min-width:1081px){.amb-banner-copy{left:calc(var(--pad) + var(--rail))}}
@@ -688,7 +691,10 @@ footer .marca img{height:24px}
 
   <div class="amb-sub" id="competicion">
     <div class="amb-banner rv">
-      <img src="img/headerComp.jpg" alt="Piloto de motocross en salto durante una carrera" style="object-position:center 40%">
+      <picture>
+        <source media="(max-width:640px)" srcset="img/competicion-mezher-mobile.jpg">
+        <img src="img/competicion-mezher.jpg" alt="Piloto de motocross tomando una curva durante una carrera">
+      </picture>
       <div class="amb-banner-copy">
         <div class="amb-eyebrow"><span class="amb-eyebrow-bar"></span><span class="mono">01 · Pista y campo</span></div>
         <h3>Competición</h3>
@@ -700,6 +706,10 @@ footer .marca img{height:24px}
         <div class="texto rv">
           <p>Acompañamos y asesoramos a pilotos de motocross, enduro y rally en todos sus niveles, profesionales y amateurs. Trabajamos junto a cada uno hasta encontrar el set-up justo, el que le saca el máximo rendimiento al piloto y a la máquina.</p>
           <p>El punto de partida es siempre el mismo: cómo corrés, dónde corrés y qué necesitás ajustar en la respuesta de la moto. A partir de ahí revalvulamos, ajustamos y probamos.</p>
+          <div class="amb-fotos">
+            <img src="img/competicion-salto.jpg" alt="Piloto de motocross en pleno salto durante una carrera">
+            <img src="img/competicion-enduro.jpg" alt="Piloto de enduro atacando una subida de arena">
+          </div>
         </div>
         <aside class="amb-ficha rv">
           <span class="mono">Qué preparamos</span>
