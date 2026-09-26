@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 132" role="img" aria-label="GMR Suspensiones Especiales, versión sobre naranja">
+  <title>GMR Suspensiones Especiales — sobre naranja</title>
+  <rect x="0" y="0" width="620" height="132" fill="#F66E00"/>
+  <g>
+    <rect x="20" y="24" width="26" height="26" fill="#101112"/>
+    <rect x="20" y="50" width="26" height="52" fill="#A84800"/>
+    <rect x="20" y="102" width="26" height="26" fill="#101112"/>
+  </g>
+  <text x="70" y="98" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="88" letter-spacing="-1" fill="#101112">GMR</text>
+  <text x="72" y="118" font-family="IBM Plex Mono, ui-monospace, monospace" font-weight="500" font-size="12" letter-spacing="4" fill="#101112">SUSPENSIONES ESPECIALES</text>
+</svg>
