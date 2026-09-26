@@ -94,7 +94,9 @@ nav.links a:hover,nav.links a.on{color:var(--text);border-color:var(--a500)}
   .hero .wrap{max-width:none;padding-right:0}
   .hero-grid{grid-template-columns:minmax(0,600px) 1fr;align-items:stretch;gap:clamp(28px,5vw,64px)}
   .hero-copy{padding-bottom:clamp(40px,7vw,76px);display:flex;flex-direction:column;justify-content:center}
-  .hero-media .marco{aspect-ratio:auto;height:100%}
+  /* el poster es el primer cuadro del video, así que va encuadrado igual (el video usa
+     object-position:50% 38%); si queda centrado, la imagen salta cuando arranca el video */
+  .hero-media .marco{aspect-ratio:auto;height:100%;background-position:50% 38%}
   .hero-media video{object-position:50% 38%}
 }
 @media(max-width:900px){
@@ -456,8 +458,14 @@ footer .marca img{height:24px}
              lenta fluida sin servir un archivo el doble de largo. Se fija acá y no en el script del
              final porque ese va después de GSAP, y si el CDN tarda el video arrancaría a 1x. */
           v.defaultPlaybackRate = v.playbackRate = 0.5;
-          var base = matchMedia('(max-width:900px)').matches ? 'video/hero-mezher-mobile' : 'video/hero-mezher';
-          [[base + '.hevc.mp4', 'video/mp4; codecs="hvc1.1.6.L120.B0"'], [base + '.mp4', 'video/mp4']]
+          var mobile = matchMedia('(max-width:900px)').matches;
+          var base = mobile ? 'video/hero-mezher-mobile' : 'video/hero-mezher';
+          /* El nivel HEVC forma parte del string de codecs y cambia según el archivo: el de mobile
+             es 1080x1920 (nivel 4.1 -> L123) y el de desktop 1080x960 (nivel 4.0 -> L120). Declarar
+             un nivel más bajo que el real es pedirle a Safari que acepte una fuente que después
+             puede no poder decodificar, así que va el que realmente tiene cada archivo. */
+          var hevc = mobile ? 'hvc1.1.6.L123.B0' : 'hvc1.1.6.L120.B0';
+          [[base + '.hevc.mp4', 'video/mp4; codecs="' + hevc + '"'], [base + '.mp4', 'video/mp4']]
             .forEach(function (f) {
               var s = document.createElement('source');
               s.src = f[0]; s.type = f[1];
