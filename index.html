@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6YSNRCMZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S6YSNRCMZ8');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GMR Suspensiones Especiales — Gustavo Mazzotta Racing</title>
@@ -986,7 +995,7 @@ footer .marca img{height:24px}
       <p class="mono eyebrow">Seguinos en las redes</p>
       <div class="redes">
         <a href="https://www.facebook.com/gmrsuspensiones.com.ar/" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h-3a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>Facebook</a>
-        <a href="https://www.instagram.com/mazzotta_gmr_suspensiones/?hl=es-la" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span>Instagram</a>
+        <a href="https://www.instagram.com/gmr.suspensiones.especiales" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span>Instagram</a>
         <a href="https://www.youtube.com/channel/UCWG4rHSeRSNcY1JCIyHqKJw" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="4"/><polygon points="10.5,9.5 10.5,14.5 15,12" fill="currentColor" stroke="none"/></svg></span>YouTube</a>
         <a href="https://maps.app.goo.gl/8HRKHDrSsRUuEVRR6" target="_blank"><span class="redes-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.58 7-12A7 7 0 0 0 5 9c0 4.42 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></span>Google</a>
       </div>
@@ -1008,6 +1017,7 @@ footer .marca img{height:24px}
       <!-- <a href="galeria.html">Galería</a> -->
       <a href="#contacto">Contacto</a>
     </nav>
+    <div class="lang" role="group" aria-label="Idioma"><a href="index.html" lang="es" hreflang="es" title="Español" aria-current="true">ES</a><a href="en/index.html" lang="en" hreflang="en" title="English">EN</a></div>
     <span class="mono">© <span id="anio"></span> GMR Suspensiones Especiales</span>
   </div>
 </footer>
@@ -1334,6 +1344,11 @@ function initCarruselCoverflow({carruselId, cardsId, nextId, prevId, seccionId})
 
 initCarruselCoverflow({carruselId: 'testiCarrusel', cardsId: 'testiCards', nextId: 'testiNext', prevId: 'testiPrev', seccionId: 'testimonios'});
 initCarruselCoverflow({carruselId: 'videoCarrusel', cardsId: 'videoCards', nextId: 'videoNext', prevId: 'videoPrev', seccionId: 'consejos'});
+
+/* el selector de idioma conserva la sección en la que estás */
+document.querySelectorAll('.lang a:not([aria-current])').forEach(a => {
+  a.addEventListener('click', () => { if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
+});
 </script>
 </body>
 </html>
